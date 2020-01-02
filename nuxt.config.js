@@ -1,10 +1,12 @@
+import colors from 'vuetify/es5/util/colors'
+
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Jereny Bratcher, Web Developer',
     meta: [{
         charset: 'utf-8'
       },
@@ -19,10 +21,15 @@ export default {
       }
     ],
     link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Raleway&display=swap',
+      },
+    ]
   },
   generate: {
     routes: function () {
@@ -71,5 +78,26 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  }
+  },
+  /*
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
+  vuetify: {
+    theme: {
+      light: true,
+      themes: {
+        light: {
+          primary: colors.blue.darken2,
+          accent: colors.blue.lighten1,
+          secondary: colors.lightBlue.darken3,
+          info: colors.blueGrey.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+          background: colors.blue.base,
+        }
+      }
+    }
+  },
 }

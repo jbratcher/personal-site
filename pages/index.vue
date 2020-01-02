@@ -3,23 +3,17 @@
     <v-flex>
       <main>
         <!-- Hero Section -->
-        <section id="hero" class="py-12">
-          <h1 class="display-1 pl-12">Hero Section</h1>
-        </section>
-
-        <!-- Benefits Section -->
-        <section id="benefits" class="py-12">
-          <h1 class="display-1 pl-12">Benefits Section</h1>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-12">
-          <h1 class="display-1 pl-12">About Section</h1>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-12">
-          <h1 class="display-1 pl-12">Contact Section</h1>
+        <section class="container" id="hero">
+          <p>
+            My name is
+            <span>Jeremy</span>
+          </p>
+          <p>
+            I am a
+            <span>Web Developer</span>
+          </p>
+          <p class="sub-heading">Let me help you with your next project</p>
+          <p class="background-text">Hi,</p>
         </section>
       </main>
     </v-flex>
@@ -45,37 +39,43 @@ export default {
 
 <style lang="scss">
 main {
-  .container {
-    min-height: 100vh;
+  background: #eee;
+  position: relative;
+
+  section#hero {
+    padding: 4rem 0;
+
+    p {
+      font-size: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    p:first-child {
+      span {
+        color: #f57c00;
+      }
+    }
+
+    p:nth-of-type(2) {
+      span {
+        color: #1976d2;
+      }
+    }
+
+    p.sub-heading {
+      font-size: 3rem;
+    }
+
+    p.background-text {
+      background: none;
+      color: #ddd;
+      font-size: 35rem;
+      position: absolute;
+      top: -200px;
+      left: 30vw;
+      z-index: 0;
+    }
   }
-
-  & > section:nth-child(odd) {
-    background-color: #eee;
-  }
-}
-
-.title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: bold;
-  font-size: 3.2rem;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 2rem;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-a {
-  font-weight: bold;
-  color: #526488;
-}
-.deploy-button {
-  margin-top: 1rem;
 }
 </style>
