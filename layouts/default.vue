@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <v-app color="#eee">
     <!-- Header Area -->
-    <v-app-bar app color="#eee" flat height="70px">
+    <v-toolbar color="#eee" flat height="100px" max-height="100px">
       <v-toolbar-title v-text="title" />
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
       <MenuLinks
@@ -9,7 +9,7 @@
         list-class="hidden-md-and-down"
         list-item-class="row-menu"
       />
-    </v-app-bar>
+    </v-toolbar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed app right>
       <MenuLinks :general-links="generalLinks" list-class="listClass" list-item-class="column" />
@@ -30,7 +30,7 @@
         >{{ link.title }}</v-btn>
         <v-col class="py-4 text-center" cols="12">
           {{ new Date().getFullYear() }} —
-          <strong>Green Spaces</strong>
+          <strong>Jeremy Bratcher</strong>
         </v-col>
       </v-row>
     </v-footer>
@@ -114,15 +114,52 @@ html,
 
 html,
 body {
+  min-width: 100vw;
   overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .v-application a {
   color: #000 !important;
 }
 
-.v-list {
-  background: none;
+.v-toolbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+
+.v-toolbar__content {
+  justify-content: space-between;
+  width: 100%;
+
+  .v-toolbar__title {
+    border-radius: 0.33rem;
+    box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 1),
+      4px 4px 4px 0 rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    letter-spacing: 0.125rem;
+    margin: 0 1rem;
+    padding: 0 0.4rem;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+      box-shadow: -1px -1px 1px 0 rgba(255, 255, 255, 0.5),
+        1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .v-list {
+    display: flex;
+    align-items: baseline;
+    background: none;
+    padding-bottom: 0;
+  }
+}
+
+.v-list-item {
+  margin: 0 0.5rem;
 }
 
 .v-list-item__title {
@@ -137,24 +174,5 @@ body {
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;
-}
-
-.v-toolbar__content {
-  justify-content: space-between;
-
-  .v-toolbar__title {
-    border-radius: 0.33rem;
-    box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 1),
-      4px 4px 4px 0 rgba(0, 0, 0, 0.3);
-    font-size: 2rem;
-    letter-spacing: 0.125rem;
-    margin: 0 1rem;
-    padding: 0 0.4rem;
-  }
-
-  .v-list {
-    display: flex;
-    margin-right: 4rem;
-  }
 }
 </style>
