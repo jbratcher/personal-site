@@ -29,6 +29,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Raleway&display=swap',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
+      },
     ]
   },
   generate: {

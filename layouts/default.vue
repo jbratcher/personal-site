@@ -1,8 +1,15 @@
 <template>
   <v-app color="#eee">
     <!-- Header Area -->
-    <v-toolbar color="#eee" flat height="100px" max-height="100px">
-      <v-toolbar-title v-text="title" />
+    <v-toolbar class="pt-3 pb-12" color="#eee" flat height="max-content">
+      <v-avatar size="110">
+        <v-img
+          src="profile.jpg"
+          lazy-src="https://picsum.photos/id/11/10/6"
+          aspect-ratio="1"
+          cover
+        />
+      </v-avatar>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
       <MenuLinks
         :general-links="generalLinks"
@@ -11,7 +18,14 @@
       />
     </v-toolbar>
     <!-- side/mobile navigation -->
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" fixed app right>
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      app
+      disable-resize-watcher
+      fixed
+      right
+    >
       <MenuLinks :general-links="generalLinks" list-class="listClass" list-item-class="column" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
@@ -82,10 +96,13 @@ export default {
         {
           title: 'Blog',
           to: '/blog'
+        },
+        {
+          title: 'Portfolio',
+          to: '/portfolio'
         }
       ],
-      miniVariant: false,
-      title: 'JB'
+      miniVariant: false
     }
   }
 }
@@ -116,7 +133,7 @@ html,
 body {
   min-width: 100vw;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: hidden;
 }
 
 .v-application a {
@@ -134,31 +151,22 @@ body {
   justify-content: space-between;
   width: 100%;
 
-  .v-toolbar__title {
-    border-radius: 0.33rem;
-    box-shadow: -4px -4px 4px 0 rgba(255, 255, 255, 1),
-      4px 4px 4px 0 rgba(0, 0, 0, 0.3);
-    font-size: 2rem;
-    letter-spacing: 0.125rem;
-    margin: 0 1rem;
-    padding: 0 0.4rem;
-    transition: box-shadow 0.5s ease;
-
-    &:hover {
-      box-shadow: -1px -1px 1px 0 rgba(255, 255, 255, 0.5),
-        1px 1px 1px 0 rgba(0, 0, 0, 0.1);
-    }
+  .v-avatar {
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px #fff;
   }
 
   .v-list {
+    border-top: 1px solid #666;
     display: flex;
     align-items: baseline;
     background: none;
     padding-bottom: 0;
+    width: 100%;
   }
 }
 
 .v-list-item {
+  flex: 0;
   margin: 0 0.5rem;
 }
 

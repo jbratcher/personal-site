@@ -6,11 +6,31 @@
         <section class="container" id="hero">
           <p>
             My name is
-            <span>Jeremy</span>
+            <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
           </p>
+          <transition
+            name="custom-classes-transition"
+            enter-active-class="animated pulse"
+            leave-active-class="animated rubberBand"
+          >
+            <section v-if="profilePic" id="profile-pic">
+              <v-avatar size="96">
+                <v-img
+                  src="profile.jpg"
+                  lazy-src="https://picsum.photos/id/11/10/6"
+                  aspect-ratio="1"
+                  cover
+                />
+              </v-avatar>
+            </section>
+          </transition>
           <p>
             I'm a
-            <span>Web Developer</span>
+            <span
+              :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
+              @mouseenter="toggleInputDisplay"
+              @mouseleave="toggleInputDisplay"
+            >Web Developer</span>
           </p>
           <p>
             I'm good at creating
@@ -37,6 +57,18 @@ export default {
         { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
       ]
     }
+  },
+  data: () => ({
+    inputDisplay: false,
+    profilePic: false
+  }),
+  methods: {
+    showProfilePic: function() {
+      this.profilePic = !this.profilePic
+    },
+    toggleInputDisplay: function() {
+      this.inputDisplay = !this.inputDisplay
+    }
   }
 }
 </script>
@@ -48,6 +80,7 @@ main {
   padding: 0 1rem;
 
   section#hero {
+    position: relative;
     p {
       position: relative;
       z-index: 1;
@@ -63,10 +96,6 @@ main {
 
     p:nth-of-type(2) {
       font-size: 1.75rem;
-
-      span {
-        color: #1976d2;
-      }
     }
 
     p:nth-of-type(3) {
@@ -89,6 +118,17 @@ main {
       top: -120px;
       left: 5vw;
       z-index: 0;
+    }
+
+    .no-input {
+      color: #1976d2;
+      transition: all 0.5s ease;
+    }
+
+    .input-display {
+      background: #333;
+      color: #d25d19;
+      transition: all 0.5s ease;
     }
   }
 }
@@ -117,6 +157,12 @@ main {
         z-index: 0;
       }
     }
+  }
+
+  #profile-pic {
+    position: absolute;
+    top: 60px;
+    left: 540px;
   }
 }
 </style>
