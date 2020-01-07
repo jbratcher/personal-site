@@ -1,8 +1,15 @@
 <template>
   <v-app color="#eee">
     <!-- Header Area -->
-    <v-toolbar class="pt-3 pb-12" color="#eee" flat height="max-content">
-      <v-avatar size="110">
+    <v-toolbar
+      class="py-12"
+      color="#eee"
+      flat
+      :min-height="responsiveNavHeight"
+      :height="responsiveNavHeight"
+      :max-height="responsiveNavHeight"
+    >
+      <v-avatar :size="responsiveIconSize">
         <v-img
           src="profile.jpg"
           lazy-src="https://picsum.photos/id/11/10/6"
@@ -11,11 +18,7 @@
         />
       </v-avatar>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
-      <MenuLinks
-        :general-links="generalLinks"
-        list-class="hidden-md-and-down"
-        list-item-class="row-menu"
-      />
+      <MenuLinks :general-links="generalLinks" list-class="hidden-md-and-down" />
     </v-toolbar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
@@ -102,7 +105,53 @@ export default {
           to: '/portfolio'
         }
       ],
-      miniVariant: false
+      iconSize: 0,
+      miniVariant: false,
+      navHeight: 0
+    }
+  },
+  computed: {
+    responsiveIconSize() {
+      let value = '32'
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          value = '64'
+          break
+        case 'sm':
+          value = '80'
+          break
+        case 'md':
+          value = '96'
+          break
+        case 'lg':
+          value = '112'
+          break
+        case 'xl':
+          value = '128'
+          break
+      }
+      return value
+    },
+    responsiveNavHeight() {
+      let value = '160'
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs':
+          value = '100'
+          break
+        case 'sm':
+          value = '120'
+          break
+        case 'md':
+          value = '160'
+          break
+        case 'lg':
+          value = '160'
+          break
+        case 'xl':
+          value = '160'
+          break
+      }
+      return value
     }
   }
 }
@@ -118,6 +167,7 @@ export default {
 }
 
 html,
+body,
 .v-application {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
@@ -127,13 +177,9 @@ html,
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-}
-
-html,
-body {
   min-width: 100vw;
+  height: auto;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .v-application a {
@@ -156,23 +202,14 @@ body {
   }
 
   .v-list {
+    border-radius: 0;
     border-top: 1px solid #666;
     display: flex;
     align-items: baseline;
-    background: none;
+    background: transparent;
     padding-bottom: 0;
     width: 100%;
   }
-}
-
-.v-list-item {
-  flex: 0;
-  margin: 0 0.5rem;
-}
-
-.v-list-item__title {
-  font-weight: 400;
-  font-size: 1.25rem;
 }
 
 .v-card__title {

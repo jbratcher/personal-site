@@ -1,15 +1,23 @@
 export const state = () => ({
-  blogPosts: []
+  blogPosts: [],
+  highlightPortfolioLink: false,
 })
 
 export const mutations = {
   setBlogPosts(state, list) {
-    state.blogPosts = list
+    state.blogPosts = list;
+  },
+  toggleHighlightPortfolioLink(state, highlightPortfolioLink) {
+    console.log('clicked');
+    state.highlightPortfolioLink = !state.highlightPortfolioLink;
+    console.log(state.highlightPortfolioLink);
   }
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }) {
+  async nuxtServerInit({
+    commit
+  }) {
     let files = await require.context(
       '~/assets/content/blog/',
       false,
