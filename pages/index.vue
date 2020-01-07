@@ -104,7 +104,7 @@ main {
   section#hero {
     border-left: 1px solid #333;
     position: relative;
-    margin-left: 2rem;
+    margin-left: 3vw;
 
     p {
       position: relative;
@@ -139,8 +139,9 @@ main {
       background: none;
       color: #ddd;
       font-size: 20rem;
+      opacity: 0.7;
       position: absolute;
-      top: -120px;
+      top: -140px;
       left: 5vw;
       z-index: 0;
     }
@@ -159,11 +160,11 @@ main {
     .abstract-shape-1 {
       background: none;
       border: 5px solid #ddd;
-      height: 150px;
-      width: 150px;
+      height: 50px;
+      width: 50px;
       position: absolute;
-      top: 200px;
-      right: 5vw;
+      top: 100px;
+      right: 1vw;
       transform: rotate(30deg);
       transition: all 0.5s ease;
     }
@@ -172,26 +173,26 @@ main {
       background: none;
       border: 5px solid #ddd;
       border-radius: 50%;
-      height: 150px;
-      width: 150px;
+      height: 50px;
+      width: 50px;
       position: absolute;
-      top: -30px;
-      right: 15vw;
+      top: 0;
+      right: 1vw;
       transition: all 0.5s ease;
     }
 
     .experience-on-1 {
       border-color: #d25d19;
-      top: 0;
-      right: 20vw;
+      top: 10px;
+      right: 1vw;
       transform: rotate(225deg);
       transition: all 0.5s ease;
     }
 
     .experience-on-2 {
       border-color: #1976d2;
-      top: 0;
-      right: 10vw;
+      top: 40px;
+      right: 1vw;
       transform: scale(1.25);
       transition: all 0.5s ease;
     }
@@ -227,6 +228,46 @@ main {
         top: -300px;
         left: 7vw;
         z-index: 0;
+      }
+
+      .abstract-shape-1 {
+        background: none;
+        border: 5px solid #ddd;
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        top: 200px;
+        right: 5vw;
+        transform: rotate(30deg);
+        transition: all 0.5s ease;
+      }
+
+      .abstract-shape-2 {
+        background: none;
+        border: 5px solid #ddd;
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        position: absolute;
+        top: -30px;
+        right: 15vw;
+        transition: all 0.5s ease;
+      }
+
+      .experience-on-1 {
+        border-color: #d25d19;
+        top: 0;
+        right: 20vw;
+        transform: rotate(225deg);
+        transition: all 0.5s ease;
+      }
+
+      .experience-on-2 {
+        border-color: #1976d2;
+        top: 0;
+        right: 10vw;
+        transform: scale(1.25);
+        transition: all 0.5s ease;
       }
     }
   }
