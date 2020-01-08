@@ -10,15 +10,10 @@
       :max-height="responsiveNavHeight"
     >
       <v-avatar :size="responsiveIconSize">
-        <v-img
-          src="profile.jpg"
-          lazy-src="https://picsum.photos/id/11/10/6"
-          aspect-ratio="1"
-          cover
-        />
+        <v-img src="profile.jpg" lazy-src="10x10_profile.png" aspect-ratio="1" cover />
       </v-avatar>
-      <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
-      <MenuLinks :general-links="generalLinks" list-class="hidden-md-and-down" />
+      <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
+      <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
     </v-toolbar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
@@ -97,12 +92,12 @@ export default {
           to: '/'
         },
         {
-          title: 'Blog',
-          to: '/blog'
-        },
-        {
           title: 'Portfolio',
           to: '/portfolio'
+        },
+        {
+          title: 'Blog',
+          to: '/blog'
         }
       ],
       iconSize: 0,
@@ -164,6 +159,11 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  font-size: 1rem; // fallback for older browsers
+  font-size: calc(1vw + 1vh + 0.5vmin); // fluid typography
 }
 
 html,

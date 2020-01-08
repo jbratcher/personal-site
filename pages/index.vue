@@ -11,17 +11,12 @@
             </p>
             <transition
               name="custom-classes-transition"
-              enter-active-class="animated pulse"
-              leave-active-class="animated rubberBand"
+              enter-active-class="animated fadeInDown"
+              leave-active-class="animated lightSpeedOut"
             >
               <section v-if="profilePic" id="profile-pic">
                 <v-avatar size="96">
-                  <v-img
-                    src="profile.jpg"
-                    lazy-src="https://picsum.photos/id/11/10/6"
-                    aspect-ratio="1"
-                    cover
-                  />
+                  <v-img src="profile.jpg" lazy-src="10x10_profile.png" aspect-ratio="1" cover />
                 </v-avatar>
               </section>
             </transition>
@@ -48,7 +43,9 @@
               >Experiences</span>
             </p>
           </section>
-          <p class="background-text">Hi,</p>
+          <p
+            :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']"
+          >Hi,</p>
           <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
           <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
         </section>
@@ -138,12 +135,19 @@ main {
     p.background-text {
       background: none;
       color: #ddd;
-      font-size: 20rem;
+      font-size: 30rem;
       opacity: 0.7;
       position: absolute;
       top: -140px;
       left: 5vw;
+      transition: all 1s ease;
       z-index: 0;
+    }
+
+    p.experience-on-text {
+      color: #d25d19;
+      opacity: 1;
+      transition: all 1s ease;
     }
 
     .no-input {
@@ -160,8 +164,8 @@ main {
     .abstract-shape-1 {
       background: none;
       border: 5px solid #ddd;
-      height: 50px;
-      width: 50px;
+      height: 2.5rem;
+      width: 2.5rem;
       position: absolute;
       top: 100px;
       right: 1vw;
@@ -173,8 +177,8 @@ main {
       background: none;
       border: 5px solid #ddd;
       border-radius: 50%;
-      height: 50px;
-      width: 50px;
+      height: 2.5rem;
+      width: 2.5rem;
       position: absolute;
       top: 0;
       right: 1vw;
@@ -200,31 +204,22 @@ main {
 
   #profile-pic {
     position: absolute;
-    top: 15px;
-    left: 540px;
+    top: -4vh;
+    left: 31vw;
     z-index: 1;
+
+    .v-avatar {
+      box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px #fff;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
   main {
     section#hero {
-      padding-bottom: 200px;
-
-      p:first-child {
-        font-size: 3.5rem;
-      }
-
-      p:nth-of-type(2) {
-        font-size: 3rem;
-      }
-
-      p:nth-of-type(3) {
-        font-size: 2.5rem;
-      }
+      padding: 1rem 0 12.5rem 0;
 
       p.background-text {
-        font-size: 40rem;
         top: -300px;
         left: 7vw;
         z-index: 0;
@@ -233,8 +228,8 @@ main {
       .abstract-shape-1 {
         background: none;
         border: 5px solid #ddd;
-        height: 150px;
-        width: 150px;
+        height: 7.5rem;
+        width: 7.5rem;
         position: absolute;
         top: 200px;
         right: 5vw;
@@ -246,8 +241,8 @@ main {
         background: none;
         border: 5px solid #ddd;
         border-radius: 50%;
-        height: 150px;
-        width: 150px;
+        height: 7.5rem;
+        width: 7.5rem;
         position: absolute;
         top: -30px;
         right: 15vw;

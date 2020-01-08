@@ -48,13 +48,12 @@ export default {
 <style lang="scss">
 .v-list-item {
   flex: 0;
-  margin: 0 0.5rem;
-  padding: 0 1.5rem;
+  margin: 0 0.25rem;
+  padding: 0 1rem;
 }
 
 .v-list-item__title {
   font-weight: 400;
-  font-size: 1.25rem;
 }
 
 .highlight-portfolio-link {
