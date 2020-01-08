@@ -1,21 +1,15 @@
-# Nuxt, Vuetify, & Netlify CMS Starter
+# Personal Website
+
+This is the code for my 2020 personal website
 
 Built on top of [Nuxt Netlify CMS Starter Kit](https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
 
-## How to use
-
 ## Getting Started
-
-The quickest way to get started is with Netlify's hyper-convenient **one-click Deploy To Netlify**, which will automatically create an instance of this project on your GitHub account and deploy it instantly to Netlify.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/xdesro/nuxt-netlify-cms-starter)
-
-Otherwise, you can follow these steps!
 
 1. Clone the repository locally and cd into the directory.
 
 ```bash
-git clone https://github.com/xdesro/nuxt-netlify-cms-starter
+git clone https://github.com/jbratcher/personal-site
 
 cd nuxt-netlify-cms-starter
 ```
@@ -67,8 +61,10 @@ This project comes with Netlify CMS ready to rumble, and a basic blog configurat
 2. Enter the Netlify URL of your site when prompted.
 3. Login with the account you created or one of the external providers, if you enabled them.
 
-#### To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console.
+#### To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console. This needs to be done if you previously used this method for another Netlify site.
 
 ### Use Netlify CMS Dashboard
 
-Feel free to reach out [on Twitter](https://twitter.com/xdesro). Friendly feedback and advice is always welcome. Contributions doubly so.
+You can access the admin panel by going ot '/admin' from your Netlify url
+
+
