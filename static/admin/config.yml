@@ -19,8 +19,8 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", default: "~/static/profile.jpg", media_library: , config: , multiple: true }
-      - { label: "Hero", name: "hero", widget: "image", default: "~/static/profile.jpg", media_library: , config: , multiple: true }
+      - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', default: '../profile.jpg', media_library: , config: , multiple: true }
+      - { label: 'Hero', name: 'hero', widget: 'image', default: '../profile.jpg', media_library: , config: , multiple: true }
   - name: 'portfolio'
     label: 'Portfolio'
     folder: 'assets/content/portfolio'
@@ -34,5 +34,5 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", default: "~/static/profile.jpg", media_library: , config: , multiple: true }
-      - { label: "Hero", name: "hero", widget: "image", default: "~/static/profile.jpg", media_library: , config: , multiple: true }
+      - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', default: '../profile.jpg', media_library: , config: , multiple: true }
+      - { label: 'Hero', name: 'hero', widget: 'image', default: '../profile.jpg', media_library: , config: , multiple: true }
