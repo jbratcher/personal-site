@@ -158,6 +158,8 @@ body,
 html,
 body {
   background: #eee;
+  min-width: 100vw;
+  overflow-x: hidden;
 }
 
 .v-application a {

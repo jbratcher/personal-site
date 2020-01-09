@@ -1,63 +1,57 @@
 <template>
   <v-container class="pa-0" fluid>
-    <v-row>
-      <v-col color="#eee" class="pa-0">
-        <main>
-          <!-- Hero Section -->
-          <section id="hero">
-            <section class="container">
-              <p>
-                My name is
-                <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
-              </p>
-              <transition
-                name="custom-classes-transition"
-                enter-active-class="animated fadeInDown"
-                leave-active-class="animated lightSpeedOut"
-              >
-                <section v-if="profilePic" id="profile-pic">
-                  <v-avatar size="96">
-                    <v-img
-                      src="img/profile.jpg"
-                      lazy-src="img/10x10_profile.png"
-                      aspect-ratio="1"
-                      cover
-                    />
-                  </v-avatar>
-                </section>
-              </transition>
-              <p>
-                I'm a
-                <span
-                  :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
-                  @mouseover="toggleInputDisplay"
-                  @mouseout="toggleInputDisplay"
-                >Web Developer</span>
-              </p>
-              <p>
-                I'm good at creating
-                <span
-                  @click="toggleHighlightPortfolioLink"
-                  @mouseover="toggleHighlightPortfolioLink"
-                  @mouseout="toggleHighlightPortfolioLink"
-                >User Interfaces</span>
-                &amp;
-                <span
-                  @click="toggleShapeAnimation"
-                  @mouseover="toggleShapeAnimation"
-                  @mouseout="toggleShapeAnimation"
-                >Experiences</span>
-              </p>
+    <main>
+      <!-- Hero Section -->
+      <section id="hero">
+        <section class="container">
+          <p>
+            My name is
+            <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
+          </p>
+          <transition
+            name="custom-classes-transition"
+            enter-active-class="animated fadeInDown"
+            leave-active-class="animated lightSpeedOut"
+          >
+            <section v-if="profilePic" id="profile-pic">
+              <v-avatar size="96">
+                <v-img
+                  src="img/profile.jpg"
+                  lazy-src="img/10x10_profile.png"
+                  aspect-ratio="1"
+                  cover
+                />
+              </v-avatar>
             </section>
-            <p
-              :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']"
-            >Hi,</p>
-            <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
-            <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
-          </section>
-        </main>
-      </v-col>
-    </v-row>
+          </transition>
+          <p>
+            I'm a
+            <span
+              :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
+              @mouseover="toggleInputDisplay"
+              @mouseout="toggleInputDisplay"
+            >Web Developer</span>
+          </p>
+          <p>
+            I'm good at creating
+            <span
+              @click="toggleHighlightPortfolioLink"
+              @mouseover="toggleHighlightPortfolioLink"
+              @mouseout="toggleHighlightPortfolioLink"
+            >User Interfaces</span>
+            &amp;
+            <span
+              @click="toggleShapeAnimation"
+              @mouseover="toggleShapeAnimation"
+              @mouseout="toggleShapeAnimation"
+            >Experiences</span>
+          </p>
+        </section>
+        <p :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']">Hi,</p>
+        <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
+        <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
+      </section>
+    </main>
   </v-container>
 </template>
 
@@ -107,8 +101,8 @@ main {
   section#hero {
     border-left: 1px solid #333;
     position: relative;
-    margin-left: 3rem;
     width: 100%;
+    margin: 0 2rem;
 
     p {
       position: relative;
@@ -145,8 +139,8 @@ main {
       font-size: 30rem;
       opacity: 0.7;
       position: absolute;
-      top: -140px;
-      left: 5vw;
+      top: -30vh;
+      right: 0;
       transition: all 1s ease;
       z-index: 0;
     }
@@ -211,8 +205,8 @@ main {
 
   #profile-pic {
     position: absolute;
-    top: -4vh;
-    left: 31vw;
+    top: -2vh;
+    left: 66vw;
     z-index: 1;
 
     .v-avatar {
@@ -232,7 +226,68 @@ div.v-content__wrap {
 @media screen and (min-width: 768px) {
   main {
     section#hero {
-      margin-left: 5rem;
+      margin-left: 3rem;
+      padding-bottom: 12.5rem;
+
+      p.background-text {
+        top: -25vh;
+        left: 3vw;
+        z-index: 0;
+      }
+
+      .abstract-shape-1 {
+        background: none;
+        border: 5px solid #ddd;
+        height: 7.5rem;
+        width: 7.5rem;
+        position: absolute;
+        top: 200px;
+        right: 15vw;
+        transform: rotate(30deg);
+        transition: all 0.5s ease;
+      }
+
+      .abstract-shape-2 {
+        background: none;
+        border: 5px solid #ddd;
+        border-radius: 50%;
+        height: 7.5rem;
+        width: 7.5rem;
+        position: absolute;
+        top: -30px;
+        right: 25vw;
+        transition: all 0.5s ease;
+      }
+
+      .experience-on-1 {
+        border-color: #d25d19;
+        top: 0;
+        right: 20vw;
+        transform: rotate(225deg);
+        transition: all 0.5s ease;
+      }
+
+      .experience-on-2 {
+        border-color: #1976d2;
+        top: 0;
+        right: 10vw;
+        transform: scale(1.25);
+        transition: all 0.5s ease;
+      }
+    }
+
+    #profile-pic {
+      position: absolute;
+      top: 60px;
+      left: 540px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    section#hero {
+      margin-left: 3rem;
       padding-bottom: 12.5rem;
 
       p.background-text {
@@ -281,12 +336,19 @@ div.v-content__wrap {
         transition: all 0.5s ease;
       }
     }
-  }
 
-  #profile-pic {
-    position: absolute;
-    top: 60px;
-    left: 540px;
+    #profile-pic {
+      position: absolute;
+      top: 0;
+      left: 35vw;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main #profile-pic {
+    top: 15px;
+    left: 49vw;
   }
 }
 </style>
