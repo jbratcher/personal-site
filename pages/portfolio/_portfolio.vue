@@ -2,7 +2,7 @@
   <v-container class="pt-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <v-sheet class="ma-0" color="primary" dark tile>
+        <v-sheet class="ma-0" color="#444" dark tile>
           <h1 class="headline pa-2" display="headline">Portfolio > {{ portfolioItem.title }}</h1>
         </v-sheet>
         <article class="mx-12 mt-2">

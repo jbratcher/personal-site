@@ -22,14 +22,14 @@ collections:
       - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
-        default: "profile.jpg"
+        default:
         media_library:
           config:
             multiple: true
       - label: "Hero"
         name: "hero"
         widget: "image"
-        default: "profile.jpg"
+        default:
         media_library:
           config:
             multiple: true
@@ -49,15 +49,17 @@ collections:
       - label: "Thumbnail"
         name: "thumbnail"
         widget: "image"
-        default: "profile.jpg"
+        default: 
         media_library:
           config:
             multiple: true
       - label: "Hero"
         name: "hero"
         widget: "image"
-        default: "profile.jpg"
+        default: 
         media_library:
           config:
             multiple: true
+      - { label: 'Demo Link', name: 'demo', widget: 'string' }
+      - { label: 'Repository Link', name: 'repo', widget: 'string' }
 

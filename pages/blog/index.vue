@@ -3,7 +3,7 @@
     <v-row>
       <v-col class="pa-0">
         <main>
-          <v-sheet class="ma-0" color="primary" dark tile>
+          <v-sheet class="ma-0" color="#444" dark tile>
             <h1 class="headline pa-2" display="headline">Blog ></h1>
           </v-sheet>
           <v-list>

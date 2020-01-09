@@ -10,7 +10,7 @@
       :max-height="responsiveNavHeight"
     >
       <v-avatar :size="responsiveIconSize">
-        <v-img src="profile.jpg" lazy-src="10x10_profile.png" aspect-ratio="1" cover />
+        <v-img src="img/profile.jpg" lazy-src="img/10x10_profile.png" aspect-ratio="1" cover />
       </v-avatar>
       <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
       <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />

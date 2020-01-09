@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid>
+  <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
         <main>
-          <v-sheet class="ma-0" color="primary" dark tile>
-            <h1 class="headline pa-2" display="headline">Portfolio ></h1>
+          <v-sheet class="ma-0" color="#444" dark tile>
+            <h1 class="headline pa-2" display="headline">Portfolio&nbsp;></h1>
           </v-sheet>
           <v-list class="grid-2">
             <v-list-item three-line v-for="(portfolioItem, index) in portfolioItems" :key="index">
