@@ -60,6 +60,6 @@ collections:
         media_library:
           config:
             multiple: true
-      - { label: 'Demo Link', name: 'demo', widget: 'string' }
-      - { label: 'Repository Link', name: 'repo', widget: 'string' }
+      - { label: 'Demo Link', name: 'demo', widget: 'string', required: false }
+      - { label: 'Repository Link', name: 'repo', widget: 'string', required: false }
 
