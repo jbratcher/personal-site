@@ -17,32 +17,34 @@
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
                 <v-card-text>{{portfolioItem.body.substring(0, 144) + '...'}}</v-card-text>
-                <v-btn
-                  class="ml-3 mb-12"
-                  max-width="120px"
-                  color="primary"
-                  nuxt
-                  dark
-                  :to="`portfolio/${portfolioItem.slug}`"
-                >Info</v-btn>
-                <v-btn
-                  v-if="portfolioItem.repo"
-                  class="ml-3 mb-12"
-                  max-width="120px"
-                  color="primary"
-                  nuxt
-                  dark
-                  :to="`portfolio/${portfolioItem.repo}`"
-                >Repo</v-btn>
-                <v-btn
-                  v-if="portfolioItem.demo"
-                  class="ml-3 mb-12"
-                  max-width="120px"
-                  color="primary"
-                  nuxt
-                  dark
-                  :to="`portfolio/${portfolioItem.demo}`"
-                >Demo</v-btn>
+                <v-container>
+                  <v-btn
+                    class="ml-3 mb-12"
+                    max-width="120px"
+                    color="primary"
+                    nuxt
+                    dark
+                    :to="`portfolio/${portfolioItem.slug}`"
+                  >Info</v-btn>
+                  <v-btn
+                    v-if="portfolioItem.repo"
+                    class="ml-3 mb-12"
+                    max-width="120px"
+                    color="primary"
+                    dark
+                  >
+                    <a :href="portfolioItem.repo">Repo</a>
+                  </v-btn>
+                  <v-btn
+                    v-if="portfolioItem.demo"
+                    class="ml-3 mb-12"
+                    max-width="120px"
+                    color="primary"
+                    dark
+                  >
+                    <a :href="portfolioItem.demo">Demo</a>
+                  </v-btn>
+                </v-container>
               </v-card>
             </v-list-item>
           </v-list>

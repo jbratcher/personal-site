@@ -157,7 +157,8 @@ body,
 }
 
 .v-application a {
-  color: #000;
+  color: #fff !important;
+  text-decoration: none;
 }
 
 .v-toolbar {
