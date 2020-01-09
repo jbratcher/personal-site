@@ -2,15 +2,15 @@
   <v-layout>
     <v-flex>
       <main>
-        <v-sheet class="ma-0" color="primary lighten-2" dark tile>
+        <v-sheet class="ma-0" color="primary" dark tile>
           <h1 class="headline pa-2" display="headline">Blog ></h1>
         </v-sheet>
         <v-list>
           <v-list-item three-line v-for="(blogPost, index) in blogPosts" :key="index">
             <v-card class="d-flex flex-column">
               <v-img
-                src="https://picsum.photos/300/240"
-                lazy-src="https://picsum.photos/300/240"
+                :src="blogPost.thumbnail"
+                lazy-src="https://picsum.photos/10/6"
                 max-height="200px"
               />
               <v-card-title class="display-1">{{blogPost.title.substring(0, 70)}}</v-card-title>
@@ -31,11 +31,16 @@
   </v-layout>
 </template>
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
   computed: {
-    blogPosts() {
-      return this.$store.state.blogPosts
-    }
+    ...mapState('resources', ['blogPosts'])
+  },
+  methods: {
+    ...mapActions('resources', ['getBlogPosts'])
+  },
+  created() {
+    this.getBlogPosts()
   }
 }
 </script>
