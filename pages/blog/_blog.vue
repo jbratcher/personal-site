@@ -34,8 +34,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.col {
-  margin: 0;
-  padding: 0;
-}
 </style>

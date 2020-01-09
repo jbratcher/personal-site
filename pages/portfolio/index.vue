@@ -3,20 +3,26 @@
     <v-row>
       <v-col class="pa-0">
         <main>
-          <v-sheet class="ma-0" color="#444" dark tile>
-            <h1 class="headline pa-2" display="headline">Portfolio&nbsp;></h1>
+          <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
+            <h1 class="headline ml-3 pa-2" display="headline">Portfolio&nbsp;></h1>
           </v-sheet>
-          <v-list class="grid-2">
-            <v-list-item three-line v-for="(portfolioItem, index) in portfolioItems" :key="index">
+          <v-list class="mx-6">
+            <v-list-item
+              class="align-stretch ma-0 pa-0"
+              three-line
+              v-for="(portfolioItem, index) in portfolioItems"
+              :key="index"
+            >
               <v-card class="d-flex flex-column">
                 <v-img
                   :src="portfolioItem.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
+                  height="200px"
                   max-height="200px"
                 />
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
-                <v-card-text>{{portfolioItem.body.substring(0, 144) + '...'}}</v-card-text>
+                <v-card-text v-html="$md.render(portfolioItem.body.substring(0, 144) + '...')" />
                 <v-container>
                   <v-btn
                     class="ml-3 mb-12"
@@ -33,7 +39,7 @@
                     color="primary"
                     dark
                   >
-                    <a :href="portfolioItem.repo">Repo</a>
+                    <a class="white--text" :href="portfolioItem.repo">Repo</a>
                   </v-btn>
                   <v-btn
                     v-if="portfolioItem.demo"
@@ -42,7 +48,7 @@
                     color="primary"
                     dark
                   >
-                    <a :href="portfolioItem.demo">Demo</a>
+                    <a class="white--text" :href="portfolioItem.demo">Demo</a>
                   </v-btn>
                 </v-container>
               </v-card>
@@ -75,21 +81,34 @@ main {
 
     .v-list-item {
       margin-bottom: 2rem;
+
+      .v-card {
+        width: 100%;
+      }
     }
   }
 }
 
 @media screen and (min-width: 768px) {
   main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .v-sheet.header {
+      width: 100vw;
+    }
+
     .v-list {
-      align-items: flex-start;
+      align-items: baseline;
       display: grid;
-      grid-template-columns: minmax(calc(50vw - 2rem), 1fr) minmax(
+      grid-template-columns: minmax(calc(50vw - 2rem), 500px) minmax(
           calc(50vw - 2rem),
-          1fr
+          500px
         );
-      grid-template-rows: auto;
-      gap: 2rem;
+      grid-template-rows: minmax(500px, auto);
+      gap: 0.5rem;
+      justify-content: center;
 
       .v-list-item {
         margin-bottom: 0;

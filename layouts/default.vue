@@ -1,7 +1,7 @@
 <template>
-  <v-app color="#eee">
+  <v-app>
     <!-- Header Area -->
-    <v-toolbar
+    <v-app-bar
       class="py-12"
       color="#eee"
       flat
@@ -13,8 +13,8 @@
         <v-img src="img/profile.jpg" lazy-src="img/10x10_profile.png" aspect-ratio="1" cover />
       </v-avatar>
       <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
-      <MenuLinks :general-links="generalLinks" list-class="hidden-sm-and-down" />
-    </v-toolbar>
+      <MenuLinks :general-links="generalLinks" list-class="hidden-xs-only" />
+    </v-app-bar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
       v-model="drawer"
@@ -38,6 +38,8 @@
           :key="i + link.title"
           text
           rounded
+          nuxt
+          :to="link.to"
           class="my-2"
         >{{ link.title }}</v-btn>
         <v-col class="py-4 text-center" cols="12">
@@ -76,7 +78,7 @@ export default {
       ],
       iconSize: 0,
       miniVariant: false,
-      navHeight: 0
+      navHeight: 64
     }
   },
   computed: {
@@ -151,13 +153,14 @@ body,
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  min-width: 100vw;
-  height: auto;
-  overflow-x: hidden;
+}
+
+html,
+body {
+  background: #eee;
 }
 
 .v-application a {
-  color: #fff !important;
   text-decoration: none;
 }
 

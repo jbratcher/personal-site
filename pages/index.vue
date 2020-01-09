@@ -1,11 +1,11 @@
 <template>
-  <v-container fluid>
+  <v-container class="pa-0" fluid>
     <v-row>
-      <v-col>
+      <v-col color="#eee" class="pa-0">
         <main>
           <!-- Hero Section -->
           <section id="hero">
-            <section class="container content-container">
+            <section class="container">
               <p>
                 My name is
                 <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
@@ -17,7 +17,12 @@
               >
                 <section v-if="profilePic" id="profile-pic">
                   <v-avatar size="96">
-                    <v-img src="profile.jpg" lazy-src="10x10_profile.png" aspect-ratio="1" cover />
+                    <v-img
+                      src="img/profile.jpg"
+                      lazy-src="img/10x10_profile.png"
+                      aspect-ratio="1"
+                      cover
+                    />
                   </v-avatar>
                 </section>
               </transition>
@@ -80,7 +85,7 @@ export default {
     ...mapState(['highlightPortfolioLink'])
   },
   methods: {
-    ...mapMutations(['toggleHighlightPortfolioLink']),
+    ...mapMutations('resources', ['toggleHighlightPortfolioLink']),
     showProfilePic: function() {
       this.profilePic = !this.profilePic
     },
@@ -96,13 +101,14 @@ export default {
 
 <style lang="scss">
 main {
-  background: #eee;
+  background-color: #eee;
   position: relative;
 
   section#hero {
     border-left: 1px solid #333;
     position: relative;
-    margin-left: 3vw;
+    margin-left: 3rem;
+    width: 100%;
 
     p {
       position: relative;
@@ -215,10 +221,19 @@ main {
   }
 }
 
+#home-main {
+  background: #eee;
+}
+
+div.v-content__wrap {
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   main {
     section#hero {
-      padding: 1rem 0 12.5rem 0;
+      margin-left: 5rem;
+      padding-bottom: 12.5rem;
 
       p.background-text {
         top: -300px;
@@ -233,7 +248,7 @@ main {
         width: 7.5rem;
         position: absolute;
         top: 200px;
-        right: 5vw;
+        right: 15vw;
         transform: rotate(30deg);
         transition: all 0.5s ease;
       }
@@ -246,7 +261,7 @@ main {
         width: 7.5rem;
         position: absolute;
         top: -30px;
-        right: 15vw;
+        right: 25vw;
         transition: all 0.5s ease;
       }
 
