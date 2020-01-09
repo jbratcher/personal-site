@@ -1,50 +1,55 @@
 <template>
-  <v-layout>
-    <v-flex>
-      <main>
-        <v-sheet class="ma-0" color="primary" dark tile>
-          <h1 class="headline pa-2" display="headline">Portfolio ></h1>
-        </v-sheet>
-        <v-list class="grid-2">
-          <v-list-item three-line v-for="(portfolioItem, index) in portfolioItems" :key="index">
-            <v-card class="d-flex flex-column">
-              <v-img
-                :src="portfolioItem.thumbnail"
-                lazy-src="https://picsum.photos/10/6"
-                max-height="200px"
-              />
-              <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
-              <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
-              <v-card-text>{{portfolioItem.body.substring(0, 144) + '...'}}</v-card-text>
-              <v-btn
-                class="ml-3 mb-12"
-                max-width="120px"
-                color="primary"
-                nuxt
-                :to="`portfolio/${portfolioItem.slug}`"
-              >Info</v-btn>
-              <v-btn
-                v-if="portfolioItem.repo"
-                class="ml-3 mb-12"
-                max-width="120px"
-                color="primary"
-                nuxt
-                :to="`portfolio/${portfolioItem.repo}`"
-              >Repo</v-btn>
-              <v-btn
-                v-if="portfolioItem.demo"
-                class="ml-3 mb-12"
-                max-width="120px"
-                color="primary"
-                nuxt
-                :to="`portfolio/${portfolioItem.demo}`"
-              >Demo</v-btn>
-            </v-card>
-          </v-list-item>
-        </v-list>
-      </main>
-    </v-flex>
-  </v-layout>
+  <v-container fluid>
+    <v-row>
+      <v-col class="pa-0">
+        <main>
+          <v-sheet class="ma-0" color="primary" dark tile>
+            <h1 class="headline pa-2" display="headline">Portfolio ></h1>
+          </v-sheet>
+          <v-list class="grid-2">
+            <v-list-item three-line v-for="(portfolioItem, index) in portfolioItems" :key="index">
+              <v-card class="d-flex flex-column">
+                <v-img
+                  :src="portfolioItem.thumbnail"
+                  lazy-src="https://picsum.photos/10/6"
+                  max-height="200px"
+                />
+                <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
+                <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
+                <v-card-text>{{portfolioItem.body.substring(0, 144) + '...'}}</v-card-text>
+                <v-btn
+                  class="ml-3 mb-12"
+                  max-width="120px"
+                  color="primary"
+                  nuxt
+                  dark
+                  :to="`portfolio/${portfolioItem.slug}`"
+                >Info</v-btn>
+                <v-btn
+                  v-if="portfolioItem.repo"
+                  class="ml-3 mb-12"
+                  max-width="120px"
+                  color="primary"
+                  nuxt
+                  dark
+                  :to="`portfolio/${portfolioItem.repo}`"
+                >Repo</v-btn>
+                <v-btn
+                  v-if="portfolioItem.demo"
+                  class="ml-3 mb-12"
+                  max-width="120px"
+                  color="primary"
+                  nuxt
+                  dark
+                  :to="`portfolio/${portfolioItem.demo}`"
+                >Demo</v-btn>
+              </v-card>
+            </v-list-item>
+          </v-list>
+        </main>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
 import { mapActions, mapState } from 'vuex'

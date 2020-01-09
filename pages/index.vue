@@ -1,57 +1,59 @@
 <template>
-  <v-layout>
-    <v-flex>
-      <main>
-        <!-- Hero Section -->
-        <section id="hero">
-          <section class="container content-container">
-            <p>
-              My name is
-              <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
-            </p>
-            <transition
-              name="custom-classes-transition"
-              enter-active-class="animated fadeInDown"
-              leave-active-class="animated lightSpeedOut"
-            >
-              <section v-if="profilePic" id="profile-pic">
-                <v-avatar size="96">
-                  <v-img src="profile.jpg" lazy-src="10x10_profile.png" aspect-ratio="1" cover />
-                </v-avatar>
-              </section>
-            </transition>
-            <p>
-              I'm a
-              <span
-                :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
-                @mouseover="toggleInputDisplay"
-                @mouseout="toggleInputDisplay"
-              >Web Developer</span>
-            </p>
-            <p>
-              I'm good at creating
-              <span
-                @click="toggleHighlightPortfolioLink"
-                @mouseover="toggleHighlightPortfolioLink"
-                @mouseout="toggleHighlightPortfolioLink"
-              >User Interfaces</span>
-              &amp;
-              <span
-                @click="toggleShapeAnimation"
-                @mouseover="toggleShapeAnimation"
-                @mouseout="toggleShapeAnimation"
-              >Experiences</span>
-            </p>
+  <v-container fluid>
+    <v-row>
+      <v-col>
+        <main>
+          <!-- Hero Section -->
+          <section id="hero">
+            <section class="container content-container">
+              <p>
+                My name is
+                <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
+              </p>
+              <transition
+                name="custom-classes-transition"
+                enter-active-class="animated fadeInDown"
+                leave-active-class="animated lightSpeedOut"
+              >
+                <section v-if="profilePic" id="profile-pic">
+                  <v-avatar size="96">
+                    <v-img src="profile.jpg" lazy-src="10x10_profile.png" aspect-ratio="1" cover />
+                  </v-avatar>
+                </section>
+              </transition>
+              <p>
+                I'm a
+                <span
+                  :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
+                  @mouseover="toggleInputDisplay"
+                  @mouseout="toggleInputDisplay"
+                >Web Developer</span>
+              </p>
+              <p>
+                I'm good at creating
+                <span
+                  @click="toggleHighlightPortfolioLink"
+                  @mouseover="toggleHighlightPortfolioLink"
+                  @mouseout="toggleHighlightPortfolioLink"
+                >User Interfaces</span>
+                &amp;
+                <span
+                  @click="toggleShapeAnimation"
+                  @mouseover="toggleShapeAnimation"
+                  @mouseout="toggleShapeAnimation"
+                >Experiences</span>
+              </p>
+            </section>
+            <p
+              :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']"
+            >Hi,</p>
+            <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
+            <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
           </section>
-          <p
-            :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']"
-          >Hi,</p>
-          <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
-          <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
-        </section>
-      </main>
-    </v-flex>
-  </v-layout>
+        </main>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -96,7 +98,6 @@ export default {
 main {
   background: #eee;
   position: relative;
-  padding: 0 1rem;
 
   section#hero {
     border-left: 1px solid #333;

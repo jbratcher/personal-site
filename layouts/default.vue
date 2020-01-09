@@ -34,7 +34,7 @@
     <v-footer light color="#eee" class="pa-0">
       <v-row justify="center" no-gutters>
         <v-btn
-          v-for="(link, i) in footerLinks"
+          v-for="(link, i) in generalLinks"
           :key="i + link.title"
           text
           rounded
@@ -60,32 +60,6 @@ export default {
     return {
       drawer: false,
       fixed: false,
-      footerLinks: [
-        {
-          title: 'Home',
-          to: '/'
-        },
-        {
-          title: 'About Us',
-          to: '/'
-        },
-        {
-          title: 'Team',
-          to: '/'
-        },
-        {
-          title: 'Services',
-          to: '/'
-        },
-        {
-          title: 'Blog',
-          to: '/'
-        },
-        {
-          title: 'Contact Us',
-          to: '/'
-        }
-      ],
       generalLinks: [
         {
           title: 'Home',
@@ -183,7 +157,7 @@ body,
 }
 
 .v-application a {
-  color: #000 !important;
+  color: #000;
 }
 
 .v-toolbar {
