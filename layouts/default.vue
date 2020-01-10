@@ -74,6 +74,10 @@ export default {
         {
           title: 'Blog',
           to: '/blog'
+        },
+        {
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       iconSize: 0,
