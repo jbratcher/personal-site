@@ -5,7 +5,7 @@
         <v-sheet class="ma-0" color="#444" dark tile>
           <h1 class="headline pa-2" display="headline">Portfolio > {{ portfolioItem.title }}</h1>
         </v-sheet>
-        <article class="mx-12 mt-2">
+        <article>
           <v-card class="d-flex flex-column align-center mx-auto">
             <v-img
               :src="portfolioItem.hero"
@@ -34,4 +34,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@media screen and (min-width: 768px) {
+  article {
+    margin: 0 3rem;
+  }
+}
 </style>

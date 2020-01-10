@@ -76,7 +76,7 @@ export default {
     shapeAnimation: false
   }),
   computed: {
-    ...mapState(['highlightPortfolioLink'])
+    ...mapState('resources', ['highlightPortfolioLink'])
   },
   methods: {
     ...mapMutations('resources', ['toggleHighlightPortfolioLink']),
@@ -136,11 +136,11 @@ main {
     p.background-text {
       background: none;
       color: #ddd;
-      font-size: 30rem;
+      font-size: 20rem;
       opacity: 0.7;
       position: absolute;
-      top: -30vh;
-      right: 0;
+      top: -15vh;
+      right: 15vw;
       transition: all 1s ease;
       z-index: 0;
     }
@@ -168,10 +168,11 @@ main {
       height: 2.5rem;
       width: 2.5rem;
       position: absolute;
-      top: 100px;
-      right: 1vw;
+      top: 80px;
+      right: 15vw;
       transform: rotate(30deg);
       transition: all 0.5s ease;
+      z-index: 0;
     }
 
     .abstract-shape-2 {
@@ -182,14 +183,15 @@ main {
       width: 2.5rem;
       position: absolute;
       top: 0;
-      right: 1vw;
+      right: 15vw;
       transition: all 0.5s ease;
+      z-index: 0;
     }
 
     .experience-on-1 {
       border-color: #d25d19;
       top: 10px;
-      right: 1vw;
+      right: 15vw;
       transform: rotate(225deg);
       transition: all 0.5s ease;
     }
@@ -197,7 +199,7 @@ main {
     .experience-on-2 {
       border-color: #1976d2;
       top: 40px;
-      right: 1vw;
+      right: 15vw;
       transform: scale(1.25);
       transition: all 0.5s ease;
     }
@@ -291,6 +293,7 @@ div.v-content__wrap {
       padding-bottom: 12.5rem;
 
       p.background-text {
+        font-size: 30rem;
         top: -300px;
         left: 7vw;
         z-index: 0;
@@ -339,8 +342,8 @@ div.v-content__wrap {
 
     #profile-pic {
       position: absolute;
-      top: 0;
-      left: 35vw;
+      top: -10px;
+      left: 37vw;
     }
   }
 }

@@ -7,7 +7,7 @@
       v-for="(item, i) in generalLinks"
       :key="i + `-${item.title}`"
       :to="item.to"
-      :class="[item.title === 'Portfolio' && highlightPortfolioLink ? 'highlight-portfolio-link' : 'no-highlight']"
+      :class="[highlightPortfolioLink && item.title === 'Portfolio' ? 'highlight-portfolio-link' : 'no-highlight']"
       router
       exact
     >
@@ -40,7 +40,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['highlightPortfolioLink'])
+    ...mapState('resources', ['highlightPortfolioLink'])
   }
 }
 </script>
