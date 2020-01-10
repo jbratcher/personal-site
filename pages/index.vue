@@ -136,18 +136,20 @@ main {
     p.background-text {
       background: none;
       color: #ddd;
-      font-size: 20rem;
+      font-size: 10rem;
       opacity: 0.7;
       position: absolute;
-      top: -15vh;
-      right: 15vw;
-      transition: all 1s ease;
+      top: -30%;
+      right: 50vw;
+      transition: all 0.5s ease 0.25s;
       z-index: 0;
     }
 
     p.experience-on-text {
       color: #d25d19;
       opacity: 1;
+      top: -140px;
+      right: 25vh;
       transition: all 1s ease;
     }
 
@@ -164,27 +166,27 @@ main {
 
     .abstract-shape-1 {
       background: none;
-      border: 5px solid #ddd;
+      border: 2px solid #ddd;
       height: 2.5rem;
       width: 2.5rem;
       position: absolute;
       top: 80px;
       right: 15vw;
       transform: rotate(30deg);
-      transition: all 0.5s ease;
+      transition: all 0.5s ease 0.25s;
       z-index: 0;
     }
 
     .abstract-shape-2 {
       background: none;
-      border: 5px solid #ddd;
+      border: 2px solid #ddd;
       border-radius: 50%;
       height: 2.5rem;
       width: 2.5rem;
       position: absolute;
       top: 0;
       right: 15vw;
-      transition: all 0.5s ease;
+      transition: all 0.5s ease 0.25s;
       z-index: 0;
     }
 
@@ -193,7 +195,7 @@ main {
       top: 10px;
       right: 15vw;
       transform: rotate(225deg);
-      transition: all 0.5s ease;
+      transition: all 0.5s ease 0.25s;
     }
 
     .experience-on-2 {
@@ -201,7 +203,7 @@ main {
       top: 40px;
       right: 15vw;
       transform: scale(1.25);
-      transition: all 0.5s ease;
+      transition: all 0.5s ease 0.25s;
     }
   }
 
@@ -232,7 +234,8 @@ div.v-content__wrap {
       padding-bottom: 12.5rem;
 
       p.background-text {
-        top: -25vh;
+        font-size: 20rem;
+        top: -30%;
         left: 3vw;
         z-index: 0;
       }
@@ -246,7 +249,6 @@ div.v-content__wrap {
         top: 200px;
         right: 15vw;
         transform: rotate(30deg);
-        transition: all 0.5s ease;
       }
 
       .abstract-shape-2 {
@@ -258,7 +260,6 @@ div.v-content__wrap {
         position: absolute;
         top: -30px;
         right: 25vw;
-        transition: all 0.5s ease;
       }
 
       .experience-on-1 {
@@ -266,7 +267,6 @@ div.v-content__wrap {
         top: 0;
         right: 20vw;
         transform: rotate(225deg);
-        transition: all 0.5s ease;
       }
 
       .experience-on-2 {
@@ -274,7 +274,6 @@ div.v-content__wrap {
         top: 0;
         right: 10vw;
         transform: scale(1.25);
-        transition: all 0.5s ease;
       }
     }
 
@@ -294,33 +293,31 @@ div.v-content__wrap {
 
       p.background-text {
         font-size: 30rem;
-        top: -300px;
+        top: -60%;
         left: 7vw;
         z-index: 0;
       }
 
       .abstract-shape-1 {
         background: none;
-        border: 5px solid #ddd;
+        border: 8px solid #ddd;
         height: 7.5rem;
         width: 7.5rem;
         position: absolute;
         top: 200px;
         right: 15vw;
         transform: rotate(30deg);
-        transition: all 0.5s ease;
       }
 
       .abstract-shape-2 {
         background: none;
-        border: 5px solid #ddd;
+        border: 8px solid #ddd;
         border-radius: 50%;
         height: 7.5rem;
         width: 7.5rem;
         position: absolute;
         top: -30px;
         right: 25vw;
-        transition: all 0.5s ease;
       }
 
       .experience-on-1 {
@@ -336,7 +333,6 @@ div.v-content__wrap {
         top: 0;
         right: 10vw;
         transform: scale(1.25);
-        transition: all 0.5s ease;
       }
     }
 

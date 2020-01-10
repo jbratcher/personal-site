@@ -2,11 +2,11 @@
   <main>
     <!-- Contact Section -->
     <v-container id="contact">
-      <h2 class="text-center">
+      <h2 class="display-1 text-center">
         I'm currently
         <span class="teal--text">open</span> to new projects
       </h2>
-      <p class="text-center mt-5">Drop me a line!</p>
+      <p class="headline text-center mt-5">Drop me a line!</p>
       <v-form
         ref="form"
         v-model="valid"

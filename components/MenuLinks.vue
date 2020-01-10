@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list :class="`justify-end ${listClass}`" rounded>
+  <v-list :class="`mr-3 justify-end ${listClass}`" rounded>
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"

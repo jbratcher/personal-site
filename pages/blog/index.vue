@@ -1,12 +1,12 @@
 <template>
   <v-container class="py-0" fluid>
     <v-row>
-      <v-col class="pa-0">
+      <v-col class="pa-0 pb-12">
         <main>
           <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
             <h1 class="headline ml-3 pa-2" display="headline">Blog ></h1>
           </v-sheet>
-          <v-list class="mx-6">
+          <v-list class="mx-12" color="#eee">
             <v-list-item
               class="align-stretch pa-0"
               three-line
@@ -24,7 +24,7 @@
                 <v-card-subtitle class="subtitle-1">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
                 <v-card-text v-html="$md.render(blogPost.body.substring(0, 144) + '...')" />
                 <v-btn
-                  class="ml-3 mb-12"
+                  class="ml-3 mb-12 mt-auto"
                   max-width="120px"
                   color="primary"
                   nuxt
@@ -61,6 +61,7 @@ main {
 
     .v-list-item {
       margin-bottom: 2rem;
+      min-height: 100%;
 
       .v-card {
         width: 100%;
@@ -82,20 +83,13 @@ main {
     .v-list {
       align-items: baseline;
       display: grid;
-      grid-template-columns: minmax(calc(50vw - 2rem), 500px) minmax(
-          calc(50vw - 2rem),
-          500px
-        );
-      grid-template-rows: minmax(500px, auto);
-      gap: 0.5rem;
-      justify-content: center;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
+      gap: 2rem;
 
       .v-list-item {
         margin-bottom: 0;
-
-        .v-card {
-          width: 100%;
-        }
+        max-width: 100%;
       }
     }
   }

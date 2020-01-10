@@ -6,7 +6,7 @@
           <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
             <h1 class="headline ml-3 pa-2" display="headline">Portfolio&nbsp;></h1>
           </v-sheet>
-          <v-list class="mx-6">
+          <v-list class="mx-6 pb-12" color="#eee">
             <v-list-item
               class="align-stretch ma-0 pa-0"
               three-line
@@ -25,7 +25,7 @@
                 <v-card-text v-html="$md.render(portfolioItem.body.substring(0, 144) + '...')" />
                 <v-container>
                   <v-btn
-                    class="ml-3 mb-12"
+                    class="ml-3 mb-12 mt-auto"
                     max-width="120px"
                     color="primary"
                     nuxt
@@ -34,7 +34,7 @@
                   >Info</v-btn>
                   <v-btn
                     v-if="portfolioItem.repo"
-                    class="ml-3 mb-12"
+                    class="ml-3 mb-12 mt-auto"
                     max-width="120px"
                     color="primary"
                     dark
@@ -43,7 +43,7 @@
                   </v-btn>
                   <v-btn
                     v-if="portfolioItem.demo"
-                    class="ml-3 mb-12"
+                    class="ml-3 mb-12 mt-auto"
                     max-width="120px"
                     color="primary"
                     dark
@@ -81,6 +81,7 @@ main {
 
     .v-list-item {
       margin-bottom: 2rem;
+      min-height: 100%;
 
       .v-card {
         width: 100%;
