@@ -14,8 +14,10 @@
         method="post"
         value="contactform"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
         lazy-validation
       >
+        <input type="hidden" name="form-name" value="contact" />
         <v-text-field v-model="name" :rules="nameRules" label="Name" name="name" required></v-text-field>
         <v-text-field v-model="email" :rules="emailRules" label="E-mail" name="email" required></v-text-field>
         <v-textarea

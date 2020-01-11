@@ -1,8 +1,16 @@
 # Personal Website
 
-This is the code for my 2020 personal website
+This is the code for my 2020 personal website.
+
+You can see it live at [jeremybratcher.com](https://jeremybratcher.com/contact)
+
+This is a static site generate by Nuxt and host by Netlify.  I use Netlify CMS on the backend to manage blog posts and portfolio items.  The contact form is also tied to Netlify to handle form submissions.
 
 Built on top of [Nuxt Netlify CMS Starter Kit](https://github.com/jbratcher/nuxt-netlify-cms-starter-kit)
+
+#### Note:
+
+Not that long ago, I rebuilt my 2 year old site from a static page and rolled my own CMS using Laravel for the API and Vue for the frontend.  At the time, I wanted to build my own CMS for Laravel for the experience.  While I did indeed create a working CMS and dashboard to manage blog posts and other resources, I found that the imperfections in my own system made it painful to consistently update the site thus I found a more simple method to fit my needs.
 
 ## Getting Started
 
