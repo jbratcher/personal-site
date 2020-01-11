@@ -6,6 +6,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Jereny Bratcher, Web Developer',
     meta: [{
         charset: 'utf-8'

@@ -36,6 +36,7 @@
         <v-btn
           v-for="(link, i) in generalLinks"
           :key="i + link.title"
+          :name="link.title.toLowerCase()"
           text
           rounded
           nuxt

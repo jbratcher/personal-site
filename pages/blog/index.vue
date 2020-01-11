@@ -28,6 +28,7 @@
                 <v-card-text v-html="$md.render(blogPost.body.substring(0, 144) + '...')" />
                 <v-btn
                   class="ml-3 mb-12 mt-auto"
+                  name="more"
                   max-width="120px"
                   color="primary"
                   nuxt

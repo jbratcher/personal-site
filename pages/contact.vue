@@ -27,8 +27,8 @@
           name="message"
           required
         ></v-textarea>
-        <v-btn color="secondary" class="mr-4" @click="reset">Reset</v-btn>
-        <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4">Submit</v-btn>
+        <v-btn class="mr-4" name="reset" color="secondary" @click="reset">Reset</v-btn>
+        <v-btn type="submit" name="submit" :disabled="!valid" color="primary" class="mr-4">Submit</v-btn>
       </v-form>
     </v-container>
   </main>

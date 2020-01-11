@@ -29,6 +29,7 @@
                 <v-container class="mt-auto">
                   <v-btn
                     class="ml-3 mb-12"
+                    name="info"
                     max-width="120px"
                     color="primary"
                     nuxt
@@ -38,6 +39,7 @@
                   <v-btn
                     v-if="portfolioItem.repo"
                     class="ml-3 mb-12"
+                    name="repo"
                     max-width="120px"
                     color="primary"
                     dark
@@ -47,6 +49,7 @@
                   <v-btn
                     v-if="portfolioItem.demo"
                     class="ml-3 mb-12"
+                    name="demo"
                     max-width="120px"
                     color="primary"
                     dark
