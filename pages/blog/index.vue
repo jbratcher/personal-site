@@ -17,11 +17,14 @@
                 <v-img
                   :src="blogPost.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
-                  height="200px"
-                  max-height="200px"
-                />
-                <v-card-title class="display-1">{{blogPost.title.substring(0, 70)}}</v-card-title>
-                <v-card-subtitle class="subtitle-1">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
+                  height="300px"
+                  max-height="300px"
+                >
+                  <section class="img-text">
+                    <v-card-title class="white--text">{{blogPost.title.substring(0, 70)}}</v-card-title>
+                    <v-card-subtitle class="white--text">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
+                  </section>
+                </v-img>
                 <v-card-text v-html="$md.render(blogPost.body.substring(0, 144) + '...')" />
                 <v-btn
                   class="ml-3 mb-12 mt-auto"
@@ -55,6 +58,25 @@ export default {
 </script>
 <style lang="scss">
 main {
+  .v-image {
+    align-self: center;
+
+    .img-text {
+      width: 50%;
+
+      .v-card__title {
+        font-size: 2rem;
+        word-break: inherit;
+        margin-bottom: 1rem;
+      }
+
+      .v-card__subtitle {
+        font-size: 1.5rem;
+        line-height: 1.2;
+      }
+    }
+  }
+
   .v-list {
     display: flex;
     flex-direction: column;

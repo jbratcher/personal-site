@@ -15,17 +15,20 @@
             >
               <v-card class="d-flex flex-column">
                 <v-img
+                  class="align-self-center"
                   :src="portfolioItem.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
                   height="200px"
                   max-height="200px"
+                  width="100%"
+                  max-width="500px"
                 />
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
                 <v-card-text v-html="$md.render(portfolioItem.body.substring(0, 144) + '...')" />
-                <v-container>
+                <v-container class="mt-auto">
                   <v-btn
-                    class="ml-3 mb-12 mt-auto"
+                    class="ml-3 mb-12"
                     max-width="120px"
                     color="primary"
                     nuxt
@@ -34,7 +37,7 @@
                   >Info</v-btn>
                   <v-btn
                     v-if="portfolioItem.repo"
-                    class="ml-3 mb-12 mt-auto"
+                    class="ml-3 mb-12"
                     max-width="120px"
                     color="primary"
                     dark
@@ -43,7 +46,7 @@
                   </v-btn>
                   <v-btn
                     v-if="portfolioItem.demo"
-                    class="ml-3 mb-12 mt-auto"
+                    class="ml-3 mb-12"
                     max-width="120px"
                     color="primary"
                     dark
@@ -103,12 +106,9 @@ main {
     .v-list {
       align-items: baseline;
       display: grid;
-      grid-template-columns: minmax(calc(50vw - 2rem), 500px) minmax(
-          calc(50vw - 2rem),
-          500px
-        );
-      grid-template-rows: minmax(500px, auto);
-      gap: 0.5rem;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
+      gap: 2rem;
       justify-content: center;
 
       .v-list-item {
