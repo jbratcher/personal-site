@@ -197,10 +197,6 @@ body {
   }
 }
 
-.v-card__title {
-  word-break: break-word;
-}
-
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;

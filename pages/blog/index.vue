@@ -67,7 +67,6 @@ main {
 
       .v-card__title {
         font-size: 2rem;
-        word-break: inherit;
         margin-bottom: 1rem;
       }
 

@@ -34,9 +34,30 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+article {
+  .v-card__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .v-card__subtitle {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
 @media screen and (min-width: 768px) {
   article {
     margin: 0 3rem;
+
+    .v-card__text {
+      font-size: 1rem;
+      line-height: 1.5;
+      width: 70vw;
+    }
+
+    .v-card__subtitle.date {
+      font-size: 0.875rem;
+    }
   }
 }
 </style>
