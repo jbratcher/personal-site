@@ -13,8 +13,10 @@
                 <v-card-subtitle class="white--text">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
               </section>
             </v-img>
-            <v-card-subtitle class="date my-6">{{ formatDate(blogPost.date) }}</v-card-subtitle>
-            <v-card-text class="px-12 my-3" v-html="$md.render(blogPost.body)"></v-card-text>
+            <section class="post-content">
+              <v-card-subtitle class="date">{{ formatDate(blogPost.date) }}</v-card-subtitle>
+              <v-card-text v-html="$md.render(blogPost.body)"></v-card-text>
+            </section>
           </v-card>
         </article>
       </v-col>
@@ -46,20 +48,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-article {
-  .img-text {
-    width: 50%;
-
-    .v-card__title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .v-card__subtitle {
-      font-size: 1.5rem;
-      line-height: 1.2;
-    }
-  }
+.post-content {
 }
 
 @media screen and (min-width: 768px) {
@@ -74,11 +63,10 @@ article {
     .v-card__text {
       font-size: 1rem;
       line-height: 1.5;
-      width: 70vw;
     }
 
     .v-card__subtitle.date {
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
   }
 }

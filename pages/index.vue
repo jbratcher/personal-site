@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-0" fluid>
+  <v-container class="py-0 px-6" fluid>
     <main>
       <!-- Hero Section -->
       <section id="hero">
@@ -102,7 +102,6 @@ main {
     border-left: 1px solid #333;
     position: relative;
     width: 100%;
-    margin: 0 2rem;
 
     p {
       position: relative;
@@ -140,7 +139,7 @@ main {
       opacity: 0.7;
       position: absolute;
       top: -30%;
-      right: 50vw;
+      right: 30vw;
       transition: all 0.5s ease 0.25s;
       z-index: 0;
     }
@@ -149,7 +148,7 @@ main {
       color: #d25d19;
       opacity: 1;
       top: -140px;
-      right: 25vh;
+      right: 10vh;
       transition: all 1s ease;
     }
 
@@ -171,7 +170,7 @@ main {
       width: 2.5rem;
       position: absolute;
       top: 80px;
-      right: 15vw;
+      right: 3vw;
       transform: rotate(30deg);
       transition: all 0.5s ease 0.25s;
       z-index: 0;
@@ -185,7 +184,7 @@ main {
       width: 2.5rem;
       position: absolute;
       top: 0;
-      right: 15vw;
+      right: 3vw;
       transition: all 0.5s ease 0.25s;
       z-index: 0;
     }
@@ -193,7 +192,6 @@ main {
     .experience-on-1 {
       border-color: #d25d19;
       top: 10px;
-      right: 15vw;
       transform: rotate(225deg);
       transition: all 0.5s ease 0.25s;
     }
@@ -201,7 +199,6 @@ main {
     .experience-on-2 {
       border-color: #1976d2;
       top: 40px;
-      right: 15vw;
       transform: scale(1.25);
       transition: all 0.5s ease 0.25s;
     }
@@ -230,7 +227,6 @@ div.v-content__wrap {
 @media screen and (min-width: 768px) {
   main {
     section#hero {
-      margin-left: 3rem;
       padding-bottom: 12.5rem;
 
       p.background-text {

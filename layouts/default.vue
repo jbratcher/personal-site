@@ -197,6 +197,12 @@ body {
   }
 }
 
+.v-card__title,
+.v-card__subtitle,
+.v-card__text {
+  word-break: keep-all;
+}
+
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;

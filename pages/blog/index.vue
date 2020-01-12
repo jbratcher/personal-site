@@ -58,6 +58,15 @@ export default {
 }
 </script>
 <style lang="scss">
+.v-card__text {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.v-card__subtitle.date {
+  font-size: 1.25rem;
+}
+
 main {
   .v-image {
     align-self: center;
@@ -93,6 +102,15 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  .v-card__text {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .v-card__subtitle.date {
+    font-size: 1rem;
+  }
+
   main {
     display: flex;
     flex-direction: column;
