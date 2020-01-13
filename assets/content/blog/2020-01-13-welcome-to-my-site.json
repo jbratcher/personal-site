@@ -1,0 +1,8 @@
+{
+  "title": "Welcome to my site",
+  "date": "2020-01-13T14:52:58.811Z",
+  "description": "An introductory blog post of sorts",
+  "body": "Hi, my name is Jeremy Bratcher and I currently work as a full-stack web developer.  I'm interested in all parts of the pipeline from UI design to building APIs to build tools and dev ops.\n\nThis post is more of a placeholder right now.",
+  "thumbnail": "/img/blog-header.png",
+  "hero": "/img/blog-header.png"
+}
