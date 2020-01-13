@@ -1,57 +1,63 @@
 <template>
-  <v-container class="py-0 px-6" fluid>
-    <main>
-      <!-- Hero Section -->
-      <section id="hero">
-        <section class="container">
-          <p>
-            My name is
-            <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
-          </p>
-          <transition
-            name="custom-classes-transition"
-            enter-active-class="animated fadeInDown"
-            leave-active-class="animated lightSpeedOut"
-          >
-            <section v-if="profilePic" id="profile-pic">
-              <v-avatar size="96">
-                <v-img
-                  src="img/profile.jpg"
-                  lazy-src="img/10x10_profile.png"
-                  aspect-ratio="1"
-                  cover
-                />
-              </v-avatar>
+  <v-container class="py-0" fluid>
+    <v-row>
+      <v-col class="pa-0">
+        <main>
+          <!-- Hero Section -->
+          <section id="hero">
+            <section class="container">
+              <p>
+                My name is
+                <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
+              </p>
+              <transition
+                name="custom-classes-transition"
+                enter-active-class="animated fadeInDown"
+                leave-active-class="animated lightSpeedOut"
+              >
+                <section v-if="profilePic" id="profile-pic">
+                  <v-avatar size="96">
+                    <v-img
+                      src="img/profile.jpg"
+                      lazy-src="img/10x10_profile.png"
+                      aspect-ratio="1"
+                      cover
+                    />
+                  </v-avatar>
+                </section>
+              </transition>
+              <p>
+                I'm a
+                <span
+                  :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
+                  @mouseover="toggleInputDisplay"
+                  @mouseout="toggleInputDisplay"
+                >Web Developer</span>
+              </p>
+              <p>
+                I'm good at creating
+                <span
+                  @click="toggleHighlightPortfolioLink"
+                  @mouseover="toggleHighlightPortfolioLink"
+                  @mouseout="toggleHighlightPortfolioLink"
+                >User Interfaces</span>
+                &amp;
+                <span
+                  @click="toggleShapeAnimation"
+                  @mouseover="toggleShapeAnimation"
+                  @mouseout="toggleShapeAnimation"
+                >Experiences</span>
+              </p>
             </section>
-          </transition>
-          <p>
-            I'm a
-            <span
-              :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
-              @mouseover="toggleInputDisplay"
-              @mouseout="toggleInputDisplay"
-            >Web Developer</span>
-          </p>
-          <p>
-            I'm good at creating
-            <span
-              @click="toggleHighlightPortfolioLink"
-              @mouseover="toggleHighlightPortfolioLink"
-              @mouseout="toggleHighlightPortfolioLink"
-            >User Interfaces</span>
-            &amp;
-            <span
-              @click="toggleShapeAnimation"
-              @mouseover="toggleShapeAnimation"
-              @mouseout="toggleShapeAnimation"
-            >Experiences</span>
-          </p>
-        </section>
-        <p :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']">Hi,</p>
-        <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
-        <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
-      </section>
-    </main>
+            <p
+              :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']"
+            >Hi,</p>
+            <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
+            <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
+          </section>
+        </main>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
