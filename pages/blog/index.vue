@@ -1,26 +1,21 @@
 <template>
   <v-container class="py-0" fluid>
     <v-row>
-      <v-col class="pa-0 pb-12">
+      <v-col class="pa-0">
         <main>
           <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
             <h1 class="headline ml-3 pa-2" display="headline">Blog ></h1>
           </v-sheet>
-          <v-list class="mx-12" color="#eee">
+          <v-list class="my-12 mx-6" color="#eee">
             <v-list-item
               class="align-stretch pa-0"
               three-line
               v-for="(blogPost, index) in blogPosts"
               :key="index"
             >
-              <v-card class="d-flex flex-column">
-                <v-img
-                  :src="blogPost.thumbnail"
-                  lazy-src="https://picsum.photos/10/6"
-                  height="300px"
-                  max-height="300px"
-                >
-                  <section class="img-text">
+              <v-card class="d-flex flex-column blog-card">
+                <v-img :src="blogPost.thumbnail" lazy-src="https://picsum.photos/10/6">
+                  <section class="img-text my-auto">
                     <v-card-title class="white--text">{{blogPost.title.substring(0, 70)}}</v-card-title>
                     <v-card-subtitle class="white--text">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
                   </section>
@@ -72,7 +67,11 @@ main {
     align-self: center;
 
     .img-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 50%;
+      height: 100%;
 
       .v-card__title {
         font-size: 2rem;
@@ -102,6 +101,10 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  .blog-card {
+    max-width: calc(50vw - 4rem);
+  }
+
   .v-card__text {
     font-size: 1rem;
     line-height: 1.2;
@@ -118,6 +121,12 @@ main {
 
     .v-sheet.header {
       width: 100vw;
+    }
+
+    .v-image {
+      max-width: 100%;
+      height: 300px;
+      max-height: 300px;
     }
 
     .v-list {

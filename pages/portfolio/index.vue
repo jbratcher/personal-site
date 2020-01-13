@@ -6,22 +6,20 @@
           <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
             <h1 class="headline ml-3 pa-2" display="headline">Portfolio&nbsp;></h1>
           </v-sheet>
-          <v-list class="mx-6 pb-12" color="#eee">
+          <v-list class="my-12 mx-6">
             <v-list-item
-              class="align-stretch ma-0 pa-0"
+              class="align-stretch pa-0"
               three-line
               v-for="(portfolioItem, index) in portfolioItems"
               :key="index"
             >
-              <v-card class="d-flex flex-column">
+              <v-card class="d-flex flex-column portfolio-card">
                 <v-img
                   class="align-self-center"
                   :src="portfolioItem.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
                   height="200px"
                   max-height="200px"
-                  width="100%"
-                  max-width="500px"
                 />
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
@@ -31,7 +29,7 @@
                     class="ml-3 mb-12"
                     name="info"
                     max-width="120px"
-                    color="primary"
+                    color="primary darken-2"
                     nuxt
                     dark
                     :to="`portfolio/${portfolioItem.slug}`"
@@ -41,7 +39,7 @@
                     class="ml-3 mb-12"
                     name="repo"
                     max-width="120px"
-                    color="primary"
+                    color="primary darken-1"
                     dark
                   >
                     <a class="white--text" :href="portfolioItem.repo">Repo</a>
@@ -80,6 +78,10 @@ export default {
 }
 </script>
 <style lang="scss">
+.portfolio-card {
+  max-width: 100%;
+}
+
 main {
   .v-list {
     display: flex;
@@ -97,6 +99,10 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+  .portfolio-card {
+    max-width: calc(50vw - 4rem);
+  }
+
   main {
     display: flex;
     flex-direction: column;

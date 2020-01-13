@@ -1,13 +1,14 @@
 <template>
   <main>
     <!-- Contact Section -->
-    <v-container id="contact">
+    <v-container class="my-12 mx-auto">
       <h2 class="display-1 text-center">
         I'm currently
         <span class="teal--text">open</span> to new projects
       </h2>
-      <p class="headline text-center mt-5">Drop me a line!</p>
+      <p class="headline text-center my-6 mb-12">Drop me a line!</p>
       <v-form
+        id="contact-form"
         ref="form"
         v-model="valid"
         name="contact"
@@ -27,7 +28,7 @@
           name="message"
           required
         ></v-textarea>
-        <v-btn class="mr-4" name="reset" color="secondary" @click="reset">Reset</v-btn>
+        <v-btn class="mr-4" name="reset" color="primary lighten-1" @click="reset">Reset</v-btn>
         <v-btn type="submit" name="submit" :disabled="!valid" color="primary" class="mr-4">Submit</v-btn>
       </v-form>
     </v-container>
@@ -70,14 +71,14 @@ export default {
 </script>
 
 <style lang="scss">
-#contact {
-  margin-bottom: 4rem;
+#contact-form {
+  margin: 4rem auto;
   width: 80vw;
 }
 
 @media screen and (min-width: 768px) {
-  #contact {
-    width: auto;
+  #contact-form {
+    width: 40vw;
   }
 }
 </style>

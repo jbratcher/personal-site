@@ -12,6 +12,7 @@
       <v-avatar :size="responsiveIconSize">
         <v-img src="/img/profile.jpg" lazy-src="/img/10x10_profile.png" aspect-ratio="1" cover />
       </v-avatar>
+      <span class="hidden-sm-and-up">Jeremy Bratcher</span>
       <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
       <MenuLinks :general-links="generalLinks" list-class="hidden-xs-only" />
     </v-app-bar>
@@ -134,6 +135,8 @@ export default {
 </script>
 
 <style lang="scss">
+// global
+
 *,
 *:before,
 *:after {
@@ -171,6 +174,8 @@ body {
   text-decoration: none;
 }
 
+// header
+
 .v-toolbar {
   display: flex;
   align-items: center;
@@ -181,6 +186,10 @@ body {
 .v-toolbar__content {
   justify-content: space-between;
   width: 100%;
+
+  span {
+    font-size: 1.67rem;
+  }
 
   .v-avatar {
     box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px #fff;
@@ -196,6 +205,25 @@ body {
     width: 100%;
   }
 }
+
+.v-toolbar__content .v-btn.v-btn--icon.v-size--default {
+  height: 4.75rem;
+  width: 4.75rem;
+}
+
+.v-btn--icon.v-size--default .v-icon {
+  font-size: 4rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+// lists
+
+.theme--light.v-list {
+  background-color: #eee;
+}
+
+// cards (global)
 
 .v-card__title,
 .v-card__subtitle,

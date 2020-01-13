@@ -5,8 +5,8 @@
         <v-sheet class="ma-0" color="#444" dark tile>
           <h1 class="headline pa-2" display="headline">Blog > {{ blogPost.title }}</h1>
         </v-sheet>
-        <article>
-          <v-card class="d-flex flex-column align-center mx-auto">
+        <article class="my-12">
+          <v-card class="d-flex flex-column align-center mx-auto" tile>
             <v-img :src="blogPost.hero" lazy-src="https://picsum.photos/10/6">
               <section class="img-text">
                 <v-card-title class="white--text">{{blogPost.title.substring(0, 70)}}</v-card-title>
@@ -63,10 +63,6 @@ export default {
     .v-card__text {
       font-size: 1rem;
       line-height: 1.5;
-    }
-
-    .v-card__subtitle.date {
-      font-size: 1rem;
     }
   }
 }
