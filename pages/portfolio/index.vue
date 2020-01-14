@@ -22,8 +22,10 @@
                   max-height="200px"
                 />
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
-                <v-card-subtitle class="subtitle-1">{{portfolioItem.description.substring(0, 80)}}</v-card-subtitle>
-                <v-card-text v-html="$md.render(portfolioItem.body.substring(0, 144) + '...')" />
+                <v-card-subtitle
+                  class="subtitle-1"
+                >{{portfolioItem.description.substring(0, 43) + '...'}}</v-card-subtitle>
+                <v-card-text v-html="$md.render(portfolioItem.body.substring(0, 133) + '...')" />
                 <v-container class="mt-auto">
                   <v-btn
                     class="ml-3 mb-12"

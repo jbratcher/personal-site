@@ -106,7 +106,9 @@ main {
 
   section#hero {
     border-left: 1px solid #333;
+    margin-left: 5vw;
     position: relative;
+    min-height: 600px;
     width: 100%;
 
     p {
@@ -144,7 +146,7 @@ main {
       font-size: 10rem;
       opacity: 0.7;
       position: absolute;
-      top: -30%;
+      top: -10%;
       right: 30vw;
       transition: all 0.5s ease 0.25s;
       z-index: 0;
@@ -153,7 +155,7 @@ main {
     p.experience-on-text {
       color: #d25d19;
       opacity: 1;
-      top: -140px;
+      top: 20%;
       right: 10vh;
       transition: all 1s ease;
     }
@@ -176,7 +178,7 @@ main {
       width: 2.5rem;
       position: absolute;
       top: 80px;
-      right: 3vw;
+      right: 10vw;
       transform: rotate(30deg);
       transition: all 0.5s ease 0.25s;
       z-index: 0;
@@ -190,7 +192,7 @@ main {
       width: 2.5rem;
       position: absolute;
       top: 0;
-      right: 3vw;
+      right: 10vw;
       transition: all 0.5s ease 0.25s;
       z-index: 0;
     }
@@ -233,8 +235,6 @@ div.v-content__wrap {
 @media screen and (min-width: 768px) {
   main {
     section#hero {
-      padding-bottom: 12.5rem;
-
       p.background-text {
         font-size: 20rem;
         top: -30%;
@@ -290,12 +290,9 @@ div.v-content__wrap {
 @media screen and (min-width: 1024px) {
   main {
     section#hero {
-      margin-left: 3rem;
-      padding-bottom: 12.5rem;
-
       p.background-text {
         font-size: 30rem;
-        top: -60%;
+        top: -50%;
         left: 7vw;
         z-index: 0;
       }

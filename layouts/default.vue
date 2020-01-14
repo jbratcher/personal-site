@@ -20,12 +20,15 @@
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
+      class="pt-6 pb-12"
+      color="#eee"
+      height="auto"
       app
       disable-resize-watcher
       fixed
       right
     >
-      <MenuLinks :general-links="generalLinks" list-class="listClass" list-item-class="column" />
+      <MenuLinks :general-links="generalLinks" list-class="mobile" list-item-class="column" />
     </v-navigation-drawer>
     <!-- Nuxt content -->
     <v-content>
@@ -154,7 +157,6 @@ html,
 body,
 .v-application {
   font-family: 'Raleway', sans-serif;
-  font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -179,6 +181,7 @@ body {
 .v-toolbar {
   display: flex;
   align-items: center;
+  min-width: 100vw;
   position: relative;
   z-index: 0;
 }
@@ -215,6 +218,10 @@ body {
   font-size: 4rem;
   height: 4rem;
   width: 4rem;
+}
+
+nav.v-navigation-drawer {
+  border-bottom-left-radius: 5rem;
 }
 
 // lists

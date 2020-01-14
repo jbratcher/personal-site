@@ -48,7 +48,6 @@ export const mutations = {
         state.portfolioItems = list;
     },
     toggleHighlightPortfolioLink(state, highlightPortfolioLink) {
-        console.log(state.highlightPortfolioLink);
         state.highlightPortfolioLink = !state.highlightPortfolioLink;
     }
 };

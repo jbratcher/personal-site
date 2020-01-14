@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list :class="`mr-3 justify-end ${listClass}`" rounded>
+  <v-list :class="`justify-end ${listClass}`" rounded>
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"
@@ -64,5 +64,12 @@ export default {
 .no-highlight {
   background: none;
   transition: all 0.5s ease;
+}
+
+.mobile {
+  margin: 0 auto;
+  padding: 1rem 0;
+  text-align: center;
+  width: 50%;
 }
 </style>
