@@ -101,7 +101,7 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-  .portfolio-card {
+  main .v-list .v-list-item .v-card.portfolio-card {
     max-width: calc(50vw - 4rem);
   }
 
