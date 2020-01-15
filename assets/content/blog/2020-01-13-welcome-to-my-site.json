@@ -1,8 +1,8 @@
 {
   "title": "Welcome to my site",
   "date": "2020-01-13T14:52:58.811Z",
-  "description": "An introductory blog post of sorts",
-  "body": "Hi, my name is Jeremy Bratcher and I currently work as a full-stack web developer.  I'm interested in all parts of the pipeline from UI design to building APIs to build tools and dev ops.\n\nThis post is more of a placeholder right now.",
+  "description": "A brief introduction",
+  "body": "Hi, I'm Jeremy and I'm a web developer of the full-stack variety residing in beautiful Louisville, KY.\n\nI created this website to showcase my personal projects and share my thoughts and knowledge about web development.\n\nI have a strong interest in web development as a whole and typically work the entire spectrum of the development process from design to markup to deployment.  I live to work with modern tools whether cutting- or bleeding-edge.  I also believe in open-source and all of my personal projects are open-source and available on [Github](https://github.com/jbratcher).\n\nThe website itself was developed using the JAM stack specifically Vue and Netlify.  Modules include: Nuxt and Vuetify for Vue and Netlify CMS for Netlify.\n\nLanguages I code:  \n\n* Javascript\n* PHP\n* Go\n\nTechnologies I use:  \n\n* Vue \n* Nuxt \n* Vuetify\n* AdonisJS\n* Laravel\n* SASS/SCSS\n* MySQL\n* MariaDB\n* (too many others too list)\n\nI 'hid' some easter egg animation on the homepage if you are curious to see them in action.  interaction with one of the highlighted texts with trigger each animation.\n\nThe website itself was developed using the JAM stack specifically Vue (Nuxt, Vuetify) and Netlify (Netlify CMS).",
   "thumbnail": "/img/blog-header.png",
   "hero": "/img/blog-header.png"
 }
