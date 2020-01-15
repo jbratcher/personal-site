@@ -35,7 +35,7 @@
                 >Web Developer</span>
               </p>
               <p>
-                I'm good at creating
+                I create
                 <span
                   @click="toggleHighlightPortfolioLink"
                   @mouseover="toggleHighlightPortfolioLink"
