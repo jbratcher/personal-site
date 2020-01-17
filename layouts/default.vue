@@ -156,7 +156,7 @@ export default {
 html,
 body,
 .v-application {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
