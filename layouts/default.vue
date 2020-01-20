@@ -35,8 +35,8 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer light color="#eee" class="pa-0">
-      <v-row justify="center" no-gutters>
+    <v-footer light color="#eee" class="py-12">
+      <v-row class="mx-6 pt-6 justify-center" no-gutters>
         <v-btn
           v-for="(link, i) in generalLinks"
           :key="i + link.title"
@@ -47,6 +47,20 @@
           :to="link.to"
           class="my-2"
         >{{ link.title }}</v-btn>
+        <v-col class="d-flex justify-center mt-6 mb-12" cols="12">
+          <v-btn
+            v-for="(link, i) in socialLinks"
+            :key="i +link.title"
+            :name="link.title.toLowerCase()"
+            :href="link.to"
+            color="primary"
+            target="_blank"
+            text
+            rounded
+          >
+            <v-icon size="2rem">{{ link.icon }}</v-icon>
+          </v-btn>
+        </v-col>
         <v-col class="py-4 text-center" cols="12">
           {{ new Date().getFullYear() }} —
           <strong>Jeremy Bratcher</strong>
@@ -83,6 +97,23 @@ export default {
         {
           title: 'Contact',
           to: '/contact'
+        }
+      ],
+      socialLinks: [
+        {
+          title: 'Github',
+          to: 'https://github.com/jbratcher',
+          icon: 'mdi-github-circle'
+        },
+        {
+          title: 'Twitter',
+          to: 'https://twitter.com/JeremyBBratcher',
+          icon: 'mdi-twitter'
+        },
+        {
+          title: 'LinkedIn',
+          to: ' https://www.linkedin.com/in/jeremy-bratcher/',
+          icon: 'mdi-linkedin'
         }
       ],
       iconSize: 0,
@@ -224,7 +255,13 @@ nav.v-navigation-drawer {
   border-bottom-left-radius: 5rem;
 }
 
-// lists
+// footer
+
+.v-footer {
+  border: 1px solid #000;
+}
+
+// lists (global)
 
 .theme--light.v-list {
   background-color: #eee;
