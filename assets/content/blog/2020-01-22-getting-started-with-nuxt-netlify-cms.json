@@ -1,0 +1,8 @@
+{
+  "title": "Getting Started With Nuxt + Netlify CMS",
+  "date": "2020-01-22T18:47:34.235Z",
+  "description": "Quickly spin up a headless CMS",
+  "body": "Sometimes you just want to get a static site with a CMS dashboard up and running.  I've created a starter kit that will help you do just that.",
+  "thumbnail": "/img/nuxt-netlify-cms-starter.svg",
+  "hero": "/img/nuxt-netlify-cms-starter.svg"
+}
