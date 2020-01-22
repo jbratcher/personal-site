@@ -101,7 +101,7 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-  .blog-card {
+  main .v-list .v-list-item .v-card.blog-card {
     max-width: calc(50vw - 4rem);
   }
 
