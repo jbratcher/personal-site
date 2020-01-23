@@ -10,7 +10,7 @@
             <v-list-item
               class="align-stretch pa-0"
               three-line
-              v-for="(blogPost, index) in blogPosts"
+              v-for="(blogPost, index) in blogPostsByDateDescending"
               :key="index"
             >
               <v-card class="d-flex flex-column blog-card">
@@ -42,12 +42,18 @@
 import { mapActions, mapState } from 'vuex'
 export default {
   computed: {
-    ...mapState('resources', ['blogPosts'])
+    ...mapState('resources', ['blogPosts']),
+    // return temporary array of events from newest to oldest
+    blogPostsByDateDescending() {
+      return this.blogPosts
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+    }
   },
   methods: {
     ...mapActions('resources', ['getBlogPosts'])
   },
-  created() {
+  mounted() {
     this.getBlogPosts()
   }
 }
