@@ -203,6 +203,22 @@ body {
   overflow-x: hidden;
 }
 
+.v-application p,
+.v-application pre {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.v-application h3 {
+  font-size: 2rem;
+  margin: 6rem 0 3rem;
+}
+
+.v-application pre code {
+  max-width: 100%;
+  padding: 1rem;
+}
+
 .v-application a {
   text-decoration: none;
 }
@@ -278,5 +294,23 @@ nav.v-navigation-drawer {
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;
+}
+
+@media screen and (min-width: 960px) {
+  .v-application p,
+  .v-application pre {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .v-application h3 {
+    font-size: 2rem;
+    margin: 6rem 0 3rem;
+  }
+
+  .v-application pre code {
+    max-width: 100%;
+    padding: 1rem;
+  }
 }
 </style>

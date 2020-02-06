@@ -5,7 +5,7 @@
         <v-sheet class="ma-0" color="#444" dark tile>
           <h1 class="headline pa-2" display="headline">Blog > {{ blogPost.title }}</h1>
         </v-sheet>
-        <article class="my-12">
+        <article>
           <v-card class="d-flex flex-column align-center mx-auto" tile>
             <v-img :src="blogPost.hero" lazy-src="https://picsum.photos/10/6">
               <section class="img-text">
@@ -48,18 +48,33 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.post-content {
+.v-card__subtitle + .v-card__text {
+  padding-top: 1rem;
+}
+
+article {
+  .v-image {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .post-content {
+    padding: 1rem 1.5rem;
+    width: 95vw;
+  }
+
+  .v-card__text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
 
 @media screen and (min-width: 768px) {
   article {
-    margin: 0 3rem;
-
-    .v-image {
-      width: 100%;
-      max-height: 300px;
+    .post-content {
+      padding: 1rem 1.5rem;
+      width: 70vw;
     }
-
     .v-card__text {
       font-size: 1rem;
       line-height: 1.5;

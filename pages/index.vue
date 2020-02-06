@@ -106,7 +106,7 @@ main {
 
   section#hero {
     border-left: 1px solid #333;
-    margin-left: 5vw;
+    margin-left: 3vw;
     position: relative;
     min-height: 600px;
     width: 100%;

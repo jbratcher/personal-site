@@ -75,17 +75,16 @@ main {
     .img-text {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       width: 50%;
       height: 100%;
 
       .v-card__title {
-        font-size: 2rem;
+        font-size: 1.67rem;
         margin-bottom: 1rem;
       }
 
       .v-card__subtitle {
-        font-size: 1.5rem;
+        font-size: 1.33rem;
         line-height: 1.2;
       }
     }
