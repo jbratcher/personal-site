@@ -20,7 +20,10 @@
                     <v-card-subtitle class="white--text">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
                   </section>
                 </v-img>
-                <v-card-text v-html="$md.render(blogPost.body.substring(0, 144) + '...')" />
+                <v-card-text
+                  class="blog-card-text"
+                  v-html="$md.render(blogPost.body).substring(0, 200) + '...'"
+                />
                 <v-btn
                   class="ml-3 mb-12 mt-auto"
                   name="more"
@@ -81,6 +84,7 @@ main {
       .v-card__title {
         font-size: 1.67rem;
         margin-bottom: 1rem;
+        line-height: 1.2;
       }
 
       .v-card__subtitle {
@@ -108,6 +112,9 @@ main {
 @media screen and (min-width: 768px) {
   main .v-list .v-list-item .v-card.blog-card {
     max-width: calc(50vw - 4rem);
+    .v-card__text.blog-card-text p {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .v-card__text {
@@ -132,6 +139,16 @@ main {
       max-width: 100%;
       height: 300px;
       max-height: 300px;
+
+      .img-text {
+        .v-card__title {
+          font-size: 1.33rem;
+        }
+
+        .v-card__subtitle {
+          font-size: 1.125rem;
+        }
+      }
     }
 
     .v-list {
