@@ -6,7 +6,7 @@
           <h1 class="headline pa-2" display="headline">Blog > {{ blogPost.title }}</h1>
         </v-sheet>
         <article>
-          <v-card class="d-flex flex-column align-center mx-auto" tile>
+          <v-card class="blog-post-header d-flex flex-column align-center mx-auto" tile>
             <v-img :src="blogPost.hero" lazy-src="https://picsum.photos/10/6">
               <section class="img-text">
                 <v-card-title class="white--text">{{blogPost.title.substring(0, 70)}}</v-card-title>
@@ -53,31 +53,38 @@ export default {
 }
 
 article {
-  .v-image {
-    width: 100%;
-    max-height: 300px;
+  .blog-post-header {
+    .v-image {
+      width: 100%;
+      max-height: 300px;
+    }
   }
 
   .post-content {
     padding: 1rem 1.5rem;
     width: 95vw;
   }
-
-  .v-card__text {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
 }
 
 @media screen and (min-width: 768px) {
   article {
+    .blog-post-header {
+      .v-image {
+        .img-text {
+          padding-top: 1rem;
+          .v-card__title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+          }
+          .v-card__subtitle {
+            font-size: 1.125rem;
+          }
+        }
+      }
+    }
     .post-content {
       padding: 1rem 1.5rem;
-      width: 70vw;
-    }
-    .v-card__text {
-      font-size: 1rem;
-      line-height: 1.5;
+      width: 80vw;
     }
   }
 }

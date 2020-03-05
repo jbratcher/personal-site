@@ -63,8 +63,8 @@ export default {
 </script>
 <style lang="scss">
 .v-card__text {
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .v-card__subtitle.date {
@@ -118,8 +118,7 @@ main {
   }
 
   .v-card__text {
-    font-size: 1rem;
-    line-height: 1.2;
+    font-size: 1.25rem;
   }
 
   .v-card__subtitle.date {

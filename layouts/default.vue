@@ -204,9 +204,16 @@ body {
 }
 
 .v-application p,
-.v-application pre {
-  font-size: 1.25rem;
+.v-application p + p,
+.v-application ul {
+  font-size: 1rem;
   margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.v-application h1,
+h2 {
+  margin-bottom: 1rem;
 }
 
 .v-application h3 {
@@ -214,9 +221,15 @@ body {
   margin: 6rem 0 3rem;
 }
 
-.v-application pre code {
-  max-width: 100%;
-  padding: 1rem;
+.v-application pre {
+  margin-bottom: 2rem;
+  min-width: 100%;
+  code {
+    font-size: 1rem;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 1rem;
+  }
 }
 
 .v-application a {
@@ -298,19 +311,10 @@ nav.v-navigation-drawer {
 
 @media screen and (min-width: 960px) {
   .v-application p,
-  .v-application pre {
+  .v-application p + p,
+  .v-application ul {
     font-size: 1rem;
     margin-bottom: 2rem;
-  }
-
-  .v-application h3 {
-    font-size: 2rem;
-    margin: 6rem 0 3rem;
-  }
-
-  .v-application pre code {
-    max-width: 100%;
-    padding: 1rem;
   }
 }
 </style>
