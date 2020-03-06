@@ -1,6 +1,4 @@
-import colors from 'vuetify/es5/util/colors';
-import hljs from 'highlight.js/lib';
-
+import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'universal',
@@ -114,16 +112,17 @@ export default {
   markdownit: {
     injected: true,
     // use syntax highlighting:
-    // highlight: function (str, lang) {
-    //   if (lang && hljs.getLanguage(lang)) {
-    //     try {
-    //       return '<pre class="hljs"><code>' +
-    //         hljs.highlight(lang, str, true).value +
-    //         '</code></pre>';
-    //     } catch (__) {}
-    //   }
+    highlight: function (str, lang) {
+      const hljs = require('highlight.js');
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return '<pre class="hljs"><code>' +
+            hljs.highlight(lang, str, true).value +
+            '</code></pre>';
+        } catch (__) {}
+      }
 
-    //   return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-    // }
+      return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+    }
   },
 }
