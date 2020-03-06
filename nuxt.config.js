@@ -116,13 +116,11 @@ export default {
       const hljs = require('highlight.js');
       if (lang && hljs.getLanguage(lang)) {
         try {
-          return '<pre class="hljs"><code>' +
-            hljs.highlight(lang, str, true).value +
-            '</code></pre>';
+          return hljs.highlight(lang, str).value;
         } catch (__) {}
       }
 
-      return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+      return ''; // use external default escaping
     }
   },
 }

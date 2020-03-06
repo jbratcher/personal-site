@@ -235,6 +235,9 @@ body {
       min-width: 100%;
       padding: 1rem;
     }
+    code:before {
+      content: '';
+    }
   }
 }
 
