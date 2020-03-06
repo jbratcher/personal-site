@@ -3,9 +3,9 @@
     <v-row>
       <v-col class="pa-0">
         <v-sheet class="ma-0" color="#444" dark tile>
-          <h1 class="headline pa-2" display="headline">Blog > {{ blogPost.title }}</h1>
+          <h1 class="headline mb-0 pa-2">Blog > {{ blogPost.title }}</h1>
         </v-sheet>
-        <article>
+        <article class="mb-12">
           <v-card class="blog-post-header d-flex flex-column align-center mx-auto" tile>
             <v-img :src="blogPost.hero" lazy-src="https://picsum.photos/10/6">
               <section class="img-text">

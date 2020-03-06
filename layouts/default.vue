@@ -35,7 +35,7 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer light color="#eee" class="py-12">
+    <v-footer light color="#eee" class="main-footer">
       <v-row class="mx-6 pt-6 justify-center" no-gutters>
         <v-btn
           v-for="(link, i) in generalLinks"
@@ -203,37 +203,39 @@ body {
   overflow-x: hidden;
 }
 
-.v-application p,
-.v-application p + p,
-.v-application ul {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-
-.v-application h1,
-h2 {
-  margin-bottom: 1rem;
-}
-
-.v-application h3 {
-  font-size: 2rem;
-  margin: 6rem 0 3rem;
-}
-
-.v-application pre {
-  margin-bottom: 2rem;
-  min-width: 100%;
-  code {
-    font-size: 1rem;
-    max-width: 100%;
-    min-width: 100%;
-    padding: 1rem;
+.v-application {
+  a {
+    text-decoration: none;
   }
-}
 
-.v-application a {
-  text-decoration: none;
+  p,
+  p + p,
+  ul {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+
+  h1,
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 6rem 0 3rem;
+  }
+
+  pre {
+    margin-bottom: 2rem;
+    min-width: 100%;
+    code {
+      font-size: 1rem;
+      max-width: 100%;
+      min-width: 100%;
+      padding: 1rem;
+    }
+  }
 }
 
 // header
@@ -310,11 +312,13 @@ nav.v-navigation-drawer {
 }
 
 @media screen and (min-width: 960px) {
-  .v-application p,
-  .v-application p + p,
-  .v-application ul {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .v-application {
+    p,
+    p + p,
+    ul {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
   }
 }
 </style>

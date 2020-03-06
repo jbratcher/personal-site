@@ -58,7 +58,9 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    'highlight.js/styles/github.css',
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -74,9 +76,6 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/vuetify',
   ],
-  markdownit: {
-    injected: true
-  },
   /*
    ** Build configuration
    */
@@ -105,6 +104,24 @@ export default {
           background: colors.blue.base,
         }
       }
+    }
+  },
+  /*
+   ** Markdown-it module config
+   */
+  markdownit: {
+    injected: true,
+    // use syntax highlighting:
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return '<pre class="hljs"><code>' +
+            hljs.highlight(lang, str, true).value +
+            '</code></pre>';
+        } catch (__) {}
+      }
+
+      return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
     }
   },
 }
