@@ -108,8 +108,8 @@ main {
     border-left: 1px solid #333;
     margin-left: 3vw;
     position: relative;
-    min-height: 600px;
     width: 100%;
+    min-height: 300px;
 
     p {
       position: relative;
@@ -235,6 +235,8 @@ div.v-content__wrap {
 @media screen and (min-width: 768px) {
   main {
     section#hero {
+      min-height: 600px;
+
       p.background-text {
         font-size: 20rem;
         top: -30%;

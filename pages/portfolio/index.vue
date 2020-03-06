@@ -3,8 +3,8 @@
     <v-row>
       <v-col class="pa-0">
         <main>
-          <v-sheet class="header pb-0" color="#444" dark tile>
-            <h1 class="headline ml-3 pa-2" display="headline">Portfolio&nbsp;></h1>
+          <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
+            <h1 class="headline mb-0 ml-3 pa-2">Portfolio&nbsp;></h1>
           </v-sheet>
           <v-list class="my-12 mx-6">
             <v-list-item
@@ -15,11 +15,9 @@
             >
               <v-card class="d-flex flex-column portfolio-card">
                 <v-img
-                  class="align-self-center"
+                  class="align-self-start"
                   :src="portfolioItem.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
-                  height="200px"
-                  max-height="200px"
                 />
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle

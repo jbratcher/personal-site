@@ -4,7 +4,7 @@
       <v-col class="pa-0">
         <main>
           <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
-            <h1 class="headline ml-3 pa-2" display="headline">Blog ></h1>
+            <h1 class="headline mb-0 ml-3 pa-2">Blog ></h1>
           </v-sheet>
           <v-list class="my-12 mx-6" color="#eee">
             <v-list-item
