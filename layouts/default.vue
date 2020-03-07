@@ -12,7 +12,12 @@
       <v-avatar :size="responsiveIconSize">
         <v-img src="/img/profile.jpg" lazy-src="/img/10x10_profile.png" aspect-ratio="1" cover />
       </v-avatar>
-      <span class="hidden-sm-and-up">Jeremy Bratcher</span>
+      <span class="hidden-sm-and-up">
+        <v-btn v-if="togglePortfolioLink" class="white--text" href="/portfolio" color="#444">
+          Portfolio
+          <v-icon class="ml-2">mdi-folder-star-outline</v-icon>
+        </v-btn>
+      </span>
       <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
       <MenuLinks :general-links="generalLinks" list-class="hidden-xs-only" />
     </v-app-bar>
@@ -163,6 +168,13 @@ export default {
           break
       }
       return value
+    },
+    togglePortfolioLink() {
+      if (this.$route.name !== 'portfolio') {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
@@ -256,7 +268,7 @@ body {
   width: 100%;
 
   span {
-    font-size: 1.67rem;
+    font-size: 1.25rem;
   }
 
   .v-avatar {
@@ -272,6 +284,10 @@ body {
     padding-bottom: 0;
     width: 100%;
   }
+}
+
+.v-list-item__title {
+  font-size: 1.5rem;
 }
 
 .v-toolbar__content .v-btn.v-btn--icon.v-size--default {
@@ -315,6 +331,11 @@ nav.v-navigation-drawer {
 }
 
 @media screen and (min-width: 960px) {
+  // header
+  .v-list-item__title {
+    font-size: 1rem;
+  }
+
   .v-application {
     p,
     p + p,
