@@ -2,8 +2,8 @@
   <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <main>
-          <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
+        <main class="grey lighten-3">
+          <v-sheet class="header ma-0 pb-0" color="primary darken-2" dark tile>
             <h1 class="headline mb-0 ml-3 pa-2">Blog ></h1>
           </v-sheet>
           <v-list class="my-12 mx-6" color="#eee">
@@ -73,6 +73,8 @@ export default {
 
 main {
   .v-image {
+    width: 100%;
+    max-width: 100%;
     align-self: center;
 
     .img-text {
@@ -135,7 +137,6 @@ main {
     }
 
     .v-image {
-      max-width: 100%;
       height: 300px;
       max-height: 300px;
 

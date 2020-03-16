@@ -2,7 +2,7 @@
   <v-container class="pt-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <v-sheet class="ma-0" color="#444" dark tile>
+        <v-sheet class="ma-0" color="primary darken-2" dark tile>
           <h1 class="headline mb-0 pa-2">Blog > {{ blogPost.title }}</h1>
         </v-sheet>
         <article class="mb-12">

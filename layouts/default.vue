@@ -3,7 +3,7 @@
     <!-- Header Area -->
     <v-app-bar
       class="py-12"
-      color="#eee"
+      color="grey lighten-3"
       flat
       :min-height="responsiveNavHeight"
       :height="responsiveNavHeight"

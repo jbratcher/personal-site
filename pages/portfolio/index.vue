@@ -2,28 +2,27 @@
   <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <main>
-          <v-sheet class="header ma-0 pb-0" color="#444" dark tile>
+        <main class="grey lighten-3">
+          <v-sheet class="header ma-0 pb-0" color="primary darken-2" dark tile>
             <h1 class="headline mb-0 ml-3 pa-2">Portfolio&nbsp;></h1>
           </v-sheet>
-          <v-list class="my-12 mx-6">
+          <v-list class="my-12 mx-6" color="#eee">
             <v-list-item
-              class="align-stretch pa-0"
+              class="align-stretch align-self-stretch pa-0"
               three-line
               v-for="(portfolioItem, index) in portfolioItems"
               :key="index"
             >
               <v-card class="d-flex flex-column portfolio-card">
-                <v-img
-                  class="align-self-start"
-                  :src="portfolioItem.thumbnail"
-                  lazy-src="https://picsum.photos/10/6"
-                />
+                <v-img :src="portfolioItem.thumbnail" lazy-src="https://picsum.photos/10/6" />
                 <v-card-title class="display-1">{{portfolioItem.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle
                   class="subtitle-1"
                 >{{portfolioItem.description.substring(0, 43) + '...'}}</v-card-subtitle>
-                <v-card-text v-html="$md.render(portfolioItem.body.substring(0, 133) + '...')" />
+                <v-card-text
+                  class="preview"
+                  v-html="$md.render(portfolioItem.body.substring(0, 133) + '...')"
+                />
                 <v-container class="mt-auto">
                   <v-btn
                     class="ml-3 mb-12"
@@ -89,10 +88,13 @@ main {
 
     .v-list-item {
       margin-bottom: 2rem;
-      min-height: 100%;
 
       .v-card {
         width: 100%;
+        .v-card__text.preview > * {
+          font-size: 1rem;
+          margin: 1rem 0;
+        }
       }
     }
   }

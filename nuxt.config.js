@@ -94,14 +94,14 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: colors.blue.darken2,
-          accent: colors.blue.lighten1,
-          secondary: colors.lightBlue.darken3,
-          info: colors.blueGrey.lighten1,
+          primary: colors.grey.darken2,
+          accent: colors.grey.lighten1,
+          secondary: colors.blueGrey.darken3,
+          info: colors.grey.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: colors.blue.base,
+          background: colors.blueGrey.base,
         }
       }
     }
