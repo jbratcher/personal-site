@@ -220,6 +220,10 @@ body {
     text-decoration: none;
   }
 
+  p > a {
+    color: #0d47a1;
+  }
+
   p,
   p + p,
   ul {
