@@ -72,9 +72,23 @@ export default {
 }
 
 main {
+  .v-list {
+    display: flex;
+    flex-direction: column;
+
+    .v-list-item {
+      margin-bottom: 2rem;
+      min-height: 100%;
+      max-width: 100%;
+
+      .v-card {
+        width: 100%;
+      }
+    }
+  }
+
   .v-image {
     width: 100%;
-    max-width: 100%;
     align-self: center;
 
     .img-text {
@@ -92,20 +106,6 @@ main {
       .v-card__subtitle {
         font-size: 1.33rem;
         line-height: 1.2;
-      }
-    }
-  }
-
-  .v-list {
-    display: flex;
-    flex-direction: column;
-
-    .v-list-item {
-      margin-bottom: 2rem;
-      min-height: 100%;
-
-      .v-card {
-        width: 100%;
       }
     }
   }
@@ -139,6 +139,7 @@ main {
     .v-image {
       height: 300px;
       max-height: 300px;
+      max-width: 100%;
 
       .img-text {
         .v-card__title {
