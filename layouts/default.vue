@@ -200,6 +200,7 @@ html,
 body,
 .v-application {
   font-family: 'Poppins', sans-serif;
+  word-break: keep-all;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -258,7 +259,6 @@ body {
 }
 
 // header
-
 .v-toolbar {
   display: flex;
   align-items: center;
@@ -310,25 +310,16 @@ nav.v-navigation-drawer {
 }
 
 // footer
-
 .v-footer {
   border: 1px solid #000;
 }
 
 // lists (global)
-
 .theme--light.v-list {
   background-color: #eee;
 }
 
 // cards (global)
-
-.v-card__title,
-.v-card__subtitle,
-.v-card__text {
-  word-break: keep-all;
-}
-
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;
