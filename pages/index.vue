@@ -63,12 +63,8 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex'
-import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
-  },
   head() {
     return {
       script: [
@@ -232,7 +228,7 @@ div.v-content__wrap {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   main {
     section#hero {
       min-height: 600px;

@@ -76,7 +76,7 @@ export default {
   width: 80vw;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   #contact-form {
     width: 40vw;
   }

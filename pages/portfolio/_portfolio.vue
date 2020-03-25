@@ -3,14 +3,25 @@
     <v-row>
       <v-col class="pa-0">
         <v-sheet class="ma-0" color="primary darken-2" dark tile>
-          <h1 class="headline mb-0 pa-2">Portfolio > {{ portfolioItem.title }}</h1>
+          <h1
+            :class="{'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp, 'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown}"
+          >Portfolio</h1>
         </v-sheet>
         <article class="mb-12">
-          <v-card class="portfolio-header d-flex flex-column align-center mx-auto" tile>
-            <v-img :src="portfolioItem.hero" lazy-src="https://picsum.photos/1280/920" />
-            <v-card-title class="display-1 mt-6">{{portfolioItem.title}}</v-card-title>
-            <v-card-subtitle class="subtitle-1">{{portfolioItem.description}}</v-card-subtitle>
-            <v-card-text class="px-12" v-html="$md.render(portfolioItem.body)"></v-card-text>
+          <v-card tile>
+            <v-img
+              :alt="portfolioItem.title"
+              :aspect-ratio="16/9"
+              class="mb-12"
+              :src="portfolioItem.hero"
+              lazy-src="https://picsum.photos/1280/920"
+              width="100%"
+              max-width="100vw"
+              height="25rem"
+            />
+            <v-card class="mx-auto" flat :width="$breakpoint.mdAndUp ? '75vw' : '90vw'">
+              <v-card-text class="px-12" v-html="$md.render(portfolioItem.body)"></v-card-text>
+            </v-card>
           </v-card>
         </article>
       </v-col>
@@ -29,38 +40,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-article {
-  .v-card.portfolio-header {
-    .v-image {
-      width: 100%;
-      height: 100%;
-      max-height: 100%;
-    }
-
-    .v-card__title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .v-card__subtitle {
-      font-size: 1.5rem;
-      line-height: 1.2;
-    }
-  }
-}
-@media screen and (min-width: 768px) {
-  article {
-    margin: 0 3rem;
-
-    .v-card__text {
-      font-size: 1rem;
-      line-height: 1.5;
-      width: 70vw;
-    }
-
-    .v-card__subtitle.date {
-      font-size: 0.875rem;
-    }
-  }
-}
 </style>

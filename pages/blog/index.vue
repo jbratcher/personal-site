@@ -2,41 +2,52 @@
   <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <main class="grey lighten-3">
-          <v-sheet class="header ma-0 pb-0" color="primary darken-2" dark tile>
-            <h1 class="headline mb-0 ml-3 pa-2">Blog ></h1>
-          </v-sheet>
-          <v-list class="my-12 mx-6 align-start" color="#eee">
-            <v-list-item
-              class="align-stretch pa-0"
-              three-line
+        <v-sheet class="ma-0 pl-10 pb-0" color="primary darken-2" dark tile>
+          <h1
+            :class="{'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp, 'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown}"
+          >Blog</h1>
+        </v-sheet>
+        <v-container id="blog-list">
+          <v-row>
+            <v-col
               v-for="(blogPost, index) in blogPostsByDateDescending"
               :key="index"
+              class="col-12 col-md-6"
             >
-              <v-card class="d-flex flex-column blog-card">
-                <v-img :src="blogPost.thumbnail" lazy-src="https://picsum.photos/10/6">
-                  <section class="img-text my-auto">
-                    <v-card-title class="white--text">{{blogPost.title.substring(0, 70)}}</v-card-title>
-                    <v-card-subtitle class="white--text">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
-                  </section>
+              <v-card class="d-flex flex-column" height="100%">
+                <v-img
+                  :alt="blogPost.title"
+                  :src="blogPost.thumbnail"
+                  lazy-src="https://picsum.photos/10/6"
+                  height="12.5rem"
+                  max-height="12.5rem"
+                >
+                  <v-card color="transparent" dark flat width="50%">
+                    <v-card-title
+                      class="title font-weight-bold mb-3"
+                    >{{blogPost.title.substring(0, 70)}}</v-card-title>
+                    <v-card-subtitle
+                      class="subtitle-1 white--text"
+                    >{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
+                  </v-card>
                 </v-img>
                 <v-card-text
-                  class="blog-card-text"
+                  :class="{'title font-weight-regular black--text': $breakpoint.mdAndUp, 'body-1 black--text': $breakpoint.smAndDown}"
                   v-html="$md.render(blogPost.body).substring(0, 200) + '...'"
                 />
                 <v-btn
                   class="ml-3 mb-12 mt-auto"
-                  name="more"
-                  max-width="120px"
-                  color="primary"
-                  nuxt
                   dark
+                  color="primary"
+                  name="more"
+                  nuxt
+                  max-width="120px"
                   :to="`blog/${blogPost.slug}`"
                 >More...</v-btn>
               </v-card>
-            </v-list-item>
-          </v-list>
-        </main>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-col>
     </v-row>
   </v-container>
@@ -62,108 +73,10 @@ export default {
 }
 </script>
 <style lang="scss">
-.v-card__text {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.v-card__subtitle.date {
-  font-size: 1.25rem;
-}
-
-main {
-  .v-list {
-    display: flex;
-    flex-direction: column;
-
-    .v-list-item {
-      margin-bottom: 2rem;
-      min-height: 100%;
-      max-width: 100%;
-
-      .v-card {
-        width: 100%;
-      }
-    }
-  }
-
-  .v-image {
-    width: 100%;
-    align-self: center;
-
-    .img-text {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      height: 100%;
-
-      .v-card__title {
-        font-size: 1.67rem;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-      }
-
-      .v-card__subtitle {
-        font-size: 1.33rem;
-        line-height: 1.2;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  main .v-list .v-list-item .v-card.blog-card {
-    max-width: calc(50vw - 4rem);
-    .v-card__text.blog-card-text p {
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  .v-card__text {
-    font-size: 1.25rem;
-  }
-
-  .v-card__subtitle.date {
-    font-size: 1rem;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .v-sheet.header {
-      width: 100vw;
-    }
-
-    .v-image {
-      height: 300px;
-      max-height: 300px;
-      max-width: 100%;
-
-      .img-text {
-        .v-card__title {
-          font-size: 1.33rem;
-        }
-
-        .v-card__subtitle {
-          font-size: 1.125rem;
-        }
-      }
-    }
-
-    .v-list {
-      align-items: baseline;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-auto-rows: 1fr;
-      gap: 2rem;
-
-      .v-list-item {
-        margin-bottom: 0;
-        max-width: 100%;
-      }
-    }
+#blog-list {
+  .v-card__title,
+  .v-card__subtitle {
+    line-height: 1.2;
   }
 }
 </style>

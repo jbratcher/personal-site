@@ -1,22 +1,35 @@
 <template>
-  <v-container class="pt-0" fluid>
+  <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <v-sheet class="ma-0" color="primary darken-2" dark tile>
-          <h1 class="headline mb-0 pa-2">Blog > {{ blogPost.title }}</h1>
+        <v-sheet class="ma-0 pb-0" color="primary darken-2" dark tile>
+          <h1
+            :class="{'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp, 'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown}"
+          >Blog</h1>
         </v-sheet>
         <article class="mb-12">
-          <v-card class="blog-post-header d-flex flex-column align-center mx-auto" tile>
-            <v-img :src="blogPost.hero" lazy-src="https://picsum.photos/10/6">
-              <section class="img-text">
-                <v-card-title class="white--text">{{blogPost.title.substring(0, 70)}}</v-card-title>
-                <v-card-subtitle class="white--text">{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
-              </section>
+          <v-card class="d-flex flex-column align-center mx-auto" tile>
+            <v-img
+              :alt="blogPost.title"
+              class="mb-12"
+              :src="blogPost.hero"
+              lazy-src="https://picsum.photos/10/6"
+              width="100%"
+              height="18.75rem"
+            >
+              <v-card color="transparent" dark flat width="50%">
+                <v-card-title
+                  :class="{'display-2 mb-6': $breakpoint.mdAndUp, 'display-1 mb-6': $breakpoint.smAndDown}"
+                >{{blogPost.title.substring(0, 70)}}</v-card-title>
+                <v-card-subtitle
+                  :class="{'headline font-weight-regular white--text': $breakpoint.mdAndUp, 'title font-weight-regular white--text': $breakpoint.smAndDown}"
+                >{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
+              </v-card>
             </v-img>
-            <section class="post-content">
-              <v-card-subtitle class="date">{{ formatDate(blogPost.date) }}</v-card-subtitle>
-              <v-card-text v-html="$md.render(blogPost.body)"></v-card-text>
-            </section>
+            <v-card flat :width="$breakpoint.mdAndUp ? '75vw' : '90vw'">
+              <v-card-subtitle class="black--text mb-6">{{ formatDate(blogPost.date) }}</v-card-subtitle>
+              <v-card-text v-html="$md.render(blogPost.body)" class="black--text"></v-card-text>
+            </v-card>
           </v-card>
         </article>
       </v-col>
@@ -48,44 +61,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.v-card__subtitle + .v-card__text {
-  padding-top: 1rem;
-}
-
-article {
-  .blog-post-header {
-    .v-image {
-      width: 100%;
-      max-height: 300px;
-    }
-  }
-
-  .post-content {
-    padding: 1rem 1.5rem;
-    width: 95vw;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  article {
-    .blog-post-header {
-      .v-image {
-        .img-text {
-          padding-top: 1rem;
-          .v-card__title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-          }
-          .v-card__subtitle {
-            font-size: 1.125rem;
-          }
-        }
-      }
-    }
-    .post-content {
-      padding: 1rem 1.5rem;
-      width: 80vw;
-    }
-  }
-}
 </style>

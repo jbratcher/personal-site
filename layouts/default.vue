@@ -182,7 +182,6 @@ export default {
 
 <style lang="scss">
 // global
-
 *,
 *:before,
 *:after {
@@ -200,6 +199,7 @@ html,
 body,
 .v-application {
   font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
   word-break: keep-all;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -243,17 +243,25 @@ body {
     margin: 6rem 0 3rem;
   }
 
-  pre {
-    margin-bottom: 2rem;
-    min-width: 100%;
-    code {
-      font-size: 1rem;
-      max-width: 100%;
+  .v-card__title,
+  .v-card__subtitle,
+  .v-card__text {
+    word-break: keep-all;
+  }
+
+  .v-card__text {
+    pre {
+      margin-bottom: 2rem;
       min-width: 100%;
-      padding: 1rem;
-    }
-    code:before {
-      content: '';
+      code {
+        font-size: 0.75rem;
+        max-width: 100%;
+        min-width: 100%;
+        padding: 1rem;
+      }
+      code:before {
+        content: '';
+      }
     }
   }
 }
