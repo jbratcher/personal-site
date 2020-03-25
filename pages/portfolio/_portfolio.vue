@@ -20,7 +20,7 @@
               height="25rem"
             />
             <v-card class="mx-auto" flat :width="$breakpoint.mdAndUp ? '75vw' : '90vw'">
-              <v-card-text class="px-12" v-html="$md.render(portfolioItem.body)"></v-card-text>
+              <v-card-text v-html="$md.render(portfolioItem.body)" class="black--text"></v-card-text>
             </v-card>
           </v-card>
         </article>
