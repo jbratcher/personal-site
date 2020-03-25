@@ -221,32 +221,26 @@ body {
     text-decoration: none;
   }
 
-  p > a {
-    color: #0d47a1;
-  }
-
-  p,
-  p + p,
-  ul {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    line-height: 1.5;
-  }
-
-  h1,
-  h2 {
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: 2rem;
-    margin: 6rem 0 3rem;
-  }
-
   .v-card__title,
   .v-card__subtitle,
   .v-card__text {
+    line-height: 1.5;
     word-break: keep-all;
+    h1,
+    h2,
+    h3 {
+      margin-bottom: 1rem;
+    }
+    p > a {
+      color: #0d47a1;
+    }
+
+    p,
+    p + p,
+    ul {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
   }
 
   .v-card__text {
