@@ -108,7 +108,7 @@ export default {
         {
           title: 'Github',
           to: 'https://github.com/jbratcher',
-          icon: 'mdi-github-circle'
+          icon: 'mdi-github'
         },
         {
           title: 'Twitter',

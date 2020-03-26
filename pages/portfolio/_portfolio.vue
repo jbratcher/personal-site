@@ -11,13 +11,11 @@
           <v-card tile>
             <v-img
               :alt="portfolioItem.title"
-              :aspect-ratio="16/9"
               class="mb-12"
               :src="portfolioItem.hero"
               lazy-src="https://picsum.photos/1280/920"
               width="100%"
               max-width="100vw"
-              height="25rem"
             />
             <v-card class="mx-auto" flat :width="$breakpoint.mdAndUp ? '75vw' : '90vw'">
               <v-card-text v-html="$md.render(portfolioItem.body)" class="black--text"></v-card-text>

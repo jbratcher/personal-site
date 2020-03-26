@@ -11,11 +11,12 @@
           <v-card class="d-flex flex-column align-center mx-auto" tile>
             <v-img
               :alt="blogPost.title"
+              :aspect-ratio="16/9"
               class="mb-12"
               :src="blogPost.hero"
               lazy-src="https://picsum.photos/10/6"
               width="100%"
-              height="18.75rem"
+              :height="$breakpoint.mdAndUp ? '18.75rem' : '12.5rem'"
             >
               <v-card color="transparent" dark flat width="50%">
                 <v-card-title
