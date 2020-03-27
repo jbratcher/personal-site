@@ -66,9 +66,10 @@
             <v-icon size="2rem">{{ link.icon }}</v-icon>
           </v-btn>
         </v-col>
-        <v-col class="py-4 text-center" cols="12">
-          {{ new Date().getFullYear() }} —
+        <v-col class="mx-auto py-4 text-center" cols="12">
+          {{ new Date().getFullYear() }} -
           <strong>Jeremy Bratcher</strong>
+          - Louisville, KY
         </v-col>
       </v-row>
     </v-footer>

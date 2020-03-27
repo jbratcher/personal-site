@@ -9,7 +9,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    title: 'Jereny Bratcher, Web Developer',
+    title: 'Jereny Bratcher | Web Developer | Louisville, KY',
     meta: [{
         charset: 'utf-8'
       },
