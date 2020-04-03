@@ -38,6 +38,18 @@
 <script>
 export default {
   name: 'Contact',
+  head() {
+    return {
+      title: `Contact | Jereny Bratcher | Web Developer | Louisville, KY`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `Contact Jeremy Bratcher, a web developer in Louisville, KY`
+        }
+      ]
+    }
+  },
   data: () => ({
     sliderModel: null,
     valid: true,

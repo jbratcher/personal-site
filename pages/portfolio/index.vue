@@ -67,6 +67,18 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 export default {
+  head() {
+    return {
+      title: `Portfolio | Jereny Bratcher | Web Developer | Louisville, KY`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `A web development portfolio by Jeremy Bratcher`
+        }
+      ]
+    }
+  },
   computed: {
     ...mapState('resources', ['portfolioItems'])
   },

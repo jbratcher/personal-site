@@ -7,10 +7,11 @@ export default {
    */
   head: {
     htmlAttrs: {
-      lang: 'en',
+      lang: 'en'
     },
     title: 'Jereny Bratcher | Web Developer | Louisville, KY',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -23,23 +24,24 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{
+    link: [
+      {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Raleway&display=swap',
+        href: 'https://fonts.googleapis.com/css?family=Raleway&display=swap'
       },
       {
         rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
-      },
+        href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1'
+      }
     ]
   },
   generate: {
-    routes: function () {
+    routes: function() {
       const fs = require('fs')
       return fs.readdirSync('./assets/content/blog').map(file => {
         return {
@@ -58,15 +60,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    'highlight.js/styles/github.css',
-  ],
+  css: ['highlight.js/styles/github.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    '~/plugins/breakpoint.js'
-  ],
+  plugins: ['~/plugins/breakpoint.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -74,10 +72,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/markdownit',
-    '@nuxtjs/vuetify',
-  ],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/vuetify'],
   /*
    ** Build configuration
    */
@@ -103,7 +98,7 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: colors.blueGrey.base,
+          background: colors.blueGrey.base
         }
       }
     }
@@ -114,15 +109,15 @@ export default {
   markdownit: {
     injected: true,
     // use syntax highlighting:
-    highlight: function (str, lang) {
-      const hljs = require('highlight.js');
+    highlight: function(str, lang) {
+      const hljs = require('highlight.js')
       if (lang && hljs.getLanguage(lang)) {
         try {
-          return hljs.highlight(lang, str).value;
+          return hljs.highlight(lang, str).value
         } catch (__) {}
       }
 
-      return ''; // use external default escaping
+      return '' // use external default escaping
     }
-  },
+  }
 }

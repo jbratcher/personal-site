@@ -39,6 +39,19 @@
 </template>
 <script>
 export default {
+  head() {
+    let blogPost = this.blogPost
+    return {
+      title: `${blogPost.title} | Jereny Bratcher | Web Developer | Louisville, KY`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${blogPost.description}`
+        }
+      ]
+    }
+  },
   async asyncData({ params, payload }) {
     if (payload) return { blogPost: payload }
     else

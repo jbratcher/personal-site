@@ -28,6 +28,19 @@
 </template>
 <script>
 export default {
+  head() {
+    let portfolioItem = this.portfolioItem
+    return {
+      title: `${portfolioItem.title} | Jereny Bratcher | Web Developer | Louisville, KY`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${portfolioItem.description}`
+        }
+      ]
+    }
+  },
   async asyncData({ params, payload }) {
     if (payload) return { portfolioItem: payload }
     else

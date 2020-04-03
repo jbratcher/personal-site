@@ -55,6 +55,18 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 export default {
+  head() {
+    return {
+      title: `Blog | Jereny Bratcher | Web Developer | Louisville, KY`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `A web development blog by Jeremy Bratcher`
+        }
+      ]
+    }
+  },
   computed: {
     ...mapState('resources', ['blogPosts']),
     // return temporary array of events from newest to oldest
