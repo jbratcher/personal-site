@@ -20,14 +20,14 @@
             >
               <v-card color="transparent" dark flat width="50%">
                 <v-card-title
-                  :class="{'display-2 mb-6': $breakpoint.mdAndUp, 'display-1 mb-6': $breakpoint.smAndDown}"
+                  :class="{'display-2 mb-6': $breakpoint.mdAndUp, 'title mb-6': $breakpoint.smAndDown}"
                 >{{blogPost.title.substring(0, 70)}}</v-card-title>
                 <v-card-subtitle
-                  :class="{'headline font-weight-regular white--text': $breakpoint.mdAndUp, 'title font-weight-regular white--text': $breakpoint.smAndDown}"
+                  :class="{'headline font-weight-regular white--text': $breakpoint.mdAndUp, 'subtitle-1 font-weight-regular white--text': $breakpoint.smAndDown}"
                 >{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
               </v-card>
             </v-img>
-            <v-card flat :width="$breakpoint.mdAndUp ? '75vw' : '90vw'">
+            <v-card flat :width="$breakpoint.mdAndUp ? '75vw' : '100%'">
               <v-card-subtitle class="black--text mb-6">{{ formatDate(blogPost.date) }}</v-card-subtitle>
               <v-card-text v-html="$md.render(blogPost.body)" class="black--text"></v-card-text>
             </v-card>

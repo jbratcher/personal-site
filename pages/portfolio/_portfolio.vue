@@ -17,7 +17,7 @@
               width="100%"
               max-width="100vw"
             />
-            <v-card class="mx-auto" flat :width="$breakpoint.mdAndUp ? '75vw' : '90vw'">
+            <v-card class="mx-auto" flat :width="$breakpoint.mdAndUp ? '75vw' : '100%'">
               <v-card-text v-html="$md.render(portfolioItem.body)" class="black--text"></v-card-text>
             </v-card>
           </v-card>
