@@ -222,6 +222,15 @@ body {
     text-decoration: none;
   }
 
+  .v-responsive__content {
+    .v-card__title,
+    .v-card__subtitle,
+    .v-card__text {
+      line-height: 1.2;
+      word-break: keep-all;
+    }
+  }
+
   .v-card__title,
   .v-card__subtitle,
   .v-card__text {
