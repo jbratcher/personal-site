@@ -8,7 +8,9 @@
             <section class="container">
               <p>
                 My name is
-                <span @mouseover="showProfilePic" @mouseleave="showProfilePic">Jeremy</span>
+                <span @mouseover="showProfilePic" @mouseleave="showProfilePic"
+                  >Jeremy</span
+                >
               </p>
               <transition
                 name="custom-classes-transition"
@@ -29,10 +31,14 @@
               <p>
                 I'm a
                 <span
-                  :class="{'pa-2 input-display': inputDisplay, 'pa-2 no-input': !inputDisplay}"
+                  :class="{
+                    'pa-2 input-display': inputDisplay,
+                    'pa-2 no-input': !inputDisplay
+                  }"
                   @mouseover="toggleInputDisplay"
                   @mouseout="toggleInputDisplay"
-                >Web Developer</span>
+                  >Web Developer</span
+                >
               </p>
               <p>
                 I create
@@ -40,20 +46,40 @@
                   @click="toggleHighlightPortfolioLink"
                   @mouseover="toggleHighlightPortfolioLink"
                   @mouseout="toggleHighlightPortfolioLink"
-                >User Interfaces</span>
+                  >User Interfaces</span
+                >
                 &amp;
                 <span
                   @click="toggleShapeAnimation"
                   @mouseover="toggleShapeAnimation"
                   @mouseout="toggleShapeAnimation"
-                >Experiences</span>
+                  >Experiences</span
+                >
               </p>
             </section>
             <p
-              :class="[shapeAnimation ? 'background-text experience-on-text' : 'background-text']"
-            >Hi,</p>
-            <p :class="[shapeAnimation ? 'abstract-shape-1 experience-on-1' : 'abstract-shape-1']"></p>
-            <p :class="[shapeAnimation ? 'abstract-shape-2 experience-on-2' : 'abstract-shape-2']"></p>
+              :class="[
+                shapeAnimation
+                  ? 'background-text experience-on-text'
+                  : 'background-text'
+              ]"
+            >
+              Hi,
+            </p>
+            <p
+              :class="[
+                shapeAnimation
+                  ? 'abstract-shape-1 experience-on-1'
+                  : 'abstract-shape-1'
+              ]"
+            ></p>
+            <p
+              :class="[
+                shapeAnimation
+                  ? 'abstract-shape-2 experience-on-2'
+                  : 'abstract-shape-2'
+              ]"
+            ></p>
           </section>
         </main>
       </v-col>
@@ -139,10 +165,10 @@ main {
     p.background-text {
       background: none;
       color: #ddd;
-      font-size: 10rem;
+      font-size: 8rem;
       opacity: 0.7;
       position: absolute;
-      top: -10%;
+      top: 0;
       right: 30vw;
       transition: all 0.5s ease 0.25s;
       z-index: 0;
@@ -234,8 +260,8 @@ div.v-content__wrap {
       min-height: 600px;
 
       p.background-text {
-        font-size: 20rem;
-        top: -30%;
+        font-size: 16rem;
+        top: -15%;
         left: 3vw;
         z-index: 0;
       }
@@ -289,8 +315,8 @@ div.v-content__wrap {
   main {
     section#hero {
       p.background-text {
-        font-size: 30rem;
-        top: -50%;
+        font-size: 24rem;
+        top: -30%;
         left: 7vw;
         z-index: 0;
       }

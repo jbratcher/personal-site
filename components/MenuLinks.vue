@@ -1,13 +1,18 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list :class="`justify-end ${listClass}`" rounded>
+  <v-list class="justify-end" :class="listClass" rounded>
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"
       :key="i + `-${item.title}`"
       :to="item.to"
-      :class="[highlightPortfolioLink && item.title === 'Portfolio' ? 'highlight-portfolio-link' : 'no-highlight']"
+      :class="[
+        highlightPortfolioLink && item.title === 'Portfolio'
+          ? 'highlight-portfolio-link'
+          : 'no-highlight',
+        listItemClass
+      ]"
       router
       exact
     >
