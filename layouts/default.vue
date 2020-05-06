@@ -2,7 +2,6 @@
   <v-app>
     <!-- Header Area -->
     <v-app-bar
-      class="py-12"
       color="grey lighten-3"
       flat
       :min-height="responsiveNavHeight"
@@ -10,16 +9,33 @@
       :max-height="responsiveNavHeight"
     >
       <v-avatar :size="responsiveIconSize">
-        <v-img src="/img/profile.jpg" lazy-src="/img/10x10_profile.png" aspect-ratio="1" cover />
+        <v-img
+          src="/img/profile.jpg"
+          lazy-src="/img/10x10_profile.png"
+          aspect-ratio="1"
+          cover
+        />
       </v-avatar>
       <span class="hidden-sm-and-up">
-        <v-btn v-if="togglePortfolioLink" class="white--text" href="/portfolio" color="#444">
+        <v-btn
+          v-if="togglePortfolioLink"
+          class="white--text"
+          href="/portfolio"
+          color="#444"
+        >
           Portfolio
           <v-icon class="ml-2">mdi-folder-star-outline</v-icon>
         </v-btn>
       </span>
-      <v-app-bar-nav-icon class="hidden-sm-and-up" @click.stop="drawer = !drawer" />
-      <MenuLinks :general-links="generalLinks" list-class="hidden-xs-only" />
+      <v-app-bar-nav-icon
+        class="hidden-sm-and-up"
+        @click.stop="drawer = !drawer"
+      />
+      <MenuLinks
+        :general-links="generalLinks"
+        list-class="hidden-xs-only d-flex"
+        list-item-class="flex-0"
+      />
     </v-app-bar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
@@ -33,7 +49,11 @@
       fixed
       right
     >
-      <MenuLinks :general-links="generalLinks" list-class="mobile" list-item-class="column" />
+      <MenuLinks
+        :general-links="generalLinks"
+        list-class="mobile"
+        list-item-class="column"
+      />
     </v-navigation-drawer>
     <!-- Nuxt content -->
     <v-content>
@@ -51,11 +71,12 @@
           nuxt
           :to="link.to"
           class="my-2"
-        >{{ link.title }}</v-btn>
+          >{{ link.title }}</v-btn
+        >
         <v-col class="d-flex justify-center mt-6 mb-12" cols="12">
           <v-btn
             v-for="(link, i) in socialLinks"
-            :key="i +link.title"
+            :key="i + link.title"
             :name="link.title.toLowerCase()"
             :href="link.to"
             color="primary"
@@ -150,22 +171,22 @@ export default {
       return value
     },
     responsiveNavHeight() {
-      let value = '160'
+      let value = '140'
       switch (this.$vuetify.breakpoint.name) {
         case 'xs':
-          value = '100'
+          value = '80'
           break
         case 'sm':
-          value = '120'
+          value = '100'
           break
         case 'md':
-          value = '160'
+          value = '140'
           break
         case 'lg':
-          value = '160'
+          value = '140'
           break
         case 'xl':
-          value = '160'
+          value = '140'
           break
       }
       return value
@@ -326,6 +347,10 @@ nav.v-navigation-drawer {
 .justify-space-evenly {
   justify-content: space-around;
   justify-content: space-evenly;
+}
+
+.flex-0 {
+  flex: 0;
 }
 
 @media screen and (min-width: 960px) {

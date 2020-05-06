@@ -89,3 +89,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Working blog posts
+blog.md
