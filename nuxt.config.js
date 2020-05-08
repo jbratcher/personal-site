@@ -57,7 +57,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['highlight.js/styles/github.css'],
+  css: ['highlight.js/styles/atom-one-light.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -84,6 +84,8 @@ export default {
    */
   markdownit: {
     injected: true,
+    linkify: true,
+    breaks: true,
     // use syntax highlighting:
     highlight: function(str, lang) {
       const hljs = require('highlight.js')
