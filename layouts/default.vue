@@ -279,6 +279,7 @@ body {
       margin-bottom: 2rem;
       min-width: 100%;
       code {
+        background-color: #f5f5f5;
         font-size: 0.75rem;
         max-width: 100%;
         min-width: 100%;
