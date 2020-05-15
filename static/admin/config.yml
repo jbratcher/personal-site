@@ -2,8 +2,6 @@ backend:
   name: git-gateway
   branch: master
 
-publish_mode: editorial_workflow
-
 media_folder: static/img
 public_folder: /img
 
@@ -21,16 +19,16 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: "Thumbnail"
-        name: "thumbnail"
-        widget: "image"
+      - label: 'Thumbnail'
+        name: 'thumbnail'
+        widget: 'image'
         default:
         media_library:
           config:
             multiple: true
-      - label: "Hero"
-        name: "hero"
-        widget: "image"
+      - label: 'Hero'
+        name: 'hero'
+        widget: 'image'
         default:
         media_library:
           config:
@@ -48,22 +46,26 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: "Thumbnail"
-        name: "thumbnail"
+      - label: 'Thumbnail'
+        name: 'thumbnail'
         preview_path: blog/{{slug}}
-        widget: "image"
-        default: 
+        widget: 'image'
+        default:
         media_library:
           config:
             multiple: true
-      - label: "Hero"
-        name: "hero"
+      - label: 'Hero'
+        name: 'hero'
         preview_path: portfolio/{{slug}}
-        widget: "image"
-        default: 
+        widget: 'image'
+        default:
         media_library:
           config:
             multiple: true
       - { label: 'Demo Link', name: 'demo', widget: 'string', required: false }
-      - { label: 'Repository Link', name: 'repo', widget: 'string', required: false }
-
+      - {
+          label: 'Repository Link',
+          name: 'repo',
+          widget: 'string',
+          required: false,
+        }
