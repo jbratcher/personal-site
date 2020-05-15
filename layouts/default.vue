@@ -24,16 +24,20 @@
           color="#444"
         >
           Portfolio
-          <v-icon class="ml-2">mdi-folder-star-outline</v-icon>
+          <v-icon class="ml-2">{{ folderStarOutlineIcon }}</v-icon>
         </v-btn>
       </span>
       <v-app-bar-nav-icon
         class="hidden-sm-and-up"
         @click.stop="drawer = !drawer"
-      />
+      >
+        <i aria-hidden="true" class="v-icon notranslate theme--dark"
+          ><v-icon>{{ menuIcon }}</v-icon></i
+        >
+      </v-app-bar-nav-icon>
       <MenuLinks
         :general-links="generalLinks"
-        list-class="hidden-xs-only d-flex"
+        list-class="d-none d-sm-flex"
         list-item-class="flex-0"
       />
     </v-app-bar>
@@ -99,7 +103,13 @@
 
 <script>
 import MenuLinks from '../components/MenuLinks.vue'
-
+import {
+  mdiGithub,
+  mdiLinkedin,
+  mdiFolderStarOutline,
+  mdiMenu,
+  mdiTwitter
+} from '@mdi/js'
 export default {
   components: {
     MenuLinks
@@ -108,6 +118,7 @@ export default {
     return {
       drawer: false,
       fixed: false,
+      folderStarOutlineIcon: mdiFolderStarOutline,
       generalLinks: [
         {
           title: 'Home',
@@ -126,21 +137,22 @@ export default {
           to: '/contact'
         }
       ],
+      menuIcon: mdiMenu,
       socialLinks: [
         {
           title: 'Github',
           to: 'https://github.com/jbratcher',
-          icon: 'mdi-github'
+          icon: mdiGithub
         },
         {
           title: 'Twitter',
           to: 'https://twitter.com/JeremyBBratcher',
-          icon: 'mdi-twitter'
+          icon: mdiTwitter
         },
         {
           title: 'LinkedIn',
           to: ' https://www.linkedin.com/in/jeremy-bratcher/',
-          icon: 'mdi-linkedin'
+          icon: mdiLinkedin
         }
       ],
       iconSize: 0,
@@ -220,15 +232,20 @@ export default {
 html,
 body,
 .v-application {
+  color: #525f7f;
+  font-size: 16px;
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
   word-break: keep-all;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
 }
 
 html,
@@ -257,9 +274,17 @@ body {
   .v-card__text {
     line-height: 1.5;
     word-break: keep-all;
+
+    .v-list-item__content {
+      overflow: visible;
+    }
+
     h1,
     h2,
-    h3 {
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-bottom: 1rem;
     }
     p > a {
@@ -279,15 +304,19 @@ body {
       margin-bottom: 2rem;
       min-width: 100%;
       code {
-        background-color: #f5f5f5;
         font-size: 0.75rem;
         max-width: 100%;
         min-width: 100%;
-        padding: 1rem;
       }
       code:before {
         content: '';
       }
+    }
+  }
+
+  .v-card__text[v-html] {
+    article > * + * {
+      margin-top: 1rem;
     }
   }
 }
@@ -361,6 +390,16 @@ nav.v-navigation-drawer {
 
 .flex-0 {
   flex: 0;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media screen and (min-width: 960px) {

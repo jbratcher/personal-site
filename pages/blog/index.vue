@@ -2,10 +2,21 @@
   <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <v-sheet class="ma-0 pl-10 pb-0" color="primary darken-2" dark tile>
+        <v-sheet
+          class="ma-0 pb-0"
+          :class="$breakpoint.mdAndUp ? ' pl-10' : 'pl-0'"
+          color="primary darken-2"
+          dark
+          tile
+        >
           <h1
-            :class="{'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp, 'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown}"
-          >Blog</h1>
+            :class="{
+              'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp,
+              'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown
+            }"
+          >
+            Blog
+          </h1>
         </v-sheet>
         <v-container id="blog-list">
           <v-row>
@@ -23,16 +34,20 @@
                   max-height="12.5rem"
                 >
                   <v-card color="transparent" dark flat width="50%">
-                    <v-card-title
-                      class="title font-weight-bold mb-3"
-                    >{{blogPost.title.substring(0, 70)}}</v-card-title>
-                    <v-card-subtitle
-                      class="subtitle-1 white--text"
-                    >{{blogPost.description.substring(0, 80)}}</v-card-subtitle>
+                    <v-card-title class="title font-weight-bold mb-3">{{
+                      blogPost.title.substring(0, 70)
+                    }}</v-card-title>
+                    <v-card-subtitle class="subtitle-1 white--text">{{
+                      blogPost.description.substring(0, 80)
+                    }}</v-card-subtitle>
                   </v-card>
                 </v-img>
                 <v-card-text
-                  :class="{'title font-weight-regular black--text': $breakpoint.mdAndUp, 'body-1 black--text': $breakpoint.smAndDown}"
+                  :class="{
+                    'title font-weight-regular black--text':
+                      $breakpoint.mdAndUp,
+                    'body-1 black--text': $breakpoint.smAndDown
+                  }"
                   v-html="$md.render(blogPost.body).substring(0, 200) + '...'"
                 />
                 <v-btn
@@ -43,7 +58,8 @@
                   nuxt
                   max-width="120px"
                   :to="`blog/${blogPost.slug}`"
-                >More...</v-btn>
+                  >More...</v-btn
+                >
               </v-card>
             </v-col>
           </v-row>

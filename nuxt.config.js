@@ -57,7 +57,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['highlight.js/styles/atom-one-light.css'],
+  css: ['highlight.js/styles/a11y-light.css'],
   /*
    ** Plugins to load before mounting the App
    */

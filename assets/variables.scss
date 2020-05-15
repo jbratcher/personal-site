@@ -1,4 +1,9 @@
 $heading-font-family: 'Raleway';
 $body-font-family: 'Raleway';
+$code-color: #111;
+
+.v-application code {
+  background-color: #fefefe;
+}
 
 @import '~vuetify/src/styles/styles.sass';
