@@ -37,7 +37,7 @@
           ><v-icon>{{ menuIcon }}</v-icon></i
         >
       </v-app-bar-nav-icon>
-      <v-card class="border-top d-none" flat tile width="100%">
+      <v-card class="border-top d-none d-md-block" flat tile width="100%">
         <MenuLinks
           :general-links="generalLinks"
           list-class="d-md-flex justify-end hidden-md-and-down ml-auto"
