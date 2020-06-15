@@ -4,8 +4,13 @@
       <v-col class="pa-0">
         <v-sheet class="ma-0 pl-10 pb-0" color="primary darken-2" dark tile>
           <h1
-            :class="{'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp, 'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown}"
-          >Portfolio&nbsp;></h1>
+            :class="{
+              'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp,
+              'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown
+            }"
+          >
+            Portfolio&nbsp;>
+          </h1>
         </v-sheet>
         <v-container>
           <v-row>
@@ -23,9 +28,15 @@
                   max-height="12.5rem"
                 />
                 <v-card-title
-                  :class="{'display-1 my-3 mx-3': $breakpoint.mdAndUp, 'headline my-3 mx-3': $breakpoint.smAndDown}"
-                >{{portfolioItem.title}}</v-card-title>
-                <v-card-subtitle class="body-1 mx-3">{{portfolioItem.description}}</v-card-subtitle>
+                  :class="{
+                    'display-1 my-3 mx-3': $breakpoint.mdAndUp,
+                    'headline my-3 mx-3': $breakpoint.smAndDown
+                  }"
+                  >{{ portfolioItem.title }}</v-card-title
+                >
+                <v-card-subtitle class="body-1 mx-3">{{
+                  portfolioItem.description
+                }}</v-card-subtitle>
                 <v-container class="mt-auto mx-3 mb-12">
                   <v-btn
                     name="info"
@@ -34,7 +45,8 @@
                     nuxt
                     dark
                     :to="`portfolio/${portfolioItem.slug}`"
-                  >Info</v-btn>
+                    >Info</v-btn
+                  >
                   <v-btn
                     v-if="portfolioItem.repo"
                     class="ml-3"
@@ -69,7 +81,7 @@ import { mapActions, mapState } from 'vuex'
 export default {
   head() {
     return {
-      title: `Portfolio | Jereny Bratcher | Web Developer | Louisville, KY`,
+      title: `Portfolio | Jeremy Bratcher | Web Developer | Louisville, KY`,
       meta: [
         {
           hid: `description`,
@@ -90,5 +102,4 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>

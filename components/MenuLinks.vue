@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list class="justify-end" :class="listClass" rounded>
+  <v-list :class="listClass" rounded :width="width">
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"
@@ -42,6 +42,10 @@ export default {
     listItemClass: {
       type: String,
       default: ''
+    },
+    width: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -51,16 +55,6 @@ export default {
 </script>
 
 <style lang="scss">
-.v-list-item {
-  flex: 0;
-  margin: 0 0.25rem;
-  padding: 0 1rem;
-}
-
-.v-list-item__title {
-  font-weight: 400;
-}
-
 .highlight-portfolio-link {
   background: orange;
   transition: all 0.5s ease;
@@ -69,12 +63,5 @@ export default {
 .no-highlight {
   background: none;
   transition: all 0.5s ease;
-}
-
-.mobile {
-  margin: 0 auto;
-  padding: 1rem 0;
-  text-align: center;
-  width: 50%;
 }
 </style>

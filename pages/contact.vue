@@ -19,8 +19,20 @@
         lazy-validation
       >
         <input type="hidden" name="form-name" value="contact" />
-        <v-text-field v-model="name" :rules="nameRules" label="Name" name="name" required></v-text-field>
-        <v-text-field v-model="email" :rules="emailRules" label="E-mail" name="email" required></v-text-field>
+        <v-text-field
+          v-model="name"
+          :rules="nameRules"
+          label="Name"
+          name="name"
+          required
+        ></v-text-field>
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          label="E-mail"
+          name="email"
+          required
+        ></v-text-field>
         <v-textarea
           v-model="message"
           :rules="messageRules"
@@ -28,8 +40,21 @@
           name="message"
           required
         ></v-textarea>
-        <v-btn class="mr-4" name="reset" color="primary lighten-1" @click="reset">Reset</v-btn>
-        <v-btn type="submit" name="submit" :disabled="!valid" color="primary" class="mr-4">Submit</v-btn>
+        <v-btn
+          class="mr-4"
+          name="reset"
+          color="primary lighten-1"
+          @click="reset"
+          >Reset</v-btn
+        >
+        <v-btn
+          type="submit"
+          name="submit"
+          :disabled="!valid"
+          color="primary"
+          class="mr-4"
+          >Submit</v-btn
+        >
       </v-form>
     </v-container>
   </main>
@@ -40,7 +65,7 @@ export default {
   name: 'Contact',
   head() {
     return {
-      title: `Contact | Jereny Bratcher | Web Developer | Louisville, KY`,
+      title: `Contact | Jeremy Bratcher | Web Developer | Louisville, KY`,
       meta: [
         {
           hid: `description`,

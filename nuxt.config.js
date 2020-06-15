@@ -9,7 +9,7 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
-    title: 'Jereny Bratcher | Web Developer | Louisville, KY',
+    title: 'Jeremy Bratcher | Web Developer | Louisville, KY',
     meta: [
       {
         charset: 'utf-8'
@@ -57,7 +57,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['highlight.js/styles/a11y-light.css'],
+  css: ['highlight.js/styles/a11y-light.css', '@/assets/global.scss'],
   /*
    ** Plugins to load before mounting the App
    */

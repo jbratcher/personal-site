@@ -2,6 +2,8 @@
   <v-app>
     <!-- Header Area -->
     <v-app-bar
+      absolute
+      app
       color="grey lighten-3"
       flat
       :min-height="responsiveNavHeight"
@@ -35,11 +37,14 @@
           ><v-icon>{{ menuIcon }}</v-icon></i
         >
       </v-app-bar-nav-icon>
-      <MenuLinks
-        :general-links="generalLinks"
-        list-class="d-none d-sm-flex"
-        list-item-class="flex-0"
-      />
+      <v-card class="border-top d-none" flat tile width="100%">
+        <MenuLinks
+          :general-links="generalLinks"
+          list-class="d-md-flex justify-end hidden-md-and-down ml-auto"
+          list-item-class="mx-3 text-center"
+          width="50%"
+        />
+      </v-card>
     </v-app-bar>
     <!-- side/mobile navigation -->
     <v-navigation-drawer
@@ -55,8 +60,8 @@
     >
       <MenuLinks
         :general-links="generalLinks"
-        list-class="mobile"
-        list-item-class="column"
+        list-class="d-flex flex-column"
+        list-item-class="text-center"
       />
     </v-navigation-drawer>
     <!-- Nuxt content -->
@@ -214,207 +219,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-// global
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  font-size: 1rem; // fallback for older browsers
-  font-size: calc(1vw + 1vh + 0.5vmin); // fluid typography
-}
-
-html,
-body,
-.v-application {
-  color: #525f7f;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  min-height: 100vh;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  word-break: keep-all;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-html,
-body {
-  background: #eee;
-  min-width: 100vw;
-  overflow-x: hidden;
-}
-
-.v-application {
-  a {
-    text-decoration: none;
-  }
-
-  .v-responsive__content {
-    .v-card__title,
-    .v-card__subtitle,
-    .v-card__text {
-      line-height: 1.2;
-      word-break: keep-all;
-    }
-  }
-
-  .v-card__title,
-  .v-card__subtitle,
-  .v-card__text {
-    line-height: 1.5;
-    word-break: keep-all;
-
-    .v-list-item__content {
-      overflow: visible;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-bottom: 1rem;
-    }
-    p > a {
-      color: #0d47a1;
-    }
-
-    p,
-    p + p,
-    ul {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-  }
-
-  .v-card__text {
-    pre {
-      margin-bottom: 2rem;
-      min-width: 100%;
-      code {
-        font-size: 0.75rem;
-        max-width: 100%;
-        min-width: 100%;
-      }
-      code:before {
-        content: '';
-      }
-    }
-  }
-
-  .v-card__text[v-html] {
-    article > * + * {
-      margin-top: 1rem;
-    }
-  }
-}
-
-// header
-.v-toolbar {
-  display: flex;
-  align-items: center;
-  min-width: 100vw;
-  position: relative;
-  z-index: 0;
-}
-
-.v-toolbar__content {
-  justify-content: space-between;
-  width: 100%;
-
-  span {
-    font-size: 1.25rem;
-  }
-
-  .v-avatar {
-    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.2), 0 0 0 4px #fff;
-  }
-
-  .v-list {
-    border-radius: 0;
-    border-top: 1px solid #666;
-    display: flex;
-    align-items: baseline;
-    background: transparent;
-    padding-bottom: 0;
-    width: 100%;
-  }
-}
-
-.v-list-item__title {
-  font-size: 1.5rem;
-}
-
-.v-toolbar__content .v-btn.v-btn--icon.v-size--default {
-  height: 4.75rem;
-  width: 4.75rem;
-}
-
-.v-btn--icon.v-size--default .v-icon {
-  font-size: 4rem;
-  height: 4rem;
-  width: 4rem;
-}
-
-nav.v-navigation-drawer {
-  border-bottom-left-radius: 5rem;
-}
-
-// footer
-.v-footer {
-  border: 1px solid #000;
-}
-
-// lists (global)
-.theme--light.v-list {
-  background-color: #eee;
-}
-
-// cards (global)
-.justify-space-evenly {
-  justify-content: space-around;
-  justify-content: space-evenly;
-}
-
-.flex-0 {
-  flex: 0;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  // header
-  .v-list-item__title {
-    font-size: 1rem;
-  }
-
-  .v-application {
-    p,
-    p + p,
-    ul {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

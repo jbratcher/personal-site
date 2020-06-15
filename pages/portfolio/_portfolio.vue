@@ -4,8 +4,13 @@
       <v-col class="pa-0">
         <v-sheet class="ma-0" color="primary darken-2" dark tile>
           <h1
-            :class="{'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp, 'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown}"
-          >Portfolio</h1>
+            :class="{
+              'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp,
+              'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown
+            }"
+          >
+            Portfolio
+          </h1>
         </v-sheet>
         <article class="mb-12">
           <v-card tile>
@@ -17,8 +22,15 @@
               width="100%"
               max-width="100vw"
             />
-            <v-card class="mx-auto" flat :width="$breakpoint.mdAndUp ? '75vw' : '100%'">
-              <v-card-text v-html="$md.render(portfolioItem.body)" class="black--text"></v-card-text>
+            <v-card
+              class="mx-auto"
+              flat
+              :width="$breakpoint.mdAndUp ? '75vw' : '100%'"
+            >
+              <v-card-text
+                v-html="$md.render(portfolioItem.body)"
+                class="black--text"
+              ></v-card-text>
             </v-card>
           </v-card>
         </article>
@@ -31,7 +43,7 @@ export default {
   head() {
     let portfolioItem = this.portfolioItem
     return {
-      title: `${portfolioItem.title} | Jereny Bratcher | Web Developer | Louisville, KY`,
+      title: `${portfolioItem.title} | Jeremy Bratcher | Web Developer | Louisville, KY`,
       meta: [
         {
           hid: `description`,
@@ -50,5 +62,4 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

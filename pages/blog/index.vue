@@ -73,7 +73,7 @@ import { mapActions, mapState } from 'vuex'
 export default {
   head() {
     return {
-      title: `Blog | Jereny Bratcher | Web Developer | Louisville, KY`,
+      title: `Blog | Jeremy Bratcher | Web Developer | Louisville, KY`,
       meta: [
         {
           hid: `description`,
