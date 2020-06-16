@@ -21,40 +21,45 @@
         <input type="hidden" name="form-name" value="contact" />
         <v-text-field
           v-model="name"
-          :rules="nameRules"
           label="Name"
+          outlined
           name="name"
           required
+          :rules="nameRules"
         ></v-text-field>
         <v-text-field
           v-model="email"
-          :rules="emailRules"
           label="E-mail"
+          outlined
           name="email"
           required
+          :rules="emailRules"
         ></v-text-field>
         <v-textarea
           v-model="message"
-          :rules="messageRules"
           label="Your Message"
+          outlined
           name="message"
           required
+          :rules="messageRules"
         ></v-textarea>
-        <v-btn
-          class="mr-4"
-          name="reset"
-          color="primary lighten-1"
-          @click="reset"
-          >Reset</v-btn
-        >
-        <v-btn
-          type="submit"
-          name="submit"
-          :disabled="!valid"
-          color="primary"
-          class="mr-4"
-          >Submit</v-btn
-        >
+        <v-container class="d-flex justify-end" fluid>
+          <v-btn
+            @click="reset"
+            class="mr-4"
+            color="primary lighten-1"
+            name="reset"
+            >Reset</v-btn
+          >
+          <v-btn
+            color="teal"
+            dark
+            :disabled="!valid"
+            name="submit"
+            type="submit"
+            >Submit</v-btn
+          >
+        </v-container>
       </v-form>
     </v-container>
   </main>

@@ -90,8 +90,12 @@ body {
         font-size: 0.75rem;
         max-width: 100%;
         min-width: 100%;
+        padding: 1rem;
       }
       code:before {
+        content: '';
+      }
+      code:after {
         content: '';
       }
     }
@@ -147,11 +151,15 @@ body {
 
 @media screen and (min-width: 960px) {
   .v-application {
-    p,
-    p + p,
-    ul {
-      font-size: 1rem;
-      margin-bottom: 2rem;
+    .v-card__title,
+    .v-card__subtitle,
+    .v-card__text {
+      p,
+      p + p,
+      ul {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
     }
   }
 }

@@ -31,9 +31,10 @@
               <p>
                 I'm a
                 <span
+                  class="pa-2"
                   :class="{
-                    'pa-2 input-display': inputDisplay,
-                    'pa-2 no-input': !inputDisplay
+                    'input-display': inputDisplay,
+                    'no-input': !inputDisplay
                   }"
                   @mouseover="toggleInputDisplay"
                   @mouseout="toggleInputDisplay"

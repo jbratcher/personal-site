@@ -49,7 +49,6 @@
     <!-- side/mobile navigation -->
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
       class="pt-6 pb-12"
       color="#eee"
       height="auto"
@@ -161,7 +160,6 @@ export default {
         }
       ],
       iconSize: 0,
-      miniVariant: false,
       navHeight: 64
     }
   },

@@ -9,7 +9,7 @@
               'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown
             }"
           >
-            Portfolio&nbsp;>
+            Portfolio
           </h1>
         </v-sheet>
         <v-container>
