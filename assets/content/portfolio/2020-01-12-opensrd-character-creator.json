@@ -1,10 +1,11 @@
 {
-  "title": "OpenSRD Character Creator",
-  "date": "2020-06-17T15:41:14.797Z",
-  "description": "A character creator for open-source RPGs",
   "body": "# OpenSRD Character Creator\n\nCharacter creator for an openSRD-based roleplaying game.  Puts together all the info you need to start playing now and not have to worry about calculations for bonuses.    \n\n[Demo Page](https://jbratcher.github.io/openSRD_character_creator/)\n\n### Version\n\n0.0.8\n\n## Install Dependencies\n\n```bash\nnpm install\n```\n\n## Start live reload server and compile Typescript, SASS\n\ngulp\n\n```bash\ngulp\n```\n\n## Folder and File Structure\n\n```\n/src\n    /css\n    styles.css\n        /vendor\n        /fonts\n            -fontawesome-webfont.eot\n            -fontawesome-webfont.svg\n            -fontawesome-webfont.ttf\n            -fontawesome-webfont.wotf\n            -fontawesome-webfont.wotf2\n            -FontAwesome.otf\n        -font-awesome.min.css\n    /js\n        -characterImages.js\n        -info.js\n        -main.js\n    /scss\n    -styles.scss\n    /ts\n      -characterImages.ts\n      -info.ts\n      -main.ts\n-gulpfile.js\n-index.html\n-LICENSE\n-package.json\n-readme.md\n```\n\n## Bulid to dist from src\n\n```bash\ngulp build\n```\n\n## Features:\n\n* Random rolls for stats, selectable races, and classes\n* Randomly selects image from array based on race, class, and gender inputs (placeholders for now)\n* Generates character preview based on user inputs\n* Calculates hit points, armor class, initiative, speed, and saving Throws\n* Calculates hit point gain, experience for next level, and proficiency bonus on level up\n* Add experience and keeps a running tottal\n* Highlights chosen skills and displays calculated bonus from proficiency and ability score modifiers\n* Dynamically highlights available skills on class selection\n* Dynamically highlights racial bonus inputs\n\n## Future Features:\n\n* Display tooltips for info\n* Add attack roll functionality\n* better sourcing of images (replace placeholders)\n\n## Known \"bugs\"\n\n* active class on general tab not working unless clicked\n\n#### Change Log\n\n###### 0.0.8\n\n* Racial ability score, and language bonuses\n* Optional subraces selection\n* Calculates saving throws on character creation\n\n\n###### 0.0.7\n\n* Highlight available skills dynamically on class selection\n\n###### 0.0.6\n\n* Added proficiency bonus logic and display to skill preview\n* Added skill modifier logic to modify skill bonuses\n\n###### 0.0.5\n\n* Added logic for level, experience and hitpoints\n\n###### 0.0.4\n\n* Added tabs for character preview section (general, proficiencies, and combat\n\n###### 0.0.3\n\n* Added support for non-binary genders, removed placeholder default values for race, class, and alignment,\n\n###### 0.0.2\n\n* Added feature to generate random character image from an array based on the character's class, race and gender.\n\n###### 0.0.1\n\n* Initial commit, preview displays input only\n",
-  "thumbnail": "/img/open-srd-character-creator.png",
-  "hero": "/img/open-srd-character-creator.png",
   "demo": "https://jbratcher.github.io/openSRD_character_creator/",
-  "repo": "https://github.com/jbratcher/openSRD_character_creator"
+  "rank": 6,
+  "thumbnail": "/img/open-srd-character-creator.png",
+  "date": "2020-06-17T15:41:14.797Z",
+  "repo": "https://github.com/jbratcher/openSRD_character_creator",
+  "title": "OpenSRD Character Creator",
+  "hero": "/img/open-srd-character-creator.png",
+  "description": "A character creator for open-source RPGs"
 }
