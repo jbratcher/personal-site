@@ -16,7 +16,7 @@
           <v-row>
             <v-col
               class="col-12 col-md-6"
-              v-for="(portfolioItem, index) in portfolioItemsByDateDescending"
+              v-for="(portfolioItem, index) in portfolioItemsByOrderDescending"
               :key="index"
             >
               <v-card class="d-flex flex-column" height="100%">
@@ -97,7 +97,7 @@ export default {
     portfolioItemsByOrderDescending() {
       return this.portfolioItems
         .slice()
-        .sort((a, b) => new Date(b.order) - new Date(a.order))
+        .sort((a, b) => new Date(a.rank) - new Date(b.rank))
     }
   },
   methods: {
