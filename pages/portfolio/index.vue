@@ -16,7 +16,7 @@
           <v-row>
             <v-col
               class="col-12 col-md-6"
-              v-for="(portfolioItem, index) in portfolioItems"
+              v-for="(portfolioItem, index) in portfolioItemsByDateDescending"
               :key="index"
             >
               <v-card class="d-flex flex-column" height="100%">
@@ -92,7 +92,13 @@ export default {
     }
   },
   computed: {
-    ...mapState('resources', ['portfolioItems'])
+    ...mapState('resources', ['portfolioItems']),
+    // return temporary array of events from newest to oldest
+    portfolioItemsByOrderDescending() {
+      return this.portfolioItems
+        .slice()
+        .sort((a, b) => new Date(b.order) - new Date(a.order))
+    }
   },
   methods: {
     ...mapActions('resources', ['getPortfolioItems'])

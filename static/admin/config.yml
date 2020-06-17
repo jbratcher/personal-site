@@ -46,6 +46,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Order', name: 'rank', widget: 'number' }
       - label: 'Thumbnail'
         name: 'thumbnail'
         preview_path: blog/{{slug}}
