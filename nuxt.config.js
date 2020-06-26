@@ -83,8 +83,6 @@ export default {
    ** Markdown-it module config
    */
   markdownit: {
-    injected: true,
-    linkify: true,
     breaks: true,
     // use syntax highlighting:
     highlight: function(str, lang) {
@@ -96,7 +94,11 @@ export default {
       }
 
       return '' // use external default escaping
-    }
+    },
+    html: true,
+    injected: true,
+    linkify: true
+    // use: [['markdown-it-anchor', { default: true }]]
   },
   /*
    ** Nuxt Optimized Images Config
