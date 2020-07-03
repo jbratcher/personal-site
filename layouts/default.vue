@@ -22,8 +22,10 @@
         <v-btn
           v-if="togglePortfolioLink"
           class="white--text"
-          href="/portfolio"
           color="#444"
+          href="/portfolio"
+          aria-label="toggle-portfolio-link"
+          name="toggle-portfolio-link"
         >
           Portfolio
           <v-icon class="ml-2">{{ folderStarOutlineIcon }}</v-icon>
@@ -32,6 +34,8 @@
       <v-app-bar-nav-icon
         class="hidden-sm-and-up"
         @click.stop="drawer = !drawer"
+        aria-label="menu-open"
+        name="menu-open"
       >
         <i aria-hidden="true" class="v-icon notranslate theme--dark"
           ><v-icon>{{ menuIcon }}</v-icon></i
@@ -85,12 +89,13 @@
           <v-btn
             v-for="(link, i) in socialLinks"
             :key="i + link.title"
-            :name="link.title.toLowerCase()"
-            :href="link.to"
+            :aria-label="link.title.toLowerCase()"
             color="primary"
+            :href="link.to"
+            :name="link.title.toLowerCase()"
+            rounded
             target="_blank"
             text
-            rounded
           >
             <v-icon size="2rem">{{ link.icon }}</v-icon>
           </v-btn>

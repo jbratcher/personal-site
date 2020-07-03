@@ -31,8 +31,9 @@ export default {
         href: '/favicon.ico'
       },
       {
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1'
+        rel: 'preconnect',
+        href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.1',
+        as: 'style'
       }
     ]
   },
@@ -65,11 +66,15 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@aceforth/nuxt-optimized-images', '@nuxtjs/vuetify'],
+  buildModules: [
+    '@aceforth/nuxt-optimized-images',
+    'nuxt-purgecss',
+    '@nuxtjs/vuetify'
+  ],
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', 'nuxt-purgecss', 'nuxt-webfontloader'],
+  modules: ['@nuxtjs/markdownit', 'nuxt-webfontloader'],
   /*
    ** Build configuration
    */
@@ -98,7 +103,6 @@ export default {
     html: true,
     injected: true,
     linkify: true
-    // use: [['markdown-it-anchor', { default: true }]]
   },
   /*
    ** Nuxt Optimized Images Config
