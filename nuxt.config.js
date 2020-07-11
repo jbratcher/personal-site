@@ -66,15 +66,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@aceforth/nuxt-optimized-images',
-    'nuxt-purgecss',
-    '@nuxtjs/vuetify'
-  ],
+  buildModules: ['@aceforth/nuxt-optimized-images', '@nuxtjs/vuetify'],
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', 'nuxt-webfontloader'],
+  modules: ['@nuxtjs/markdownit', '@nuxtjs/pwa', 'nuxt-webfontloader'],
   /*
    ** Build configuration
    */
@@ -110,6 +106,26 @@ export default {
    */
   optimizedImages: {
     optimizeImages: true
+  },
+  /*
+   ** PWA configuration
+   ** https://pwa.nuxtjs.org
+   */
+  pwa: {
+    manifest: {
+      icons: [
+        {
+          src: '/images/pwa-install.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: '/images/pwa-splash.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
+    }
   },
   /*
    ** vuetify module configuration
