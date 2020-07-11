@@ -8,7 +8,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "export": "nuxt export",
+    "static": "nuxt build --target static && nuxt export",
+    "serve": "nuxt serve"
   },
   "repository": {
     "type": "git",
