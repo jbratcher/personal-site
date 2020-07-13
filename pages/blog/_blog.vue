@@ -2,56 +2,53 @@
   <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <v-sheet class="ma-0 pb-0" color="primary darken-2" dark tile>
-          <h1
-            :class="{
-              'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp,
-              'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown
-            }"
-          >
-            Blog
-          </h1>
-        </v-sheet>
+        <!-- Hero Section -->
+        <TheBlogSplash
+          :articleUpdatedAt="formatDate(post.updatedAt)"
+          :authorName="post.author.name"
+          :avatarSrc="post.author.img"
+          :headerText="post.title"
+          imageSource="/images/vbanner.jpg"
+          :subText="post.description"
+        />
+
         <article class="mb-12">
-          <v-card class="d-flex flex-column align-center mx-auto" tile>
-            <v-img
-              :alt="blogPost.title"
-              :aspect-ratio="16 / 9"
-              class="mb-12"
-              :src="blogPost.hero"
-              lazy-src="https://picsum.photos/10/6"
-              width="100%"
-              :height="$breakpoint.mdAndUp ? '18.75rem' : '12.5rem'"
-            >
-              <v-card color="transparent" dark flat width="50%">
-                <v-card-title
-                  :class="{
-                    'display-2 mb-6': $breakpoint.mdAndUp,
-                    'title mb-6': $breakpoint.smAndDown
-                  }"
-                  >{{ blogPost.title.substring(0, 70) }}</v-card-title
+          <v-container
+            class="py-0"
+            :class="$breakpoint.mdAndUp ? 'px-12' : 'px-0'"
+          >
+            <v-row>
+              <v-col :class="$breakpoint.mdAndUp ? 'px-0' : 'py-0 px-0'">
+                <v-card
+                  class="mx-auto py-12 px-9"
+                  flat
+                  :width="$breakpoint.mdAndUp ? '75vw' : '100%'"
                 >
-                <v-card-subtitle
-                  :class="{
-                    'headline font-weight-regular white--text':
-                      $breakpoint.mdAndUp,
-                    'subtitle-1 font-weight-regular white--text':
-                      $breakpoint.smAndDown
-                  }"
-                  >{{ blogPost.description.substring(0, 80) }}</v-card-subtitle
-                >
-              </v-card>
-            </v-img>
-            <v-card flat :width="$breakpoint.mdAndUp ? '75vw' : '100%'">
-              <v-card-subtitle class="black--text mb-6">{{
-                formatDate(blogPost.date)
-              }}</v-card-subtitle>
-              <v-card-text
-                v-html="$md.render(blogPost.body)"
-                class="black--text"
-              ></v-card-text>
-            </v-card>
-          </v-card>
+                  <template>
+                    <h2
+                      class="font-weight-bold pt-6 pb-3"
+                      :class="$breakpoint.mdAndUp ? 'title' : 'display-1'"
+                    >
+                      Table of Contents
+                    </h2>
+                    <ul class="mb-12 pl-0 table-of-contents">
+                      <li
+                        v-for="link of post.toc"
+                        :key="link.id"
+                        :class="{
+                          toc2: link.depth === 2,
+                          toc3: link.depth === 3
+                        }"
+                      >
+                        <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+                      </li>
+                    </ul>
+                  </template>
+                  <nuxt-content :document="post" />
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
         </article>
       </v-col>
     </v-row>
@@ -60,38 +57,41 @@
 <script>
 export default {
   head() {
-    let blogPost = this.blogPost
+    let post = this.post
     return {
-      title: `${blogPost.title} | Jeremy Bratcher | Web Developer | Louisville, KY`,
+      title: `${post.title} | Nuxt Netlify CMS Starter Kit`,
       meta: [
         {
           hid: `description`,
           name: 'description',
-          content: `${blogPost.description}`
+          content: `${post.description}`
         }
       ]
     }
   },
-  async asyncData({ params, payload }) {
-    if (payload) return { blogPost: payload }
-    else
-      return {
-        blogPost: await require(`~/assets/content/blog/${params.blog}.json`)
-      }
+  async asyncData({ $content, params }) {
+    const post = await $content('blog', params.blog).fetch()
+    const [prev, next] = await $content('blog')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.blog)
+      .fetch()
+    return {
+      post,
+      prev,
+      next
+    }
   },
   methods: {
     formatDate(date) {
-      let newDate = new Date(date)
-      var options = {
-        weekday: 'long',
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric'
-      }
-      let formattedDate = newDate.toLocaleString('default', options)
-      return formattedDate
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
     }
   }
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.table-of-contents {
+  list-style-type: none;
+}
+</style>

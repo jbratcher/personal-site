@@ -12,8 +12,8 @@
     >
       <v-avatar :size="responsiveIconSize">
         <v-img
-          src="/img/profile.jpg"
-          lazy-src="/img/10x10_profile.png"
+          src="/images/profile.jpg"
+          lazy-src="/images/10x10_profile.png"
           aspect-ratio="1"
           cover
         />
@@ -64,7 +64,7 @@
       <MenuLinks
         :general-links="generalLinks"
         list-class="d-flex flex-column"
-        list-item-class="text-center"
+        list-item-class="headline text-center"
       />
     </v-navigation-drawer>
     <!-- Nuxt content -->

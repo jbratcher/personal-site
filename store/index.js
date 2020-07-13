@@ -1,8 +1,10 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+export const state = () => ({
+  highlightPortfolioLink: false
+})
 
-Vue.use(Vuex);
-
-export const state = () => ({});
-
-export const getters = {};
+export const actions = {
+  toggleHighlightPortfolioLink() {
+    state.highlightPortfolioLink = !state.highlightPortfolioLink
+    console.log(state.highlightPortfolioLink)
+  }
+}

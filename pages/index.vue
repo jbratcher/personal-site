@@ -20,8 +20,8 @@
                 <section v-if="profilePic" id="profile-pic">
                   <v-avatar size="96">
                     <v-img
-                      src="img/profile.jpg"
-                      lazy-src="img/10x10_profile.png"
+                      src="images/profile.jpg"
+                      lazy-src="images/10x10_profile.png"
                       aspect-ratio="1"
                       cover
                     />
@@ -89,8 +89,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
-
+import { mapActions } from 'vuex'
 export default {
   head() {
     return {
@@ -107,11 +106,8 @@ export default {
     profilePic: false,
     shapeAnimation: false
   }),
-  computed: {
-    ...mapState('resources', ['highlightPortfolioLink'])
-  },
   methods: {
-    ...mapMutations('resources', ['toggleHighlightPortfolioLink']),
+    ...mapActions(['toggleHighlightPortfolioLink']),
     showProfilePic: function() {
       this.profilePic = !this.profilePic
     },

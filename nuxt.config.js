@@ -38,15 +38,6 @@ export default {
     ]
   },
   generate: {
-    routes: function() {
-      const fs = require('fs')
-      return fs.readdirSync('./assets/content/blog').map(file => {
-        return {
-          route: `/blog/${file.slice(2, -5)}`,
-          payload: require(`./assets/content/blog/${file}`)
-        }
-      })
-    },
     fallback: true
   },
   /*
@@ -58,7 +49,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['highlight.js/styles/a11y-light.css', '@/assets/global.scss'],
+  css: ['@/assets/global.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -70,7 +61,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit', '@nuxtjs/pwa', 'nuxt-webfontloader'],
+  modules: ['@nuxt/content', '@nuxtjs/pwa', 'nuxt-webfontloader'],
   /*
    ** Build configuration
    */
@@ -81,25 +72,22 @@ export default {
     extend(config, ctx) {}
   },
   /*
-   ** Markdown-it module config
+   ** Nuxt Content Module
+   **
    */
-  markdownit: {
-    breaks: true,
-    // use syntax highlighting:
-    highlight: function(str, lang) {
-      const hljs = require('highlight.js')
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return hljs.highlight(lang, str).value
-        } catch (__) {}
-      }
-
-      return '' // use external default escaping
-    },
-    html: true,
-    injected: true,
-    linkify: true
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-a11y-dark.css'
+      },
+      nestedProperties: ['author.name', 'author.img']
+    }
   },
+  /*
+   **
+   **
+   */
+  components: true,
   /*
    ** Nuxt Optimized Images Config
    ** https://github.com/aceforth/nuxt-optimized-images
@@ -132,7 +120,7 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['@/assets/variables.scss'],
     defaultAssets: {
       icons: false
     },

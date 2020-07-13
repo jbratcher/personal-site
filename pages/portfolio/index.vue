@@ -16,13 +16,13 @@
           <v-row>
             <v-col
               class="col-12 col-md-6"
-              v-for="(portfolioItem, index) in portfolioItemsByOrderDescending"
+              v-for="(post, index) in posts"
               :key="index"
             >
               <v-card class="d-flex flex-column" height="100%">
                 <v-img
-                  :alt="portfolioItem.title"
-                  :src="portfolioItem.thumbnail"
+                  :alt="post.title"
+                  :src="post.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
                   height="12.5rem"
                   max-height="12.5rem"
@@ -32,10 +32,10 @@
                     'display-1 my-3 mx-3': $breakpoint.mdAndUp,
                     'headline my-3 mx-3': $breakpoint.smAndDown
                   }"
-                  >{{ portfolioItem.title }}</v-card-title
+                  >{{ post.title }}</v-card-title
                 >
                 <v-card-subtitle class="body-1 mx-3">{{
-                  portfolioItem.description
+                  post.description
                 }}</v-card-subtitle>
                 <v-container class="mt-auto mx-3 mb-12">
                   <v-btn
@@ -44,28 +44,28 @@
                     color="primary darken-2"
                     nuxt
                     dark
-                    :to="`portfolio/${portfolioItem.slug}`"
+                    :to="`portfolio/${post.slug}`"
                     >Info</v-btn
                   >
                   <v-btn
-                    v-if="portfolioItem.repo"
+                    v-if="post.repo"
                     class="ml-3"
                     name="repo"
                     max-width="120px"
                     color="primary darken-1"
                     dark
                   >
-                    <a class="white--text" :href="portfolioItem.repo">Repo</a>
+                    <a class="white--text" :href="post.repo">Repo</a>
                   </v-btn>
                   <v-btn
-                    v-if="portfolioItem.demo"
+                    v-if="post.demo"
                     class="ml-3"
                     name="demo"
                     max-width="120px"
                     color="primary"
                     dark
                   >
-                    <a class="white--text" :href="portfolioItem.demo">Demo</a>
+                    <a class="white--text" :href="post.demo">Demo</a>
                   </v-btn>
                 </v-container>
               </v-card>
@@ -77,7 +77,6 @@
   </v-container>
 </template>
 <script>
-import { mapActions, mapState } from 'vuex'
 export default {
   head() {
     return {
@@ -91,20 +90,13 @@ export default {
       ]
     }
   },
-  computed: {
-    ...mapState('resources', ['portfolioItems']),
-    // return temporary array of events from newest to oldest
-    portfolioItemsByOrderDescending() {
-      return this.portfolioItems
-        .slice()
-        .sort((a, b) => new Date(a.rank) - new Date(b.rank))
+  async asyncData({ $content, params }) {
+    const posts = await $content('portfolio', params.slug)
+      .sortBy('date', 'desc')
+      .fetch()
+    return {
+      posts
     }
-  },
-  methods: {
-    ...mapActions('resources', ['getPortfolioItems'])
-  },
-  created() {
-    this.getPortfolioItems()
   }
 }
 </script>

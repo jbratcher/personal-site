@@ -21,24 +21,24 @@
         <v-container id="blog-list">
           <v-row>
             <v-col
-              v-for="(blogPost, index) in blogPostsByDateDescending"
+              v-for="(post, index) in posts"
               :key="index"
               class="col-12 col-md-6"
             >
               <v-card class="d-flex flex-column" height="100%">
                 <v-img
-                  :alt="blogPost.title"
-                  :src="blogPost.thumbnail"
+                  :alt="post.title"
+                  :src="post.thumbnail"
                   lazy-src="https://picsum.photos/10/6"
                   height="12.5rem"
                   max-height="12.5rem"
                 >
                   <v-card color="transparent" dark flat width="50%">
                     <v-card-title class="title font-weight-bold mb-3">{{
-                      blogPost.title.substring(0, 70)
+                      post.title
                     }}</v-card-title>
                     <v-card-subtitle class="subtitle-1 white--text">{{
-                      blogPost.description.substring(0, 80)
+                      post.description
                     }}</v-card-subtitle>
                   </v-card>
                 </v-img>
@@ -48,8 +48,13 @@
                       $breakpoint.mdAndUp,
                     'body-1 black--text': $breakpoint.smAndDown
                   }"
-                  v-html="$md.render(blogPost.body).substring(0, 200) + '...'"
-                />
+                  v-html="
+                    String(post.body.children[0].children[0].value).substring(
+                      0,
+                      200
+                    ) + '...'
+                  "
+                ></v-card-text>
                 <v-btn
                   class="ml-3 mb-12 mt-auto"
                   dark
@@ -57,7 +62,7 @@
                   name="more"
                   nuxt
                   max-width="120px"
-                  :to="`blog/${blogPost.slug}`"
+                  :to="`blog/${post.slug}`"
                   >More...</v-btn
                 >
               </v-card>
@@ -69,7 +74,6 @@
   </v-container>
 </template>
 <script>
-import { mapActions, mapState } from 'vuex'
 export default {
   head() {
     return {
@@ -83,20 +87,13 @@ export default {
       ]
     }
   },
-  computed: {
-    ...mapState('resources', ['blogPosts']),
-    // return temporary array of events from newest to oldest
-    blogPostsByDateDescending() {
-      return this.blogPosts
-        .slice()
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
+  async asyncData({ $content, params }) {
+    const posts = await $content('blog', params.slug)
+      .sortBy('createdAt', 'desc')
+      .fetch()
+    return {
+      posts
     }
-  },
-  methods: {
-    ...mapActions('resources', ['getBlogPosts'])
-  },
-  mounted() {
-    this.getBlogPosts()
   }
 }
 </script>

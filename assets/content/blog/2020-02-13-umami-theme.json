@@ -1,8 +1,0 @@
-{
-  "title": "Umami Theme",
-  "date": "2020-02-13T16:02:03.217Z",
-  "description": "A restaurant theme for Nuxt Netlify CMS quickstart",
-  "body": "I'm a big fan of food in general and, here in Louisville, KY, over 100 new restaurants opened last year.  We really have a thriving foodie culture.  With all the new spots popping up, I decided to make a easy to use and customize theme for restaurants.\n\nLike the [Direction Theme](https://www.jeremybratcher.com/blog/2020-02-02-direction-theme), this one is built on top of Nuxt for easy to manage pages and Netlify CMS for easy to manage content.  \n\nThe dark and red theme is targeted to common branding colors in the restaurant industry.\n\nThe theme is fully responsive and mobile friendly.\n\nThe full screen hero video on the homepage should really catch the eye on large screen sizes.\n\n[Demo](https://vigorous-almeida-496a65.netlify.com/)\n\n[Repo](https://github.com/jbratcher/umami-theme)",
-  "thumbnail": "/img/umami-theme.svg",
-  "hero": "/img/umami-theme.svg"
-}

@@ -10,14 +10,13 @@
       :class="[
         highlightPortfolioLink && item.title === 'Portfolio'
           ? 'highlight-portfolio-link'
-          : 'no-highlight',
-        listItemClass
+          : 'no-highlight'
       ]"
       router
       exact
     >
       <v-list-item-content>
-        <v-list-item-title v-text="item.title" />
+        <v-list-item-title :class="listItemClass" v-text="item.title" />
       </v-list-item-content>
     </v-list-item>
   </v-list>
@@ -25,7 +24,6 @@
 
 <script>
 import { mapState } from 'vuex'
-
 export default {
   name: 'MenuLinks',
   props: {
@@ -49,7 +47,13 @@ export default {
     }
   },
   computed: {
-    ...mapState('resources', ['highlightPortfolioLink'])
+    ...mapState(['highlightPortfolioLink'])
+  },
+  data() {
+    return {}
+  },
+  watch: {
+    highlight() {}
   }
 }
 </script>

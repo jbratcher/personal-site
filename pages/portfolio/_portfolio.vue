@@ -1,38 +1,55 @@
 <template>
-  <v-container class="pt-0" fluid>
+  <v-container class="py-0" fluid>
     <v-row>
       <v-col class="pa-0">
-        <v-sheet class="ma-0" color="primary darken-2" dark tile>
-          <h1
-            :class="{
-              'headline mb-0 ml-3 pa-2': $breakpoint.mdAndUp,
-              'title font-weight-bold mb-0 ml-3 pa-2': $breakpoint.smAndDown
-            }"
-          >
-            Portfolio
-          </h1>
-        </v-sheet>
+        <!-- Hero Section -->
+        <ThePortfolioSplash
+          :articleUpdatedAt="formatDate(portfolio.updatedAt)"
+          :authorName="portfolio.author.name"
+          :avatarSrc="portfolio.author.img"
+          :headerText="portfolio.title"
+          imageSource="/images/vbanner.jpg"
+          :subText="portfolio.description"
+        />
+
         <article class="mb-12">
-          <v-card tile>
-            <v-img
-              :alt="portfolioItem.title"
-              class="mb-12"
-              :src="portfolioItem.hero"
-              lazy-src="https://picsum.photos/1280/920"
-              width="100%"
-              max-width="100vw"
-            />
-            <v-card
-              class="mx-auto"
-              flat
-              :width="$breakpoint.mdAndUp ? '75vw' : '100%'"
-            >
-              <v-card-text
-                v-html="$md.render(portfolioItem.body)"
-                class="black--text"
-              ></v-card-text>
-            </v-card>
-          </v-card>
+          <v-container
+            class="py-0"
+            :class="$breakpoint.mdAndUp ? 'px-12' : 'px-0'"
+            fluid
+          >
+            <v-row>
+              <v-col class="py-0">
+                <v-card
+                  class="mx-auto py-12 px-9"
+                  flat
+                  :width="$breakpoint.mdAndUp ? '75vw' : '100%'"
+                >
+                  <template v-if="portfolio.toc.length > 0">
+                    <h2
+                      class="font-weight-bold pt-6 pb-3"
+                      :class="$breakpoint.mdAndUp ? 'title' : 'display-1'"
+                    >
+                      Table of Contents
+                    </h2>
+                    <ul class="mb-12 pl-0 table-of-contents">
+                      <li
+                        v-for="link of portfolio.toc"
+                        :key="link.id"
+                        :class="{
+                          toc2: link.depth === 2,
+                          toc3: link.depth === 3
+                        }"
+                      >
+                        <NuxtLink :to="`#${link.id}`">{{ link.text }}</NuxtLink>
+                      </li>
+                    </ul>
+                  </template>
+                  <nuxt-content :document="portfolio" />
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
         </article>
       </v-col>
     </v-row>
@@ -41,25 +58,41 @@
 <script>
 export default {
   head() {
-    let portfolioItem = this.portfolioItem
+    let portfolio = this.portfolio
     return {
-      title: `${portfolioItem.title} | Jeremy Bratcher | Web Developer | Louisville, KY`,
+      title: `${portfolio.title} | Nuxt Netlify CMS Starter Kit`,
       meta: [
         {
           hid: `description`,
           name: 'description',
-          content: `${portfolioItem.description}`
+          content: `${portfolio.description}`
         }
       ]
     }
   },
-  async asyncData({ params, payload }) {
-    if (payload) return { portfolioItem: payload }
-    else
-      return {
-        portfolioItem: await require(`~/assets/content/portfolio/${params.portfolio}.json`)
-      }
+  async asyncData({ $content, params }) {
+    const portfolio = await $content('portfolio', params.portfolio).fetch()
+    const [prev, next] = await $content('portfolio')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.portfolio)
+      .fetch()
+    return {
+      portfolio,
+      prev,
+      next
+    }
+  },
+  methods: {
+    formatDate(date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('en', options)
+    }
   }
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.table-of-contents {
+  list-style-type: none;
+}
+</style>
