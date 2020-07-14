@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapMutations } from 'vuex'
 export default {
   head() {
     return {
@@ -107,7 +107,7 @@ export default {
     shapeAnimation: false
   }),
   methods: {
-    ...mapActions(['toggleHighlightPortfolioLink']),
+    ...mapMutations(['toggleHighlightPortfolioLink']),
     showProfilePic: function() {
       this.profilePic = !this.profilePic
     },

@@ -48,19 +48,13 @@ export default {
   },
   computed: {
     ...mapState(['highlightPortfolioLink'])
-  },
-  data() {
-    return {}
-  },
-  watch: {
-    highlight() {}
   }
 }
 </script>
 
 <style lang="scss">
 .highlight-portfolio-link {
-  background: orange;
+  background-color: orange;
   transition: all 0.5s ease;
 }
 
