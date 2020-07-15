@@ -1,6 +1,6 @@
 ---
 date: 2020-03-26T13:55:19.299Z
-title: Vuetify Tip&#58; Change Default Font
+title: Vuetify Tip - Change Default Font
 description: Configure Custom Fonts with Vuetify
 thumbnail: /images/vuetify.svg
 hero: /images/vuetify.svg

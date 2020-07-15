@@ -9,8 +9,6 @@ author:
   img: /images/pwa-install.png
 ---
 
-[Repo for this post](https://github.com/jbratcher/stripe-client-only-checkout)
-
 A recent project of mine needed a quick solution for payment collection and I decided to use [Stripe](https://stripe.com/)'s API since it provides an easy way to set this up. This project is using [Nuxt](https://nuxtjs.org) with [Netlify](https://www.netlify.com/) for CI/CD and hosting which I've come to really enjoy using to develop over the last few months. If you aren't familiar with Netlfiy, it will allow you to host a static Nuxt website that can be git pushed to deployment. I just write the code and push it to my Github repo and Netlify builds, generates, deploys, and hosts the site.
 
 Netlify does offer Lamda Functions with AWS but I haven't used them much and knew that Stripe's API is developer friendly enough simply to load via CDN.
@@ -18,6 +16,8 @@ Netlify does offer Lamda Functions with AWS but I haven't used them much and kne
 Since this is a static site, we won't be able to use Stripe Checkout's session but we will be using a Stripe hosted page that is designed to make sales as easy for the user. Checkout will allow us to redirect the user back to our site after the purchase is either completed or cancelled.
 
 ### Getting Started
+
+[Repo for this post](https://github.com/jbratcher/stripe-client-only-checkout)
 
 To use Stripe, you will need to [sign up](https://dashboard.stripe.com/register) with them and activate your account. The sign up require some information but is painless and quick to complete.
 

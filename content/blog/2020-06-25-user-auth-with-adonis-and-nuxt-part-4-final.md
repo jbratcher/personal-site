@@ -1,6 +1,6 @@
 ---
 date: 2020-06-25T17:49:49.490Z
-title: User Auth with Adonis and Nuxt, Part 4 (Final)
+title: User Auth with Adonis and Nuxt, Part 4 - Final
 description: Profile Editing / Change Email / Change Password
 thumbnail: /images/adonis-nuxt-starter.svg
 hero: /images/adonis-nuxt-starter.svg
@@ -13,22 +13,9 @@ Last time, we set up a common, useful feature allowing the user to request a pas
 
 [Previous Post](https://www.jeremybratcher.com/blog/2020-06-15-user-auth-with-adonis-and-nuxt-part-3)
 
-## Table of Contents
-
-- [Profile editing](#profile_editing)
-  - [Creating the profile layout](#creating_the_profile_page_layout)
-  - [Creating the profile view](#creating_the_profile_view)
-    - [Adding the edit menu](#adding_the_edit_menu)
-    - [Finishing the user profile view](#finishing_the_user_profile_view)
-    - [Breaking down the profile view](#breaking_down_the_profile_view)
-    - [Updating the user profile](#updating_the_user_profile)
-    - [Updating the user profile image](#updating_the_user_profile_image)
-- [Change email](#change_email)
-- [Change password](#change_password)
-
 The code from this series is part of my ongoing project [Adonis Nuxt Starter](https://github.com/jbratcher/Adonis-Nuxt-Starter)
 
-## Profile editing <a name = "profile_editing"></a>
+## Profile editing
 
 The first step we want to take is to create a view for the user's profile.
 
@@ -36,7 +23,7 @@ Right now, we have the user's data object available in the global context as `$a
 
 But before we do that, we need to create a different layout for the profile page that will give the user a handy menu to edit their profile. To do this, will create a new layout called `profile` to use on the profile page instead of the `default` layout.
 
-### Creating the profile page layout <a name="creating_the_profile_page_layout"></a>
+### Creating the profile page layout
 
 Create a new file in the layouts folder named `profile.vue`.
 
@@ -247,11 +234,11 @@ toggleEditEmailMode(state) {
 
 Notice that in addition to the edit state being toggled the other edit states are turned off to prevent more than one edit form being open at one time.
 
-### Creating the Profile View <a name="creating_the_profile_view"></a>
+### Creating the Profile View
 
 In the `pages/users` folder, we want to create a dynamic route `_id.vue` which we will finish shortly.
 
-#### Adding the edit menu <a name="adding_the_edit_menu"></a>
+#### Adding the edit menu
 
 We will then, create a conditionally rendered link in the header that only displays when the user is logged in. This is done using `v-if-"isAuthenticated`. `isAuthenticated` is a Vuex getter that simply checks if the user is logged in.
 
@@ -289,7 +276,7 @@ In `MenuLinks.vue`:
 </script>
 ```
 
-#### Finishing the user profile view <a name="finishing_the_user_profile_view"></a>
+#### Finishing the user profile view
 
 Now, let's finish our `_id.vue` component.
 
@@ -614,7 +601,7 @@ Now, let's finish our `_id.vue` component.
 </style>
 ```
 
-#### Breaking down the profile view <a name="breaking_down_the_profile_view"></a>
+#### Breaking down the profile view
 
 There is a lot going on here so let's step through it.
 
@@ -649,7 +636,7 @@ export const mutations = {
 
 The profile image is more complicated as we are allowing the user to upload a new file. We are using Vuetify's v-file-input component to do this which will set the local state variable `userProfileImage` to the image object. `userProfileImage` will be passed with the `auth.user` object to a Vuex action to update this information server side.
 
-#### Updating the user profile <a name="updating_the_user_profile"></a>
+#### Updating the user profile
 
 Once the user has changed the profile edit fields to their liking, the save button can be clicked to call the `updateUserProfileClient` method.
 
@@ -737,7 +724,7 @@ This method gets the current user and the request payload and uses it to update 
 
 Back in the Vuex action `updateUserProfile`, the response is used to update the user data on the client-side and display a Toast notification informing the user the profile has been updated.
 
-#### Updating the user profile image <a name="updating_the_user_profile_image"></a>
+#### Updating the user profile image
 
 Now, let's look at how the profile image is updated.
 
@@ -810,7 +797,7 @@ You can learn more about file uploads and handling image files with Adonis at th
 
 That was a lot of work but we can now freely update the user profile information and profile image at will.
 
-## Change Email <a name="change_email"></a>
+## Change Email
 
 Like the profile edit option, we have already seen the email form fields and this function works in a similar way. In addition to updating the email address when a change is made, we want to email the user to confirm this change to enhance the security of our app.
 
@@ -905,7 +892,7 @@ Event.on('email::changed', async payload => {
 
 This will send an email to the user's original email address to confirm the change. Note we are using the same link to verify this change as we used to verify the email of new users.
 
-## Change Password <a name="change_password"></a>
+## Change Password
 
 Letting the user change their password during an authenticated session is a useful way to offer a password reset while they are already logged in. This is done in a similar manner to the change email function as it affects the security of the user's account.
 
@@ -983,7 +970,7 @@ Event.on('password::changed', async payload => {
 
 On the client-side, the response will trigger a Toast message indicating the user's password has been changed.
 
-## Conclusion <a name="conclusion"></a>
+## Conclusion
 
 Once these steps are completed, you should have full-functional and robust user module for your application. Most applications need user account management features so this will help for sure.
 

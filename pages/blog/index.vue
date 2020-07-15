@@ -89,7 +89,7 @@ export default {
   },
   async asyncData({ $content, params }) {
     const posts = await $content('blog', params.slug)
-      .sortBy('createdAt', 'desc')
+      .sortBy('date', 'desc')
       .fetch()
     return {
       posts
