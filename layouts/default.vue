@@ -4,7 +4,7 @@
     <v-app-bar
       absolute
       app
-      color="grey lighten-3"
+      color="transparent"
       flat
       :min-height="responsiveNavHeight"
       :height="responsiveNavHeight"
@@ -41,10 +41,10 @@
           ><v-icon>{{ menuIcon }}</v-icon></i
         >
       </v-app-bar-nav-icon>
-      <v-card class="border-top d-none d-md-block" flat tile width="100%">
+      <v-card class="border-top d-none d-sm-block" flat tile width="100%">
         <MenuLinks
           :general-links="generalLinks"
-          list-class="d-md-flex justify-end hidden-md-and-down ml-auto"
+          list-class="d-sm-flex justify-end hidden-md-and-down ml-auto"
           list-item-class="mx-3 text-center"
           width="50%"
         />
