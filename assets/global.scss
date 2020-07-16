@@ -40,7 +40,6 @@ body {
 
 .v-application {
   a {
-    color: #0d47a1;
     text-decoration: none;
   }
   code,
@@ -113,9 +112,18 @@ body {
   }
 }
 
+// table of contents
+
+.table-of-contents a {
+  color: #0d47a1;
+}
+
 // <nuxt-content> styling
 
 .nuxt-content {
+  a {
+    color: #0d47a1;
+  }
   p {
     font-size: 1rem;
     line-height: 1.5;
