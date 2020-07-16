@@ -40,7 +40,7 @@ body {
 
 .v-application {
   a {
-    color: #0d47a1 !important;
+    color: #0d47a1;
     text-decoration: none;
   }
   code,
@@ -192,5 +192,11 @@ body {
     width: 36px;
     height: 36px;
     background-size: 36px 36px;
+  }
+
+  .nuxt-content h2 a > .icon.icon-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 2.5rem 2.5rem;
   }
 }
