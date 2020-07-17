@@ -65,7 +65,7 @@
                   : 'background-text'
               ]"
             >
-              Hi,
+              {{ greeting }}
             </p>
             <p
               :class="[
@@ -102,6 +102,7 @@ export default {
     }
   },
   data: () => ({
+    greeting: 'Hi,',
     inputDisplay: false,
     profilePic: false,
     shapeAnimation: false
@@ -116,6 +117,20 @@ export default {
     },
     toggleShapeAnimation: function() {
       this.shapeAnimation = !this.shapeAnimation
+    }
+  },
+  watch: {
+    shapeAnimation() {
+      var timeoutID
+      var greetingValue = () => {
+        if (this.shapeAnimation) {
+          this.greeting = 'Hi!'
+        } else {
+          this.greeting = 'Hi,'
+        }
+      }
+      timeoutID = window.setTimeout(greetingValue, 500)
+      // clearTimeout(timeoutID)
     }
   }
 }
@@ -176,9 +191,9 @@ main {
 
     p.experience-on-text {
       color: #d25d19;
+      text-shadow: 1px 1px 2px #000;
       opacity: 1;
-      top: 20%;
-      right: 10vh;
+      transform: scale(0.125) translate(25%, -65%);
       transition: all 1s ease;
     }
 
@@ -251,7 +266,7 @@ main {
 }
 
 div.v-content__wrap {
-  width: 100%;
+  min-width: 100%;
 }
 
 @media screen and (min-width: 960px) {
@@ -264,6 +279,14 @@ div.v-content__wrap {
         top: -15%;
         left: 3vw;
         z-index: 0;
+      }
+
+      p.experience-on-text {
+        color: #d25d19;
+        text-shadow: 1px 1px 2px #000;
+        opacity: 1;
+        transform: scale(0.125) translate(25%, -65%);
+        transition: all 1s ease;
       }
 
       .abstract-shape-1 {
@@ -321,6 +344,14 @@ div.v-content__wrap {
         z-index: 0;
       }
 
+      p.experience-on-text {
+        color: #d25d19;
+        text-shadow: 1px 1px 2px #000;
+        opacity: 1;
+        transform: scale(0.125) translate(25%, -65%);
+        transition: all 1s ease;
+      }
+
       .abstract-shape-1 {
         background: none;
         border: 8px solid #ddd;
@@ -345,7 +376,7 @@ div.v-content__wrap {
 
       .experience-on-1 {
         border-color: #d25d19;
-        top: 0;
+        top: 5vh;
         right: 20vw;
         transform: rotate(225deg);
         transition: all 0.5s ease;
@@ -353,7 +384,7 @@ div.v-content__wrap {
 
       .experience-on-2 {
         border-color: #1976d2;
-        top: 0;
+        top: 5vh;
         right: 10vw;
         transform: scale(1.25);
       }

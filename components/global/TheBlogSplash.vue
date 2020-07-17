@@ -95,7 +95,7 @@ export default {
 
 <style lang="scss">
 .v-parallax {
-  width: 100vw;
+  min-width: 100vw;
   > .v-parallax__image-container {
     filter: brightness(0.2);
   }
