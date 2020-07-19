@@ -96,15 +96,10 @@ export default {
       v => !!v || 'Message is required',
       v =>
         (v && v.length <= 1000) ||
-        'Your message must be less than 1000 characters. Please email us at company@email.com'
+        'Your message must be less than 1000 characters. You can send longer messages as an email to me at jeremybratcher@gmail.com'
     ]
   }),
   methods: {
-    validate() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true
-      }
-    },
     reset() {
       this.$refs.form.reset()
       this.$refs.form.resetValidation()
