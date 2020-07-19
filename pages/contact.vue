@@ -53,7 +53,8 @@
           >
           <v-btn
             color="teal"
-            dark
+            :dark="valid"
+            :light="!valid"
             :disabled="!valid"
             name="submit"
             type="submit"
