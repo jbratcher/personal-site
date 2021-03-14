@@ -31,8 +31,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "imagemin-svgo": "^7.1.0",
-    "node-sass": "^4.14.1",
-    "nuxt-purgecss": "^0.2.1",
-    "sass-loader": "^8.0.2"
+    "node-sass": "^5.0.0",
+    "nuxt-purgecss": "^0.2.1"
   }
 }

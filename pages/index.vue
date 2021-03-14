@@ -151,6 +151,10 @@ main {
     p {
       position: relative;
       z-index: 1;
+
+      span {
+        cursor: pointer;
+      }
     }
 
     p:first-child {

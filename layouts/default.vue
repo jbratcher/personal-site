@@ -182,10 +182,10 @@ export default {
           value = '96'
           break
         case 'lg':
-          value = '112'
+          value = '80'
           break
         case 'xl':
-          value = '128'
+          value = '96'
           break
       }
       return value

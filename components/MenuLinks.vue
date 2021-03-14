@@ -7,7 +7,7 @@
       v-for="(item, i) in generalLinks"
       :key="i + `-${item.title}`"
       :to="item.to"
-      class="mx-2"
+      class="mx-2 mb-2"
       :class="[
         highlightPortfolioLink && item.title === 'Portfolio'
           ? 'highlight-portfolio-link'
